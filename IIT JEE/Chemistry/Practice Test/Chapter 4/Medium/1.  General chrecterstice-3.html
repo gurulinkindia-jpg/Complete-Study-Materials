@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <title>1.  General chrecterstice-3</title>
+  
+  <style>
+    :root{--bg:#0f172a;--panel:#111827;--muted:#9ca3af;--text:#e5e7eb;
+      --brand:#22c55e;--accent:#3b82f6;--danger:#ef4444;--amber:#f59e0b;--ring:#60a5fa;}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans';background:var(--bg);color:var(--text)}
+    header{position:sticky;top:0;z-index:9999;background:linear-gradient(180deg,rgba(17,24,39,.95),rgba(17,24,39,.85));backdrop-filter:blur(6px);border-bottom:1px solid #1f2937}
+
+    .wrap{max-width:1200px;margin-inline:auto;padding:14px 16px;display:flex;align-items:center;gap:12px;justify-content:space-between;}
+    
+    /* ↓↓↓ Smaller Logo Title ↓↓↓ */
+    h1{font-size:15px;margin:0;display:flex;gap:10px;align-items:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:60vw;}
+    h1 span.logo{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:8px;overflow:hidden;}
+    h1 span.logo img{width:100%;height:100%;object-fit:contain;}
+
+    .controls{display:flex;gap:10px;align-items:center;flex-wrap:nowrap;}
+    
+    /* ↓↓↓ Smaller Buttons ↓↓↓ */
+    .btn{padding:6px 10px;font-size:13px;border:1px solid #334155;border-radius:10px;background:#111827;color:var(--text);cursor:pointer;white-space:nowrap;}
+    .btn:hover{border-color:#475569}
+    .btn.primary{background:var(--accent);border-color:var(--accent);color:white}
+    .btn.success{background:var(--brand);border-color:var(--brand);color:white}
+    .btn.warn{background:var(--amber);border-color:var(--amber);color:black}
+    .btn.danger{background:var(--danger);border-color:var(--danger);color:white}
+    
+   main{max-width:1400px;margin:18px auto;display:grid;gap:18px;padding:0 16px}
+
+/* Default mode (Question + OMR) */
+main.default {
+  grid-template-columns: 4fr 1fr; /* Question : OMR */
+}
+
+/* Score mode (score panel replaces OMR only) */
+main.scoreMode {
+  grid-template-columns: 1fr 1fr; /* Keep it balanced */
+}
+
+
+
+   
+   iframe{width:100%;height:79dvh;border:1px solid #1f2937;border-radius:14px;background:#0b1220}
+
+   /* PDFs are drawn to canvas instead of using a browser/PDF.js iframe.
+      This removes the viewer's download and print buttons. */
+   .protected-pdf{
+     width:100%;height:79dvh;overflow:hidden;position:relative;
+     display:flex;flex-direction:column;min-width:0;
+     border:1px solid #1f2937;border-radius:14px;background:#0b1220;
+     padding:0;overscroll-behavior:contain;user-select:none;
+   }
+   .protected-pdf-status{padding:24px;text-align:center;color:var(--muted)}
+   .pdf-zoom-toolbar{
+     position:relative;z-index:20;display:flex;align-items:center;justify-content:center;
+     flex:0 0 auto;gap:3px;width:max-content;max-width:100%;margin:4px auto;padding:2px 4px;
+     border:1px solid #475569;border-radius:7px;background:rgba(15,23,42,.94);
+     box-shadow:none;line-height:1;
+   }
+   .pdf-zoom-toolbar button{
+     min-width:25px;padding:3px 5px;border:1px solid #64748b;border-radius:5px;
+     background:#1e293b;color:#fff;font-size:11px;font-weight:700;cursor:pointer;
+   }
+   .pdf-zoom-toolbar button:hover{background:#334155;border-color:#94a3b8}
+   .pdf-zoom-toolbar button:disabled{opacity:.4;cursor:not-allowed}
+   .pdf-zoom-value{min-width:34px;text-align:center;color:#fff;font-size:10px;font-weight:700;line-height:1.2}
+   .panel h2.pdf-heading-with-zoom{
+     display:flex;align-items:center;justify-content:space-between;gap:8px;
+     min-height:34px;padding:4px 10px;
+   }
+   .pdf-heading-with-zoom .pdf-zoom-toolbar{margin:0}
+   .panel.pdf-panel-active > .content{padding:0;overflow:hidden}
+   #questionPanel.pdf-panel-active > #questionContainer,
+   #solutionPanel.pdf-panel-active > .content{height:80dvh;overflow:hidden}
+   .panel.pdf-panel-active .protected-pdf{
+     height:100%;border:0;border-radius:0 0 13px 13px;
+   }
+   .pdf-pages{
+     flex:1 1 auto;min-width:0;min-height:0;overflow:auto;padding:0 12px 12px;
+     overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+     touch-action:pan-x pan-y;
+   }
+   .pdf-page-shell{
+     position:relative;width:max-content;max-width:100%;margin:0 auto 14px;
+     line-height:0;overflow:hidden;background:white;box-shadow:0 4px 16px rgba(0,0,0,.35);
+   }
+   .pdf-page-shell canvas{display:block;max-width:100%;height:auto !important;pointer-events:none}
+   .pdf-watermark{
+     position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);
+     grid-template-rows:repeat(4,1fr);align-items:center;justify-items:center;
+     overflow:hidden;pointer-events:none;
+   }
+   .pdf-watermark span{
+     color:rgba(120,0,0,.15);font-size:clamp(11px,1.4vw,18px);font-weight:800;
+     line-height:1;white-space:nowrap;transform:rotate(-30deg);
+   }
+
+   @media print{
+     body{display:none !important;}
+   }
+    
+	.panel .content{height:80dvh;overflow-y:auto;-webkit-overflow-scrolling: touch;padding:12px 14px}
+    .panel{background:var(--panel);border:1px solid #1f2937;border-radius:14px}
+    
+	.panel h2{margin:0;padding:14px 16px;border-bottom:1px solid #1f2937;font-size:13px} /* smaller than 16px */
+    .panel .content{padding:12px 14px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}
+    .card{background:#0b1220;border:1px solid #1f2937;border-radius:10px;padding:6px;font-size:13px}
+    .qhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;font-size:12px}
+    .choices{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+    .choice{position:relative;}
+    .choice label{display:block;text-align:center;padding:5px 0;border-radius:8px;border:1px solid #334155;background:#0b1220;color:var(--muted);font-size:12px;font-weight:500}
+    .choice input{position:absolute;opacity:0;inset:0;cursor:pointer}
+    .choice input:checked+label{border-color:var(--ring);box-shadow:0 0 0 2px rgba(96,165,250,.4) inset;color:#fff}
+    .status{font-size:11px;color:var(--muted)}
+    .scorecard{max-width:900px;margin:20px auto;background:white;color:#111;border:1px solid #e5e7eb;border-radius:12px}
+    .scorecard header{position:relative;background:white;border-bottom:1px solid #e5e7eb}
+    .scorecard .wrap{padding:16px}
+    .score-badges{display:flex;gap:10px;flex-wrap:wrap}
+    .badge{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:6px 10px;font-weight:600;border:1px solid #e5e7eb;font-size:13px}
+    .badge.win{background:#ecfdf5;color:#065f46}
+    .badge.lose{background:#fef2f2;color:#991b1b}
+    .badge.na{background:#fefce8;color:#92400e}
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    th,td{border-bottom:1px solid #e5e7eb;padding:6px 8px;text-align:left}
+    #omrPanel,#scorePanel,#solutionPanel{display:none;}
+    main.default #omrPanel{display:block;}
+    main.scoreMode #scorePanel{display:block;}
+   
+ main.solutionMode{
+  /* Question = 35%, Solution = 65%. minmax(0, ...) prevents a wide
+     PDF canvas from forcing the question column to stay large. */
+  grid-template-columns:minmax(0,0.7fr) minmax(0,1.3fr);
+ }
+main.solutionMode #questionPanel{
+  grid-column:1;
+  min-width:0;
+}
+main.solutionMode #solutionPanel{
+  display:block;
+  grid-column:2;
+  min-width:0;
+}
+main.solutionMode #scorePanel{grid-column:1/-1;margin-top:20px;}
+
+    @media (max-width:900px){
+      .controls{gap:6px;}
+      .btn{padding:5px 8px;font-size:12px;}
+      h1{font-size:14px;max-width:55vw;}
+    }
+    @media (max-width:600px){
+      .btn{padding:4px 7px;font-size:11px;}
+      h1{font-size:13px;gap:6px;max-width:55vw;}
+    }
+    @media (max-width:480px){
+      .btn{padding:3px 6px;font-size:10px;}
+      h1{font-size:12px;max-width:45vw;}
+    }
+.panel h2 {
+  margin: 0;
+  padding: 8px 12px;   /* reduced height */
+  font-size: 11px;     /* reduced font size */
+}
+/* Instruction Panel */
+#instructionBox {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 280px;
+  background: #111827;
+  border-right: 2px solid #1f2937;
+  padding: 18px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.5;
+  z-index: 999999;
+  border-radius: 0 12px 12px 0;
+}
+#instructionBox h3 {
+  margin: 0 0 10px 0;
+  font-size: 15px;
+  color: var(--accent);
+}
+#instructionBox button {
+  margin-top: 12px;
+  width: 100%;
+  padding: 8px 0;
+  background: var(--brand);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+#instructionBox button:hover { opacity: 0.9; }
+/* MOBILE — make instructions easy to read */
+@media (max-width: 600px) {
+  #instructionBox {
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    transform: none;
+    border-radius: 12px 12px 0 0;
+    border-right: none;
+    border-top: 2px solid #1f2937;
+    font-size: 13px;
+    text-align: center;
+  }
+  #instructionBox p { font-size: 13px; }
+}
+
+	  .logoLock img {
+  display: block;
+  margin-inline: auto;
+}
+
+    #lockScreen{position:fixed;inset:0;background:var(--bg);display:flex;justify-content:center;align-items:center;z-index:99999;}
+    #lockScreen .box{background:var(--panel);padding:30px;border-radius:16px;text-align:center;max-width:320px;width:100%;}
+    #lockScreen input{margin:8px 0;padding:10px;width:100%;border-radius:10px;border:1px solid #374151;background:#0b1220;color:var(--text)}
+  /* 📌 FIX — mobile responsive lockscreen + instruction panel */
+@media (max-width: 600px) {
+
+  /* Instruction panel moves UP when lock screen is visible */
+  #instructionBox {
+    bottom: 0;
+    max-height: 35vh;
+    overflow-y: auto;
+    padding: 14px;
+  }
+
+  /* Lock screen form fully visible */
+  #lockScreen .box {
+    width: 92%;
+    max-width: 340px;
+    padding: 20px 16px;
+    margin: 0 10px;
+  }
+
+  #lockScreen input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  #lockScreen h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  /* Space between panel & keypad */
+@media (max-width: 600px){
+
+  #lockScreen {
+    align-items: flex-start;
+    padding-top: 20px;
+    padding-bottom: 40vh; /* space for instruction box */
+    overflow-y: auto;
+  }
+
+  #lockScreen .box {
+    margin-bottom: 20px;
+  }
+
+}
+}
+
+/* Extra safeguard for very small phones */
+@media (max-height: 580px) {
+  #lockScreen {
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+}
+
+
+
+
+/* OMR Toggle Button */
+#toggleOMR{
+  display:none;
+  position:fixed;
+  right:5px;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:9999;
+  background:#22c55e;
+  color:white;
+  border:none;
+  border-radius:8px;
+  padding:6px 8px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* MOBILE behaviour */
+@media (max-width:900px){
+
+  main.solutionMode{
+    grid-template-columns:1fr;
+  }
+
+  main.solutionMode #questionPanel,
+  main.solutionMode #solutionPanel{
+    grid-column:1;
+  }
+
+  main.default{
+    grid-template-columns: 1fr; /* only question visible */
+  }
+
+  #omrPanel{
+    position:fixed;
+    right:-85%;
+    top:0;
+    width:85%;
+    height:100%;
+    z-index:9998;
+    transition:0.3s;
+  }
+
+  #omrPanel.open{
+    right:0;
+  }
+
+  #toggleOMR{
+    display:block;
+  }
+
+}
+
+@media (max-width:900px){
+
+  main{
+    padding:0;      /* remove side gap */
+    margin:0;
+    max-width:none;
+    width:100%;
+    gap:8px;
+  }
+
+  html,body{
+    margin:0;
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+  }
+
+  #questionPanel,
+  #solutionPanel{
+    width:100%;
+    min-width:0;
+    border-left:0;
+    border-right:0;
+    border-radius:0;
+  }
+
+  #questionPanel > .content,
+  #solutionPanel > .content{
+    height:80dvh;
+    padding:0;
+    overflow:hidden;
+  }
+
+  #questionContainer{
+    height:80dvh;
+    padding:0;
+    overflow:hidden;
+  }
+
+  .protected-pdf{
+    width:100%;
+    height:100%;
+    border-left:0;
+    border-right:0;
+    border-radius:0;
+  }
+
+  .pdf-zoom-toolbar{
+    margin:0;
+    padding:2px 3px;
+    gap:2px;
+  }
+
+  .pdf-pages{
+    padding:0;
+    scrollbar-width:none;
+  }
+
+  .pdf-pages::-webkit-scrollbar{width:0;height:0}
+
+  .pdf-page-shell{
+    margin:0 0 8px;
+  }
+
+}
+
+
+.question-img{
+  width:100%;
+  margin-bottom:16px;
+  border-radius:12px;
+  border:1px solid #1f2937;
+  background:white;
+}
+
+#questionContainer{
+  height:79dvh;
+  overflow-y:auto;
+}
+
+#questionContainer iframe{
+  width:100%;
+  height:79dvh;
+  border:1px solid #1f2937;
+  border-radius:14px;
+}
+.question-img{
+  width:100%;
+  margin-bottom:16px;
+  border-radius:12px;
+  border:1px solid #1f2937;
+  background:white;
+
+  /* BLOCK SAVE */
+  pointer-events:none;
+  -webkit-user-drag:none;
+  user-select:none;
+}
+/* Floating Navigation Buttons */
+#navButtons{
+  position:fixed;
+  bottom:18px;
+  left:12px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  z-index:99999;
+}
+
+.navBtn{
+  width:42px;
+  height:42px;
+  border:none;
+  border-radius:50%;
+  background:#3b82f6;
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+  box-shadow:0 4px 10px rgba(0,0,0,.35);
+}
+
+.navBtn:hover{
+  opacity:.9;
+}
+
+@media(max-width:600px){
+  .navBtn{
+    width:38px;
+    height:38px;
+    font-size:16px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+<!-- Instructions Panel -->
+<div id="instructionBox">
+  <h3>📌 Instructions</h3>
+  <p>✔ Enter your Name to start the test.<br>
+     ✔ Attempt all questions carefully.<br>
+     ✔ Click <b>N</b> to lock your final answer.<br>
+     ✔ Once locked, answer can't be changed.</p>
+</div>
+
+
+
+
+
+
+
+  <!-- Lock Screen -->
+ <div id="lockScreen">
+  <div class="box">
+
+    <!-- 🔥 Inserted Logo -->
+    <div class="logoLock">
+      <img src="https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png" style="width:90px; margin-bottom:12px;">
+    </div>
+    <!-- 🔥 End Logo -->
+
+    <h2>Intermediate MCQ</h2>
+    <input id="studentName" type="text" placeholder="Student Name" />
+    <button class="btn primary" id="startBtn">Start Test</button>
+    <p id="errorMsg" style="color:#ef4444;font-size:13px;display:none;">Please enter your name</p>
+  </div>
+</div>
+
+
+  <header>
+    <div class="wrap">
+      <h1>
+  <span class="logo">
+    <a href="https://drive.google.com/uc?export=view&id=1-dDr5ZRq-GcFVilGEt-S9VthYwRz62Mh" target="_blank" rel="noopener">
+      <img src="https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png" alt="Logo">
+    </a>
+  </span>
+  
+  
+  
+  
+
+1. General chrecterstice-3
+ 
+ 
+ 
+ 
+
+  <span id="timerTitle" style="margin-left:10px; color:#22c55e; font-weight:600;">
+    ⏱ 00:00
+  </span>
+</h1>
+      <div class="controls">
+        <button class="btn success" id="submitBtn">Submit & Score</button>
+        <button class="btn warn" id="shareBtn" style="display:none;">Share Scorecard</button>
+        <button class="btn primary" id="viewSolutionBtn" style="display:none;">View Solution</button>
+        <button class="btn danger" id="reportBtn">Report</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="mainArea" class="default" style="display:none;">
+    <section class="panel" id="questionPanel">
+      <h2>Question Paper</h2>
+      <div class="content" id="questionContainer"></div>
+    </section>
+    <button id="toggleOMR">→</button>
+
+<section class="panel" id="omrPanel"><h2>OMR Answer Sheet</h2><div class="content"><div id="omrGrid" class="grid"></div></div></section>
+    <section class="panel" id="scorePanel"><h2>Scorecard</h2><div class="content"><div id="resultArea"></div></div></section>
+    <section class="panel" id="solutionPanel"><h2>Solution PDF</h2><div class="content"><div id="solutionFrame" class="protected-pdf" role="document" aria-label="Solution PDF"></div></div></section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+ 
+ 
+ 
+ 
+ 
+        const config = {
+  title:'MCQ Practice Test',
+  testTime:60,
+
+  questionUrl:[
+
+    // PDF
+    'https://gurulinkindia-jpg.github.io/Complete-Study-Materials/IIT JEE/Chemistry/Practice Test/Chapter 4/Medium/1. General chrecterstice-3Q.pdf',
+
+  
+
+  ],
+
+  solutionUrl:'https://gurulinkindia-jpg.github.io/Complete-Study-Materials/IIT JEE/Chemistry/Practice Test/Chapter 4/Medium/1. General chrecterstice-3A.pdf',
+
+  totalQuestions:20,
+
+  startQuestion:41,
+
+  answerKey:{
+    1:'C',2:'D',3:'B',4:'C',5:'D',6:'A',7:'A',8:'C',9:'C',10:'C',
+    11:'C',12:'C',13:'D',14:'C',15:'B',16:'C',17:'B',18:'C',19:'B',20:'A',
+    21:'D',22:'C',23:'A',24:'C',25:'C',26:'A',27:'C',28:'B',29:'C',30:'C',
+    31:'B',32:'C',33:'A',34:'C',35:'B',36:'A',37:'D',38:'D',39:'B',40:'C',
+    41:'D',42:'D',43:'D',44:'D',45:'C',46:'D',47:'B',48:'C',49:'A',50:'C',
+    51:'C',52:'B',53:'D',54:'D',55:'A',56:'A',57:'A',58:'B',59:'B',60:'B',
+    61:'A',62:'D',63:'B',64:'A',65:'C',66:'D',67:'B',68:'B',69:'B',70:'A',
+    71:'C',72:'D',73:'A',74:'D',75:'D',76:'C',77:'B',78:'B',79:'D',80:'C',
+    81:'B',82:'A',83:'B',84:'B',85:'D',86:'D',87:'C',88:'C',89:'B',90:'B',
+    91:'D',92:'A',93:'C',94:'C',95:'A',96:'C',97:'C',98:'C',99:'D',100:'D',
+    101:'B',102:'D',103:'D',104:'C',105:'A',106:'D',107:'C',108:'D',109:'D',110:'D',
+    111:'B',112:'A',113:'D',114:'B',115:'A',116:'B',117:'C',118:'D',119:'C',120:'B',
+    121:'A',122:'C',123:'D',124:'D',125:'A',126:'D',127:'D',128:'A',129:'D',130:'D',
+    131:'A',132:'C',133:'A',134:'C',135:'B',136:'C',137:'B',138:'C',139:'A',140:'B',
+    141:'B',142:'A',143:'B',144:'B',145:'D',146:'B',147:'D',148:'C',149:'D',150:'A',
+    151:'C',152:'D',153:'A',154:'B',155:'C',156:'D',157:'B',158:'C',159:'A',160:'A',
+    161:'C',162:'B',163:'B',164:'C',165:'A',166:'D',167:'C',168:'D',169:'D',170:'D',
+    171:'C',172:'A',173:'B',174:'A',175:'A',176:'C',177:'B',178:'C',179:'D',180:'A',
+    181:'B',182:'C',183:'A',184:'D',185:'B',186:'A',187:'C',188:'B',189:'A',190:'D',
+    191:'C',192:'C',193:'C',194:'C',195:'D',196:'C',197:'D',198:'C',199:'A',200:'A',
+    201:'A',202:'D',203:'C',204:'B',205:'D',206:'C',207:'A',208:'D',209:'B',210:'A',
+    211:'A',212:'B',213:'B',214:'B',215:'C',216:'A',217:'C',218:'D',219:'B',220:'B',
+    221:'B',222:'B',223:'B',224:'A',225:'B',226:'B',227:'D',228:'A',229:'A',230:'D',
+    231:'A',232:'A',233:'D',234:'A',235:'C',236:'A',237:'A',238:'D',239:'B',240:'B',
+    241:'B'
+},
+
+  marksPerCorrect:4,
+
+  negativeMarking:1
+};
+	const lastMarked = {};
+	
+	
+	
+	
+	
+    const $=id=>document.getElementById(id);
+
+const PDFJS_WORKER = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+const pdfViewStates = new WeakMap();
+const PDF_MIN_ZOOM = 0.75;
+const PDF_MAX_ZOOM = 3;
+const PDF_ZOOM_STEP = 0.25;
+
+function getPdfWatermarkText(){
+  const student = $('studentName')?.value.trim() || 'G10EP Student';
+  return `${student} • ${config.title}`;
+}
+
+function removePdfToolbar(state){
+  const heading = state.toolbar?.parentElement;
+  state.toolbar?.remove();
+  state.toolbar = null;
+  if(heading?.classList.contains('pdf-heading-with-zoom') && !heading.querySelector('.pdf-zoom-toolbar')){
+    heading.classList.remove('pdf-heading-with-zoom');
+  }
+}
+
+function showPdfError(state, error){
+  if(pdfViewStates.get(state.host) !== state) return;
+  console.error('Protected PDF render failed:', error);
+  removePdfToolbar(state);
+  state.host.innerHTML = '<div class="protected-pdf-status">The PDF could not be displayed. Please check the file URL and internet connection.</div>';
+}
+
+function applyPdfZoom(state, nextZoom){
+  const zoom = Math.min(PDF_MAX_ZOOM, Math.max(PDF_MIN_ZOOM, nextZoom));
+  if(zoom === state.zoom) return;
+  state.zoom = zoom;
+  state.pinch = null;
+  drawProtectedPdf(state).catch(error => showPdfError(state, error));
+}
+
+function attachPdfPinchZoom(state, pages){
+  const touchDistance = touches => Math.hypot(
+    touches[0].clientX - touches[1].clientX,
+    touches[0].clientY - touches[1].clientY
+  );
+
+  const touchMidpoint = touches => ({
+    x:(touches[0].clientX + touches[1].clientX) / 2,
+    y:(touches[0].clientY + touches[1].clientY) / 2
+  });
+
+  pages.addEventListener('touchstart', event => {
+    if(event.touches.length !== 2) return;
+    event.preventDefault();
+    const midpoint = touchMidpoint(event.touches);
+    const rect = pages.getBoundingClientRect();
+    state.pinch = {
+      startDistance:touchDistance(event.touches),
+      startZoom:state.zoom,
+      pendingZoom:state.zoom,
+      contentX:pages.scrollLeft + midpoint.x - rect.left,
+      contentY:pages.scrollTop + midpoint.y - rect.top
+    };
+  }, {passive:false});
+
+  pages.addEventListener('touchmove', event => {
+    if(!state.pinch || event.touches.length !== 2) return;
+    event.preventDefault();
+
+    const midpoint = touchMidpoint(event.touches);
+    const rect = pages.getBoundingClientRect();
+    const localX = midpoint.x - rect.left;
+    const localY = midpoint.y - rect.top;
+    const gestureRatio = touchDistance(event.touches) / state.pinch.startDistance;
+    const pendingZoom = Math.min(
+      PDF_MAX_ZOOM,
+      Math.max(PDF_MIN_ZOOM, state.pinch.startZoom * gestureRatio)
+    );
+    const visualRatio = pendingZoom / state.pinch.startZoom;
+    state.pinch.pendingZoom = pendingZoom;
+
+    pages.querySelectorAll('.pdf-page-shell').forEach(shell => {
+      shell.style.maxWidth = 'none';
+      shell.style.marginLeft = '0';
+      shell.style.marginRight = '0';
+    });
+    pages.querySelectorAll('canvas').forEach(canvas => {
+      const baseWidth = Number(canvas.dataset.renderedWidth || canvas.getBoundingClientRect().width);
+      canvas.style.width = `${Math.round(baseWidth * visualRatio)}px`;
+      canvas.style.maxWidth = 'none';
+    });
+
+    const zoomValue = state.toolbar?.querySelector('.pdf-zoom-value');
+    if(zoomValue) zoomValue.textContent = `${Math.round(pendingZoom * 100)}%`;
+
+    pages.scrollLeft = Math.max(0, state.pinch.contentX * visualRatio - localX);
+    pages.scrollTop = Math.max(0, state.pinch.contentY * visualRatio - localY);
+  }, {passive:false});
+
+  const finishPinch = event => {
+    if(!state.pinch || event.touches.length >= 2) return;
+    const finalZoom = state.pinch.pendingZoom;
+    state.pinch = null;
+    state.zoom = finalZoom;
+    drawProtectedPdf(state).catch(error => showPdfError(state, error));
+  };
+
+  pages.addEventListener('touchend', finishPinch, {passive:true});
+  pages.addEventListener('touchcancel', finishPinch, {passive:true});
+}
+
+function createPdfZoomToolbar(state){
+  const toolbar = document.createElement('div');
+  toolbar.className = 'pdf-zoom-toolbar';
+  toolbar.setAttribute('aria-label', 'PDF zoom controls');
+
+  const makeButton = (text, label, action) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = text;
+    button.title = label;
+    button.setAttribute('aria-label', label);
+    button.addEventListener('click', action);
+    return button;
+  };
+
+  const zoomOut = makeButton('−', 'Zoom out', () => applyPdfZoom(state, state.zoom - PDF_ZOOM_STEP));
+  const zoomValue = document.createElement('span');
+  zoomValue.className = 'pdf-zoom-value';
+  zoomValue.textContent = `${Math.round(state.zoom * 100)}%`;
+  const zoomIn = makeButton('+', 'Zoom in', () => applyPdfZoom(state, state.zoom + PDF_ZOOM_STEP));
+  const fit = makeButton('Fit', 'Fit PDF to panel width', () => applyPdfZoom(state, 1));
+
+  zoomOut.disabled = state.zoom <= PDF_MIN_ZOOM;
+  zoomIn.disabled = state.zoom >= PDF_MAX_ZOOM;
+  toolbar.append(zoomOut, zoomValue, zoomIn, fit);
+  return toolbar;
+}
+
+async function drawProtectedPdf(state){
+  if(pdfViewStates.get(state.host) !== state) return;
+
+  const renderVersion = ++state.renderVersion;
+  const previousPages = state.host.querySelector('.pdf-pages');
+  const previousView = previousPages ? {
+    x:(previousPages.scrollLeft + previousPages.clientWidth / 2) / Math.max(1, previousPages.scrollWidth),
+    y:(previousPages.scrollTop + previousPages.clientHeight / 2) / Math.max(1, previousPages.scrollHeight)
+  } : {x:0.5, y:0};
+  removePdfToolbar(state);
+  const toolbar = createPdfZoomToolbar(state);
+  const pages = document.createElement('div');
+  pages.className = 'pdf-pages';
+  const panel = state.host.closest('.panel');
+  const heading = panel?.querySelector('h2');
+  state.toolbar = toolbar;
+
+  if(panel && heading){
+    panel.classList.add('pdf-panel-active');
+    heading.classList.add('pdf-heading-with-zoom');
+    heading.appendChild(toolbar);
+    state.host.replaceChildren(pages);
+  }else{
+    state.host.replaceChildren(toolbar, pages);
+  }
+  attachPdfPinchZoom(state, pages);
+
+  for(let pageNumber = 1; pageNumber <= state.pdf.numPages; pageNumber++){
+    if(pdfViewStates.get(state.host) !== state || state.renderVersion !== renderVersion) return;
+
+    const page = await state.pdf.getPage(pageNumber);
+    const baseViewport = page.getViewport({scale:1});
+    const pagesStyle = getComputedStyle(pages);
+    const horizontalPadding = parseFloat(pagesStyle.paddingLeft) + parseFloat(pagesStyle.paddingRight);
+    const availableWidth = Math.max(200, pages.clientWidth - horizontalPadding);
+    const fitScale = availableWidth / baseViewport.width;
+    const renderScale = Math.min(4, fitScale * state.zoom);
+    const viewport = page.getViewport({scale:renderScale});
+    const outputScale = Math.min(window.devicePixelRatio || 1, 2);
+
+    const shell = document.createElement('div');
+    shell.className = 'pdf-page-shell';
+    shell.style.maxWidth = state.zoom > 1 ? 'none' : '100%';
+    shell.style.marginLeft = state.zoom > 1 ? '0' : 'auto';
+    shell.style.marginRight = state.zoom > 1 ? '0' : 'auto';
+
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.floor(viewport.width * outputScale);
+    canvas.height = Math.floor(viewport.height * outputScale);
+    canvas.style.width = `${Math.floor(viewport.width)}px`;
+    canvas.style.height = `${Math.floor(viewport.height)}px`;
+    canvas.style.maxWidth = state.zoom > 1 ? 'none' : '100%';
+    canvas.dataset.renderedWidth = Math.floor(viewport.width);
+    canvas.setAttribute('aria-label', `PDF page ${pageNumber} of ${state.pdf.numPages}`);
+
+    const watermark = document.createElement('div');
+    watermark.className = 'pdf-watermark';
+    const watermarkText = getPdfWatermarkText();
+    for(let i = 0; i < 12; i++){
+      const mark = document.createElement('span');
+      mark.textContent = watermarkText;
+      watermark.appendChild(mark);
+    }
+
+    shell.append(canvas, watermark);
+    pages.appendChild(shell);
+
+    const context = canvas.getContext('2d', {alpha:false});
+    await page.render({
+      canvasContext:context,
+      viewport,
+      transform:outputScale === 1 ? null : [outputScale,0,0,outputScale,0,0]
+    }).promise;
+  }
+
+  if(state.renderVersion === renderVersion){
+    pages.scrollLeft = Math.max(0, previousView.x * pages.scrollWidth - pages.clientWidth / 2);
+    pages.scrollTop = Math.max(0, previousView.y * pages.scrollHeight - pages.clientHeight / 2);
+  }
+}
+
+async function renderProtectedPdf(url, host){
+  const state = {url, host, pdf:null, zoom:1, renderVersion:0, pinch:null, toolbar:null};
+  pdfViewStates.set(host, state);
+  host.classList.add('protected-pdf');
+  host.innerHTML = '<div class="protected-pdf-status">Loading protected PDF…</div>';
+
+  try{
+    if(!window.pdfjsLib){
+      throw new Error('PDF reader library could not be loaded. Check the internet connection.');
+    }
+
+    pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_WORKER;
+    state.pdf = await pdfjsLib.getDocument({url}).promise;
+    await drawProtectedPdf(state);
+  }catch(error){
+    showPdfError(state, error);
+  }
+}
+
+function initTest(){
+
+  document.title = config.title;
+
+  const box = $('questionContainer');
+
+  // MULTIPLE FILES
+  if(Array.isArray(config.questionUrl)){
+
+    box.innerHTML = config.questionUrl.map((url, index) => {
+
+      const lower = url.toLowerCase();
+
+      // PDF
+      if(lower.endsWith('.pdf')){
+
+        return `<div class="protected-pdf" data-question-pdf="${index}" role="document" aria-label="Question PDF"></div>`;
+
+      }
+
+      // IMAGE
+      else if(
+        lower.endsWith('.jpg') ||
+        lower.endsWith('.jpeg') ||
+        lower.endsWith('.png') ||
+        lower.endsWith('.webp')
+      ){
+
+        return `
+          <img src="${url}" class="question-img">
+        `;
+
+      }
+
+      // Unsupported
+      else{
+
+        return `
+          <div style="padding:20px;color:red">
+            Unsupported file format
+          </div>
+        `;
+
+      }
+
+    }).join('');
+
+    box.querySelectorAll('[data-question-pdf]').forEach(host => {
+      const url = config.questionUrl[Number(host.dataset.questionPdf)];
+      renderProtectedPdf(url, host);
+    });
+
+  }
+
+  // SINGLE FILE
+  else{
+
+    const url = config.questionUrl.toLowerCase();
+
+    // PDF
+    if(url.endsWith('.pdf')){
+
+      box.innerHTML = '<div class="protected-pdf" id="singleQuestionPdf" role="document" aria-label="Question PDF"></div>';
+      renderProtectedPdf(config.questionUrl, $('singleQuestionPdf'));
+
+    }
+
+    // IMAGE
+    else if(
+      url.endsWith('.jpg') ||
+      url.endsWith('.jpeg') ||
+      url.endsWith('.png') ||
+      url.endsWith('.webp')
+    ){
+
+      box.innerHTML = `
+        <img src="${config.questionUrl}" class="question-img">
+      `;
+
+    }
+
+  }
+
+  renderOMR(config.totalQuestions);
+
+}
+
+    function makeChoice(q,l,type){
+      // input first then label so CSS "input:checked + label" works
+      return `<div class="choice"><input type="${type}" name="q${q}" id="q${q}_${l}" value="${l}"><label for="q${q}_${l}">${l}</label></div>`;
+    }
+
+    function renderOMR(n){
+      const g=$('omrGrid');
+      g.innerHTML='';
+      const L=['A','B','C','D','N']; // includes N for Not Attempted
+      const start=config.startQuestion || 1;
+      for(let i=0;i<n;i++){
+        const q=start+i;
+        const rawKey=(config.answerKey[q]||'').toString().replace(/\s+/g,'').toUpperCase();
+        const keyLen = rawKey.length;
+        const type = keyLen > 1 ? 'checkbox' : 'radio';
+        const multiHint = keyLen > 1 ? '<span style="color:var(--amber);font-size:10px;margin-left:8px;">(Multi-correct)</span>' : '';
+        g.innerHTML+=`<div class="card"><div class="qhead"><div style="display:flex;align-items:center;gap:8px"><strong>Q${q}</strong>${multiHint}</div><span class="status" id="st${q}">—</span></div><div class="choices">${L.map(l=>makeChoice(q,l,type)).join('')}</div></div>`;
+      }
+	  
+ 
+	  
+
+      // attach listeners with max-selection enforcement and N-handling
+// attach listeners with max-selection enforcement and N-handling
+g.querySelectorAll('input').forEach(inp=>{
+  inp.addEventListener('change', () => {
+    const q = parseInt(inp.name.replace('q',''),10);
+
+    // If N is clicked and checked -> capture current selection first (before unchecking)
+    if (inp.value === 'N' && inp.checked) {
+      // capture current (pre-N) selected options excluding N
+      const prevSel = [...document.querySelectorAll(`input[name=q${q}]`)]
+                        .filter(x => x.value !== 'N' && x.checked)
+                        .map(x => x.value).join('');
+
+      // store previous selection so scorecard can still show it
+      lastMarked[q] = prevSel || '';
+
+      // now uncheck all non-N options (N remains checked)
+      document.querySelectorAll(`input[name=q${q}]`).forEach(x => {
+        if (x.value !== 'N') x.checked = false;
+      });
+
+      updateStatus(q);
+      // pass prevSel into lock function so coloring uses the pre-N selection
+      lockQuestionAndColor(q, prevSel);
+      return;
+    }
+
+    // When A/B/C/D clicked → just mark answer (no color)
+    if (inp.value !== 'N' && inp.checked) {
+      const nButton = document.querySelector(`#q${q}_N`);
+      if (nButton) nButton.checked = false;
+    }
+
+    // store checked state in dataset for each input (useful for multi-select awareness)
+    document.querySelectorAll(`input[name=q${q}]`).forEach(x => x.dataset.sel = x.checked ? "1" : "0");
+
+    updateStatus(q); // update the mini status text
+  });
+});
+
+    }
+
+
+	  
+	let timerInterval;
+let totalSeconds = config.testTime * 60;
+
+function startTimer(){
+  timerInterval = setInterval(()=>{
+    let m = Math.floor(totalSeconds / 60);
+    let s = totalSeconds % 60;
+
+    document.getElementById("timerTitle").textContent =
+      "⏱ " + String(m).padStart(2,'0') + ":" + String(s).padStart(2,'0');
+
+    totalSeconds--;
+
+    if(totalSeconds < 0){
+      clearInterval(timerInterval);
+      autoSubmitTest();
+    }
+
+  },1000);
+} 
+
+
+
+    function updateStatus(q){
+      const sel=[...document.querySelectorAll(`input[name=q${q}]:checked`)].map(x=>x.value).join('');
+      $(`st${q}`).textContent = sel || '—';
+    }
+
+   function getAllAnswers(){
+  const arr = [];
+  const start = config.startQuestion || 1;
+
+  for(let i = 0; i < config.totalQuestions; i++){
+    const q = start + i;
+
+    let sel = [...document.querySelectorAll(`input[name=q${q}]:checked`)]
+                .map(x => x.value).join('');
+
+    // if final answer locked using N, use stored marked answer
+    if (lastMarked[q] !== undefined) sel = lastMarked[q];
+
+    arr.push({ q, ans: sel || '' });
+  }
+
+  return arr;
+}
+
+
+
+
+
+    // computeResult: scaled partial marking
+    function computeResult(){
+      const ans = getAllAnswers();
+      let correct=0, wrong=0, na=0, score=0;
+      const rows=[];
+
+      for(const {q, ans: markRaw} of ans){
+        const keyRaw = (config.answerKey[q] || '').toString().replace(/\s+/g,'').toUpperCase();
+        const keySet = new Set(keyRaw.split('').filter(Boolean));
+        const mark = (markRaw||'').toString().replace(/\s+/g,'').toUpperCase();
+
+        // Not attempted or explicitly N
+        if(!mark || mark === 'N'){
+          na++;
+          rows.push({q, sel:'-', key: keyRaw || '-', status:'NA'});
+          continue;
+        }
+
+        const selSet = new Set(mark.split('').filter(Boolean));
+        const correctSelCount = [...selSet].filter(x => keySet.has(x)).length;
+        const wrongSelCount = [...selSet].filter(x => !keySet.has(x)).length;
+
+        // Single-correct: full marks or full negative
+        if(keySet.size === 1){
+          if(correctSelCount === 1 && wrongSelCount === 0){
+            correct++;
+            score += config.marksPerCorrect;
+            rows.push({q, sel:mark, key:keyRaw, status:'Correct'});
+          } else {
+            wrong++;
+            score -= config.negativeMarking;
+            rows.push({q, sel:mark, key:keyRaw, status:'Wrong'});
+          }
+          continue;
+        }
+
+        // Multi-correct:
+        // perCorrect = marksPerCorrect / numberOfCorrectOptions
+        // perWrong   = negativeMarking / numberOfCorrectOptions
+        const numCorrectOptions = keySet.size;
+        const perCorrect = config.marksPerCorrect / numCorrectOptions;
+        const perWrong = config.negativeMarking / numCorrectOptions;
+
+        // full correct selected, no wrongs
+        if(correctSelCount === numCorrectOptions && wrongSelCount === 0){
+          correct++;
+          score += config.marksPerCorrect;
+          rows.push({q, sel:mark, key:keyRaw, status:'Correct'});
+          continue;
+        }
+
+        // partial / mixed selection
+        if(correctSelCount > 0 || wrongSelCount > 0){
+          const gained = correctSelCount * perCorrect;
+          const lost = wrongSelCount * perWrong;
+          const net = gained - lost; // can be negative
+          if(net > 0) correct++; else wrong++;
+          score += net;
+          rows.push({q, sel:mark, key:keyRaw, status:`Partial (${net.toFixed(2)})`});
+          continue;
+        }
+
+        // fallback (shouldn't happen)
+        wrong++;
+        score -= config.negativeMarking;
+        rows.push({q, sel:mark, key:keyRaw, status:'Wrong'});
+      }
+
+      // round to 2 decimals
+      score = Math.round(score * 100) / 100;
+      return { correct, wrong, na, score, total: config.totalQuestions, rows };
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+function lockQuestionAndColor(q, prevSel) {
+  const rawKey = (config.answerKey[q] || '').trim().toUpperCase();
+  const keySet = new Set(rawKey.split('').filter(Boolean));
+  const inputs = document.querySelectorAll(`input[name=q${q}]`);
+
+  // If prevSel not passed → capture selected-before-N
+  if (!prevSel) {
+    prevSel = [...inputs]
+      .filter(x => x.value !== 'N' && x.dataset.sel === "1")
+      .map(x => x.value)
+      .join('');
+  }
+  prevSel = prevSel.toUpperCase();
+
+  // ❗ Fix scorecard blank issue
+  lastMarked[q] = prevSel || '';
+
+  inputs.forEach(inp => {
+    inp.disabled = true;
+    const lbl = document.querySelector(`label[for="${inp.id}"]`);
+
+    // Reset old styles
+    lbl.style.background = "#0b1220";
+    lbl.style.color = "var(--muted)";
+    lbl.style.border = "1px solid #334155";
+
+    // ✔ Correct option always green
+    if (keySet.has(inp.value)) {
+      lbl.style.background = "green";
+      lbl.style.color = "white";
+    }
+
+    // ✔ Wrong attempt becomes red
+    if (prevSel.includes(inp.value) && !keySet.has(inp.value)) {
+      lbl.style.background = "red";
+      lbl.style.color = "white";
+    }
+
+    // ✔ Correct attempt (only if student selected it) gets yellow border
+    if (prevSel.includes(inp.value) && keySet.has(inp.value)) {
+      lbl.style.border = "3px solid yellow";
+    }
+  });
+}
+
+
+
+
+
+
+
+
+
+
+    function buildScorecard(res){
+      const percent = ((res.score / (res.total * config.marksPerCorrect)) * 100).toFixed(1);
+      const stuName = $('studentName').value;
+      const rowsHtml = res.rows.map(r => `<tr><td>Q${r.q}</td><td>${r.sel}</td><td>${r.key}</td><td>${r.status}</td></tr>`).join('');
+      return `<article class="scorecard"><header><div class="wrap"><h2>${config.title}</h2><p><strong>${stuName}</strong></p></div></header><div class="wrap"><div class="score-badges"><span class="badge win">Score: ${res.score}</span><span class="badge win">Correct: ${res.correct}</span><span class="badge lose">Wrong: ${res.wrong}</span><span class="badge na">Not Attempted: ${res.na}</span><span class="badge">Total Marks: ${res.total*config.marksPerCorrect}</span><span class="badge">Percentage: ${percent}%</span></div></div><div class="wrap"><table><thead><tr><th>Q.No</th><th>Your Ans</th><th>Correct Ans</th><th>Status</th></tr></thead><tbody>${rowsHtml}</tbody></table></div></article>`;
+    }
+    
+    $('submitBtn').addEventListener('click',()=>{
+      const res = computeResult();
+      $('resultArea').innerHTML = buildScorecard(res);
+      $('viewSolutionBtn').style.display='inline-block';
+      $('shareBtn').style.display='inline-block';
+      $('mainArea').className='scoreMode';
+    });
+    
+    $('viewSolutionBtn').addEventListener('click',()=>{
+      renderProtectedPdf(config.solutionUrl, $('solutionFrame'));
+      $('mainArea').className='solutionMode';
+      if(window.innerWidth<=900){
+        setTimeout(()=>{ $('solutionPanel').scrollIntoView({behavior:'smooth'}); },200);
+      }
+    });
+
+    $('shareBtn').addEventListener('click',()=>{
+      const res = computeResult();
+      const text = `📊 ${config.title}\n👤 ${$('studentName').value}\n✅ Correct: ${res.correct}\n❌ Wrong: ${res.wrong}\n⚪ Not Attempted: ${res.na}\n🏆 Score: ${res.score}`;
+const url = `https://wa.me/916003582005?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
+      if(window.innerWidth<=900){
+        setTimeout(()=>{ $('scorePanel').scrollIntoView({behavior:'smooth'}); },200);
+      }
+    });
+
+   
+
+
+
+
+
+
+$('startBtn').addEventListener('click',()=>{
+
+  const name = $('studentName').value.trim();
+
+  if(!name){
+    $('errorMsg').style.display='block';
+    return;
+  }
+
+  // ✅ Hide instruction panel AFTER successful login
+  document.getElementById("instructionBox").style.display = "none";
+
+  // start test
+  $('lockScreen').style.display='none';
+  $('mainArea').style.display='grid';
+  initTest();
+  startTimer();
+
+});
+	
+	
+	
+	
+	
+
+    // Report button logic
+    $('reportBtn').addEventListener('click',()=>{
+      const msg = prompt("Enter your report (e.g., 'Q5 solution seems wrong')");
+      if(!msg) return;
+      const student = $('studentName').value || "Anonymous";
+      const heading = config.title;
+      const encodedMsg = encodeURIComponent(`Student: ${student}\nQuiz: ${heading}\nReport: ${msg}`);
+      const phone = "916003582005";
+      window.open(`https://wa.me/${phone}?text=${encodedMsg}`, '_blank');
+    });
+	
+	// ➤ Add this at the bottom of your script
+
+
+const toggleBtn = document.getElementById("toggleOMR");
+const omrPanel = document.getElementById("omrPanel");
+
+toggleBtn.addEventListener("click", () => {
+
+  omrPanel.classList.toggle("open");
+
+  if(omrPanel.classList.contains("open")){
+    toggleBtn.textContent = "←";
+  }else{
+    toggleBtn.textContent = "→";
+  }
+
+});
+	
+	
+// Disable right click
+document.addEventListener("contextmenu", e => {
+  e.preventDefault();
+});
+
+// Disable drag
+document.addEventListener("dragstart", e => {
+  e.preventDefault();
+});
+
+// Disable the normal browser save/print/source shortcuts.
+document.addEventListener("keydown", e => {
+
+  const commandKey = e.ctrlKey || e.metaKey;
+  if(commandKey && ["s", "p", "u"].includes(e.key.toLowerCase())){
+    e.preventDefault();
+  }
+
+  // F12
+  if(e.key === "F12"){
+    e.preventDefault();
+  }
+
+});
+	
+window.addEventListener("load", () => {
+
+  const qBox = document.getElementById("questionContainer");
+  const nextBtn = document.getElementById("nextBtn");
+  const prevBtn = document.getElementById("prevBtn");
+
+  if(nextBtn){
+    nextBtn.addEventListener("click", () => {
+      qBox.scrollBy({
+        top: window.innerHeight * 0.8,
+        behavior: "smooth"
+      });
+    });
+  }
+
+  if(prevBtn){
+    prevBtn.addEventListener("click", () => {
+      qBox.scrollBy({
+        top: -(window.innerHeight * 0.8),
+        behavior: "smooth"
+      });
+    });
+  }
+
+});
+	
+  </script>
+  <!-- Floating Next Previous Buttons -->
+<div id="navButtons">
+  <button class="navBtn" id="prevBtn">↑</button>
+  <button class="navBtn" id="nextBtn">↓</button>
+</div>
+</body>
+</html>
