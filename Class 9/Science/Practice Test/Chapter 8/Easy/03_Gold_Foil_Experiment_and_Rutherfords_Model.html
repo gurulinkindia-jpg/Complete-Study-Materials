@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  
+  
+  <title>Gold Foil Experiment and Rutherford's Model Quiz</title>
+  
+  
+  <style>
+    body{font-family:Arial, sans-serif;padding:20px;background:#121212;color:#f0f0f0;}
+    #logo{display:block;margin:0 auto 25px;max-width:180px;}
+    #name-container{background:#1e1e1e;padding:30px;border-radius:6px;max-width:420px;margin:0 auto;}
+    #name-container input{width:100%;padding:10px;margin:10px 0 15px;border:none;border-radius:4px;font-size:16px;}
+    #quiz-container{display:none;}
+    .question{border:1px solid #333;padding:15px;margin-bottom:20px;border-radius:5px;background:#1e1e1e;}
+    .question h3{margin:0 0 10px;}
+    .option-item { display: flex; align-items: center; gap: 8px; margin: 6px 0; padding: 6px 8px; border-radius: 4px; background: #2a2a2a; color: #ccc; cursor: pointer; }
+    .option-item input[type="radio"] { margin: 0; }
+    .submit-button,.toggle-button,.dontknow-button{margin-top:10px;padding:6px 12px;background:#007BFF;color:#fff;border:none;border-radius:4px;cursor:pointer;margin-right:5px;}
+    .solution{display:none;margin-top:10px;background:#2d2d2d;padding:10px;border-left:4px solid #28a745;}
+    #scorecard{background:#2d2d2d;padding:15px;border-radius:6px;margin-top:30px;display:none;}
+    #timer{font-weight:bold;color:#00ffcc;}
+    #studentPrintName{text-align:center;font-size:18px;font-weight:bold;margin-top:-15px;margin-bottom:5px;display:none;}
+    #examDateTime{text-align:center;font-size:14px;margin-bottom:20px;display:none;}
+    @media print {
+      body { background: #fff; color:#000; }
+      .submit-button, .dontknow-button, .toggle-button, #reportBtn, #reportModal { display:none !important; }
+      #name-container { display:none !important; }
+    }
+    #reportBtn { position: fixed; bottom: 20px; right: 20px; background: #ff4757; color: white; border: none; padding: 12px 18px; border-radius: 50px; cursor: pointer; font-weight: bold; box-shadow: 0px 4px 10px rgba(0,0,0,0.3); z-index: 1000; }
+    #reportModal { display: none; position: fixed; bottom: 80px; right: 20px; background: #1e1e1e; border: 1px solid #444; padding: 15px; border-radius: 8px; width: 260px; z-index: 1001; }
+    #reportModal textarea { width: 100%; height: 80px; padding: 8px; border: none; border-radius: 4px; resize: none; font-size: 14px; }
+    #reportModal button { margin-top: 10px; padding: 8px 12px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+    #sendReport { background: #28a745; color: white; }
+    #closeReport { background: #dc3545; color: white; margin-left: 5px; }
+  
+  /* ===== LOGIN PAGE ENHANCEMENTS ===== */
+
+#name-container {
+  background: linear-gradient(145deg, #1e1e1e, #161616);
+  padding: 35px;
+  border-radius: 12px;
+  max-width: 460px;
+  margin: 0 auto;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.6);
+}
+
+.login-title {
+  text-align: center;
+  margin-bottom: 4px;
+  font-size: 26px;
+  color: #00ffcc;
+}
+
+.login-subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.instruction-box {
+  background: #111;
+  border-left: 4px solid #00ffcc;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.instruction-box h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #00ffcc;
+}
+
+.instruction-box ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.instruction-box li {
+  margin-bottom: 6px;
+  color: #ccc;
+}
+
+.input-label {
+  font-size: 14px;
+  color: #bbb;
+}
+
+#studentNameInput {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  margin-bottom: 18px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  background: #2a2a2a;
+  color: #fff;
+}
+
+#studentNameInput:focus {
+  outline: 2px solid #00ffcc;
+}
+
+.start-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 17px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #007BFF, #00c6ff);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.start-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,123,255,0.4);
+}
+
+.login-note {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #ffbaba;
+  text-align: center;
+}
+
+  /* ===== PORTAL HEADER ===== */
+.portal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.portal-logo {
+  height: 55px;
+  width: auto;
+}
+
+.portal-text h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.portal-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* ===== MOBILE OPTIMIZATION ===== */
+@media (max-width: 600px) {
+  .portal-header {
+    justify-content: flex-start;
+  }
+
+  .portal-logo {
+    height: 45px;
+  }
+
+  .portal-text h1 {
+    font-size: 20px;
+  }
+
+  .portal-text p {
+    font-size: 12px;
+  }
+}
+/* ===== MOBILE LOGIN BOX FIX ===== */
+@media (max-width: 600px) {
+
+  body {
+    padding: 10px;
+  }
+
+  #name-container {
+    max-width: 100%;
+    padding: 22px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+
+  .portal-header {
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .portal-logo {
+    height: 48px;
+  }
+
+  .portal-text h1 {
+    font-size: 21px;
+  }
+
+  .portal-text p {
+    font-size: 13px;
+  }
+
+  .instruction-box {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .instruction-box h3 {
+    font-size: 15px;
+  }
+
+  #studentNameInput {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  .start-btn {
+    font-size: 18px;
+    padding: 14px;
+    border-radius: 8px;
+  }
+
+  .login-note {
+    font-size: 13px;
+  }
+}
+/* ===== GLOWING LOGO EFFECT ===== */
+.portal-logo {
+  filter: drop-shadow(0 0 6px rgba(0, 255, 204, 0.6))
+          drop-shadow(0 0 14px rgba(0, 255, 204, 0.45));
+  animation: logoGlow 2.2s ease-in-out infinite alternate;
+}
+
+@keyframes logoGlow {
+  from {
+    filter: drop-shadow(0 0 6px rgba(0, 255, 204, 0.5))
+            drop-shadow(0 0 12px rgba(0, 255, 204, 0.35));
+  }
+  to {
+    filter: drop-shadow(0 0 12px rgba(0, 255, 204, 0.9))
+            drop-shadow(0 0 24px rgba(0, 255, 204, 0.6));
+  }
+}
+/* ===== WHATSAPP SHARE BUTTON (GREEN + YELLOW BORDER) ===== */
+#shareWhatsappBtn {
+  background: linear-gradient(135deg, #25D366, #1ebe5d);
+  color: #fff;
+  font-weight: bold;
+  border: 2px solid #FFD700; /* Yellow border */
+  border-radius: 8px;
+  padding: 10px 16px;
+  box-shadow:
+    0 0 0 2px rgba(255, 215, 0, 0.25),
+    0 4px 14px rgba(37, 211, 102, 0.45);
+}
+
+#shareWhatsappBtn:hover {
+  background: linear-gradient(135deg, #1ebe5d, #25D366);
+  box-shadow:
+    0 0 0 3px rgba(255, 215, 0, 0.45),
+    0 6px 20px rgba(37, 211, 102, 0.6);
+  transform: translateY(-1px);
+}
+
+#shareWhatsappBtn:active {
+  transform: scale(0.97);
+}
+
+/* Mobile friendly */
+@media (max-width: 600px) {
+  #shareWhatsappBtn {
+    font-size: 16px;
+    padding: 12px 18px;
+  }
+}
+
+
+  </style>
+
+  <!-- MathJax Configuration -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(','\\)'], ['$', '$']], 
+        displayMath: [['$$','$$'], ['\\[','\\]']],
+        processEscapes: true
+      },
+      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+
+<div id="studentPrintName"></div>
+<div id="examDateTime"></div>
+
+<div id="name-container">
+<div class="portal-header">
+  <img id="logo" src="https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png" alt="G10 Logo" class="portal-logo">
+
+  <div class="portal-text">
+    <h1>Online Test Portal</h1>
+    <p>G10 Educational Platform</p>
+  </div>
+</div>
+
+
+  <div class="instruction-box">
+    <h3>📌 Instructions</h3>
+  <ul>
+  <li>Enter your <strong>full name</strong> as per school records.</li>
+  <li>Do <strong>not refresh</strong> the page during the test.</li>
+  <li>Each question carries <strong>+4 marks</strong>, wrong answer <strong>−1 mark</strong>.</li>
+  <li>Click <strong>Final Submit</strong> after completing the test.</li>
+  <li>
+    After submission, <strong>share the final result with your teacher</strong> by clicking the
+    <strong>“Share on WhatsApp”</strong> button.
+  </li>
+</ul>
+  </div>
+
+  <label for="studentNameInput" class="input-label">Student Name</label>
+  <input
+    type="text"
+    id="studentNameInput"
+    placeholder="e.g. Rahul Sharma"
+    autocomplete="off"
+  />
+
+  <button class="start-btn" onclick="startQuiz()">
+    ▶ Start Test
+  </button>
+
+  <p class="login-note">
+    ⚠ Once started, the test timer cannot be paused.
+  </p>
+</div>
+
+
+<div id="quiz-container">
+
+
+  <h2>Gold Foil Experiment and Rutherford's Model</h2>
+  
+  
+  <p><strong>Time Elapsed:</strong> <span id="timer">00:00</span></p>
+  <div id="questions-container"></div>
+
+  <div style="margin-top:30px;">
+    <button class="submit-button" onclick="finalSubmit()">Final Submit</button>
+    <button class="submit-button" onclick="printQuestions()">Print Questions</button>
+    <button class="submit-button" id="printScoreBtn" onclick="printScorecard()" style="display:none;">Save or Print Scorecard</button>
+    <button class="submit-button" id="shareWhatsappBtn" style="display:none;">SHARE on WhatsApp</button>
+  </div>
+
+ <div id="scorecard">
+  <h3>Your Scorecard</h3>
+  <p id="scoreText"></p>
+  <table id="scoreTable" border="1" cellspacing="0" cellpadding="6" style="width:100%;border-collapse:collapse;margin-top:15px;">
+    <thead style="background:#333;color:#fff;">
+      <tr>
+        <th>Q.No</th>
+        <th>Question</th>
+        <th>Your Answer</th>
+        <th>Correct Answer</th>
+        <th>Result</th>
+        <th>Solution</th>
+        <th>Marks</th>
+      </tr>
+    </thead>
+    <tbody id="scoreDetails"></tbody>
+  </table>
+</div>
+
+<button id="reportBtn">Report Mistake</button>
+
+<div id="reportModal">
+  <textarea id="reportMsg" placeholder="Describe the mistake..."></textarea>
+  <div style="text-align:right;">
+    <button id="sendReport">Send</button>
+    <button id="closeReport">Close</button>
+  </div>
+</div>
+
+<script>
+
+
+const Q = [
+  {
+    id: 'q1',
+    text: "The beam used in the gold-foil experiment consisted of:",
+    options: [
+      "Alpha particles",
+      "Electrons",
+      "Neutrons",
+      "Protons"
+    ],
+    correct: 'A',
+    solution: "The experiment used positively charged alpha particles."
+  },
+  {
+    id: 'q2',
+    text: "An alpha particle contains:",
+    options: [
+      "Two protons and two neutrons",
+      "One proton and one electron",
+      "Two electrons",
+      "Four neutrons"
+    ],
+    correct: 'A',
+    solution: "An alpha particle is a helium nucleus containing two protons and two neutrons."
+  },
+  {
+    id: 'q3',
+    text: "Who carried out the experiment under Rutherford?",
+    options: [
+      "Geiger and Marsden",
+      "Dalton and Bohr",
+      "Thomson and Chadwick",
+      "Kanada and Democritus"
+    ],
+    correct: 'A',
+    solution: "Geiger and Marsden worked under Rutherford."
+  },
+  {
+    id: 'q4',
+    text: "Thomson's model predicted most alpha particles would:",
+    options: [
+      "Pass straight or deflect slightly",
+      "Bounce back",
+      "Be absorbed",
+      "Become electrons"
+    ],
+    correct: 'A',
+    solution: "Spread-out positive charge should cause only small deflections."
+  },
+  {
+    id: 'q5',
+    text: "What happened to most alpha particles?",
+    options: [
+      "They passed undeflected",
+      "They bounced back",
+      "They stopped",
+      "They became neutral"
+    ],
+    correct: 'A',
+    solution: "Most passed through undeflected."
+  },
+  {
+    id: 'q6',
+    text: "This observation showed that:",
+    options: [
+      "Most of the atom is empty space",
+      "The atom is solid",
+      "Electrons are in the nucleus",
+      "Atoms have no positive charge"
+    ],
+    correct: 'A',
+    solution: "Most atomic volume is empty space."
+  },
+  {
+    id: 'q7',
+    text: "Large deflections showed that:",
+    options: [
+      "Positive charge is concentrated in a tiny dense region",
+      "Positive charge is spread uniformly",
+      "There is no nucleus",
+      "Electrons are positive"
+    ],
+    correct: 'A',
+    solution: "Large deflections indicate a concentrated positive nucleus."
+  },
+  {
+    id: 'q8',
+    text: "Most atomic mass is concentrated in the:",
+    options: [
+      "Nucleus",
+      "Shells",
+      "Empty space",
+      "Outer surface"
+    ],
+    correct: 'A',
+    solution: "Nearly all mass is in the nucleus."
+  },
+  {
+    id: 'q9',
+    text: "Why is Rutherford's model called planetary?",
+    options: [
+      "Electrons revolve around the nucleus like planets around the Sun",
+      "The nucleus revolves around electrons",
+      "Atoms are planets",
+      "Only planets contain atoms"
+    ],
+    correct: 'A',
+    solution: "Electrons were pictured orbiting the nucleus."
+  },
+  {
+    id: 'q10',
+    text: "Approximate atom diameter is:",
+    options: [
+      "\\(10^{-10}\\,\\text{m}\\)",
+      "\\(10^{-15}\\,\\text{m}\\)",
+      "\\(10^{-5}\\,\\text{m}\\)",
+      "\\(10^{10}\\,\\text{m}\\)"
+    ],
+    correct: 'A',
+    solution: "The atom diameter is about \\(10^{-10}\\,\\text{m}\\)."
+  },
+  {
+    id: 'q11',
+    text: "Approximate nucleus diameter is:",
+    options: [
+      "\\(10^{-15}\\,\\text{m}\\)",
+      "\\(10^{-10}\\,\\text{m}\\)",
+      "\\(10^{-2}\\,\\text{m}\\)",
+      "\\(10^{15}\\,\\text{m}\\)"
+    ],
+    correct: 'A',
+    solution: "The nucleus diameter is about \\(10^{-15}\\,\\text{m}\\)."
+  },
+  {
+    id: 'q12',
+    text: "A paper is \\(10^{-4}\\,\\text{m}\\) thick and an atom is \\(10^{-10}\\,\\text{m}\\) wide. About how many atoms span the thickness?",
+    options: [
+      "\\(10^{6}\\)",
+      "\\(10^{4}\\)",
+      "\\(10^{10}\\)",
+      "\\(10^{-6}\\)"
+    ],
+    correct: 'A',
+    solution: "\\[N=\\frac{10^{-4}}{10^{-10}}=10^{6}.\\]"
+  }
+];
+
+let student = '';
+let timerHandle;
+let printMode = '';
+let examDateTime = '';
+
+const quizTitle = document.title.split("Quiz")[1]?.trim() || document.title;
+
+function startQuiz() {
+  const name = document.getElementById('studentNameInput').value.trim();
+  if (!name) { alert('Please enter your name.'); return; }
+  student = name;
+  examDateTime = new Date().toLocaleString();
+  document.getElementById('name-container').style.display = 'none';
+  document.getElementById('quiz-container').style.display = 'block';
+  buildQuestions();
+  if (window.MathJax) MathJax.typesetPromise();
+  startTimer();
+}
+
+function buildQuestions() {
+  const out = document.getElementById('questions-container');
+  out.innerHTML = '';
+
+  Q.forEach((q, index) => {
+    const qText = q.text || q.question || q.prompt || ''; // tolerate different keys
+	
+	// Fill in the blank question
+if (q.type === "fill") {
+
+  const blanksHTML = q.blanks.map((b,i)=>`
+  <input type="text" 
+    data-q="${q.id}" 
+    data-i="${i}" 
+    class="fill-input"
+    placeholder="1"
+    style="width:60px;padding:4px;margin:4px;"
+    oninput="enableSubmit('${q.id}')">
+  ${b.replace("___","")}
+`).join(" + ");
+
+  out.insertAdjacentHTML('beforeend', `
+    <div class="question" id="${q.id}-wrap">
+      <h3>Q${index+1}. ${qText}</h3>
+
+      <div style="margin:10px 0;font-size:18px">
+        ${blanksHTML}
+      </div>
+
+      <div id="${q.id}-buttons">
+        <button id="sub-${q.id}" class="submit-button" disabled onclick="gradeFill('${q.id}')">Submit</button>
+        <button class="dontknow-button" onclick="skip('${q.id}')">I Don’t Know</button>
+      </div>
+
+      <button class="toggle-button" id="btn-sol-${q.id}" style="display:none;" onclick="toggleSolution('sol-${q.id}')">Show Solution</button>
+
+    <div class="solution" id="sol-${q.id}">
+  <strong>Solution:</strong> ${q.solution || ''}
+  ${
+    q.solution_steps && q.solution_steps.length
+      ? "<ul style='margin-top:8px;'>" +
+        q.solution_steps.map(s => `<li>${s}</li>`).join("") +
+        "</ul>"
+      : ""
+  }
+</div>
+  `);
+
+  return;
+}
+
+    // Normalize options into an ordered array of [letter, optionText]
+    let entries = [];
+    if (Array.isArray(q.options)) {
+      entries = q.options.map((opt, i) => [String.fromCharCode(65 + i), opt]);
+    } else if (q.options && typeof q.options === 'object') {
+      const keys = Object.keys(q.options);
+      const keysAreLetters = keys.every(k => /^[A-Z]$/.test(k));
+      if (keysAreLetters) {
+        keys.sort();
+        entries = keys.map(k => [k, q.options[k]]);
+      } else {
+        entries = keys.map((k, i) => [String.fromCharCode(65 + i), q.options[k]]);
+      }
+    }
+
+    const optionsHTML = entries.map(([letter, opt]) => {
+      return `<label class="option-item" for="${q.id}-${letter}">
+                <input type="radio" id="${q.id}-${letter}" name="${q.id}" value="${letter}" onchange="enableSubmit('${q.id}')">
+                ${letter}. ${opt}
+              </label>`;
+    }).join('');
+
+    const imageHTML = q.image ? `<div><img src="${q.image}" alt="figure" style="max-width:360px; margin:10px 0; display:block;"></div>` : '';
+
+    // Handle solution steps if they exist
+let solutionStepsHTML = '';
+if (q.solution_steps && Array.isArray(q.solution_steps) && q.solution_steps.length > 0) {
+  solutionStepsHTML = '<ul style="margin-top:10px;">' +
+    q.solution_steps.map(step => {
+      if (step.includes("\n")) {
+        return `<li><pre style="background:#111; padding:6px; border-radius:4px; overflow-x:auto;">${step}</pre></li>`;
+      }
+      return `<li>${step}</li>`;
+    }).join('') +
+    '</ul>';
+}
+
+
+    out.insertAdjacentHTML('beforeend', `
+      <div class="question" id="${q.id}-wrap">
+        <h3>Q${index + 1}. ${qText}</h3>
+        ${imageHTML}
+        <div class="options">${optionsHTML}</div>
+        <div id="${q.id}-buttons">
+          <button id="sub-${q.id}" class="submit-button" disabled onclick="grade('${q.id}')">Submit</button>
+          <button class="dontknow-button" onclick="skip('${q.id}')">I Don’t Know</button>
+        </div>
+        <button class="toggle-button" id="btn-sol-${q.id}" style="display:none;" onclick="toggleSolution('sol-${q.id}')">Show Solution</button>
+        <div class="solution" id="sol-${q.id}">
+          <strong>Solution:</strong> ${q.solution || ''} ${solutionStepsHTML}
+        </div>
+      </div>
+    `);
+  });
+
+  if (window.MathJax && typeof MathJax.typesetPromise === 'function') MathJax.typesetPromise();
+}
+
+
+
+function enableSubmit(qid) { document.getElementById(`sub-${qid}`).disabled = false; }
+
+
+function getCorrectLetter(q) {
+  let ans = q.correct || q.answer || q.key || q.correctAnswer;
+
+  // If answer is a number like "2"
+  if (!isNaN(ans)) {
+    return String.fromCharCode(65 + Number(ans) - 1);
+  }
+
+  // If answer is already A/B/C/D
+  return ans;
+}
+
+
+function grade(qid) {
+  const q = Q.find(x => x.id === qid);
+  // accept different possible field names for the correct answer
+  
+  
+const correct = getCorrectLetter(q);
+
+
+  const chosen = document.querySelector(`input[name="${qid}"]:checked`);
+  if (!chosen) return;
+
+  // lock options
+  document.querySelectorAll(`input[name="${qid}"]`).forEach(i => i.disabled = true);
+
+  // the chosen label
+  const chosenLabel = chosen.closest('label.option-item');
+
+  // find input that matches the correct letter
+  const correctInput = document.querySelector(`input[name="${qid}"][value="${correct}"]`);
+  const correctLabel = correctInput ? correctInput.closest('label.option-item') : null;
+
+  if (chosen.value === correct) {
+    // correct
+    if (chosenLabel) {
+      chosenLabel.style.background = '#28a745';
+      chosenLabel.style.color = '#fff';
+    }
+  } else {
+    // wrong: mark chosen red, mark correct green (if found)
+    if (chosenLabel) {
+      chosenLabel.style.background = '#dc3545';
+      chosenLabel.style.color = '#fff';
+    }
+    if (correctLabel) {
+      correctLabel.style.background = '#28a745';
+      correctLabel.style.color = '#fff';
+    }
+  }
+
+  // show solution immediately
+  const solElem = document.getElementById(`sol-${qid}`);
+  if (solElem) solElem.style.display = "block";
+
+  // hide the buttons for this question
+  const buttons = document.getElementById(`${qid}-buttons`);
+  if (buttons) buttons.style.display = "none";
+  const btnSol = document.getElementById(`btn-sol-${q.id}`);
+  if (btnSol) btnSol.style.display = "none";
+
+  // re-typeset MathJax for solution if it contains LaTeX
+  if (window.MathJax && typeof MathJax.typesetPromise === 'function') MathJax.typesetPromise();
+}
+
+
+
+
+
+function gradeFill(qid){
+
+  const q = Q.find(x=>x.id===qid);
+
+  const inputs = document.querySelectorAll(`input[data-q="${qid}"]`);
+
+  let correct = true;
+
+  inputs.forEach((inp,i)=>{
+    let user = inp.value.trim();
+if(user === "") user = "1";
+    const ans = q.answer[i];
+
+    if(user === ans){
+      inp.style.background = "#28a745";
+      inp.style.color = "#fff";
+    }else{
+      inp.style.background = "#dc3545";
+      inp.style.color = "#fff";
+      correct = false;
+    }
+
+    inp.disabled = true;
+  });
+
+  document.getElementById(`${qid}-buttons`).style.display="none";
+
+  document.getElementById(`sol-${qid}`).style.display="block";
+}
+
+
+
+
+function skip(qid) { document.querySelectorAll(`input[name="${qid}"]`).forEach(r => r.disabled = true); showSolutionButton(qid); }
+function showSolutionButton(qid) { document.getElementById(`btn-sol-${qid}`).style.display = 'inline-block'; document.getElementById(`${qid}-buttons`).style.display = 'none'; }
+function toggleSolution(id) { const elem = document.getElementById(id); elem.style.display = elem.style.display === 'block' ? 'none' : 'block'; }
+
+function startTimer() {
+  const display = document.getElementById('timer');
+  const started = Date.now();
+  timerHandle = setInterval(() => { const s = Math.floor((Date.now() - started) / 1000); display.textContent = `${String((s / 60) | 0).padStart(2,'0')}:${String(s % 60).padStart(2,'0')}`; }, 1000);
+}
+
+function finalSubmit() {
+  clearInterval(timerHandle);
+  document.querySelectorAll("input[type=radio]").forEach(r => r.disabled = true);
+  document.querySelectorAll(".submit-button, .dontknow-button").forEach(btn => btn.style.display = "none");
+
+  let totalMarks = 0;
+  let negativeMarks = 0;
+  let possibleMarks = Q.length * 4;
+  let detailHTML = '';
+
+  Q.forEach((q, index) => {
+ let chosen = null;
+let correctLetter = "";
+
+// ===== Handle FILL questions =====
+if(q.type === "fill"){
+
+  const inputs = document.querySelectorAll(`input[data-q="${q.id}"]`);
+
+  let userAnswers = [];
+
+  inputs.forEach(inp=>{
+    let v = inp.value.trim();
+    if(v === "") v = "1";   // blank = coefficient 1
+    userAnswers.push(v);
+  });
+
+  chosen = userAnswers.join(",");
+
+  correctLetter = q.answer.join(",");
+
+}else{
+
+  // ===== Handle MCQ questions =====
+  const checked = document.querySelector(`input[name="${q.id}"]:checked`);
+  chosen = checked ? checked.value : null;
+  correctLetter = getCorrectLetter(q);
+
+}
+	
+	
+	
+	
+
+    let marks = 0;
+    let resultText = "";
+
+if (chosen === null || chosen === "") {
+      marks = 0;
+      resultText = "⚪ Not Attempted / I Don’t Know (0)";
+    } else if (chosen === correctLetter) {
+      marks = 4;
+      resultText = "✅ Correct (+4)";
+    } else {
+      marks = -1;
+      resultText = "❌ Incorrect (-1)";
+    }
+
+    totalMarks += marks > 0 ? marks : 0;
+    negativeMarks += marks < 0 ? marks : 0;
+
+    let solutionStepsHTML = '';
+    if (q.solution_steps && Array.isArray(q.solution_steps) && q.solution_steps.length > 0) {
+      solutionStepsHTML = '<ul style="margin-top:5px;">' +
+        q.solution_steps.map(step => `<li>${step}</li>`).join('') +
+        '</ul>';
+    }
+
+    detailHTML += `
+      <tr>
+        <td>${index + 1}</td>
+        <td>${q.text || q.question}</td>
+        <td>${chosen || 'Not Answered'}</td>
+        <td>${correctLetter}</td>
+        <td>${resultText}</td>
+        <td>${q.solution || ''}${solutionStepsHTML}</td>
+        <td>${marks}</td>
+      </tr>`;
+  });
+
+  const finalScore = totalMarks + negativeMarks;
+
+  document.getElementById('scoreText').innerHTML = `${student}, here is your result:`;
+  document.getElementById('scoreDetails').innerHTML = detailHTML;
+
+  const summaryHTML = `
+    <div style="margin-top:20px; font-weight:bold;">
+      <p>Total Marks (Possible): ${possibleMarks}</p>
+      <p>Total Marks (Correct Answers): ${totalMarks}</p>
+      <p>Negative Marks (Wrong Answers): ${negativeMarks}</p>
+      <p>Final Score: ${finalScore}</p>
+    </div>
+  `;
+  document.getElementById('scorecard').insertAdjacentHTML('beforeend', summaryHTML);
+
+  document.getElementById('scorecard').style.display = 'block';
+  document.getElementById('printScoreBtn').style.display = 'inline-block';
+  document.getElementById('shareWhatsappBtn').style.display = 'inline-block';
+
+  if (window.MathJax && typeof MathJax.typesetPromise === 'function') MathJax.typesetPromise();
+}
+
+
+
+
+
+
+function printQuestions() { printMode = "questions"; window.print(); }
+function printScorecard() { document.getElementById("studentPrintName").innerText = student; document.getElementById("examDateTime").innerText = "Exam Date & Time: " + examDateTime; printMode = "scorecard"; window.print(); }
+
+window.addEventListener('beforeprint', () => {
+  if (printMode === "questions") { document.querySelector("#questions-container").style.display = "block"; document.querySelector("#scorecard").style.display = "none"; document.querySelector("#logo").style.display = "none"; document.querySelector("#name-container").style.display = "none"; document.querySelector("#timer").style.display = "none"; document.querySelector("#studentPrintName").style.display = "none"; document.querySelector("#examDateTime").style.display = "none"; }
+  if (printMode === "scorecard") { document.querySelector("#questions-container").style.display = "none"; document.querySelector("#scorecard").style.display = "block"; document.querySelector("#logo").style.display = "block"; document.querySelector("#name-container").style.display = "none"; document.querySelector("#studentPrintName").style.display = "block"; document.querySelector("#examDateTime").style.display = "block"; }
+});
+window.addEventListener('afterprint', () => { document.querySelector("#questions-container").style.display = ""; document.querySelector("#scorecard").style.display = ""; document.querySelector("#logo").style.display = ""; document.querySelector("#name-container").style.display = ""; document.querySelector("#timer").style.display = ""; document.querySelector("#studentPrintName").style.display = "none"; document.querySelector("#examDateTime").style.display = "none"; });
+
+
+
+
+document.getElementById("shareWhatsappBtn").addEventListener("click", function () {
+  const whatsappNumber = "916003582005";
+
+  if (!student) {
+    alert("Please complete the quiz first.");
+    return;
+  }
+
+  const scoreText = document.getElementById('scoreText').innerText || "Result not available";
+
+  let totalMarks = 0;
+  let negativeMarks = 0;
+  let possibleMarks = Q.length * 4;
+
+  let details = "";
+
+  Q.forEach((q, i) => {
+    const qNum = i + 1;
+    const checked = document.querySelector(`input[name="${q.id}"]:checked`);
+    let userAns = checked ? checked.value : null;
+	
+	
+	
+	
+	
+const correctAns = getCorrectLetter(q);
+	
+	
+
+    let marks = 0;
+    let resultText = "";
+
+    if (userAns === null) {
+      marks = 0;
+      resultText = "⚪ Not Attempted / I Don’t Know (0)";
+      userAns = "Not Answered";
+    } else if (userAns === correctAns) {
+      marks = 4;
+      resultText = "✅ Correct (+4)";
+    } else {
+      marks = -1;
+      resultText = "❌ Incorrect (-1)";
+    }
+
+    totalMarks += marks > 0 ? marks : 0;
+    negativeMarks += marks < 0 ? marks : 0;
+
+    details += `Q${qNum} → ${resultText} (Your Ans: ${userAns} | Correct: ${correctAns})\n`;
+  });
+
+  const finalScore = totalMarks + negativeMarks;
+
+  const message = `Sir, I have shared my Test Result for checking. Thank you!\n\n📘 Quiz Title: ${quizTitle}\n👤 Student: ${student}\n\n${scoreText}\n\n📊 Summary:\n✔ Total Marks (Possible): ${possibleMarks}\n✔ Total Marks (Correct Answers): ${totalMarks}\n✔ Negative Marks (Wrong Answers): ${negativeMarks}\n✔ Final Score: ${finalScore}\n\nDetails:\n${details}`;
+
+  const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  window.open(waUrl, "_blank");
+});
+
+
+const reportBtn = document.getElementById("reportBtn");
+const reportModal = document.getElementById("reportModal");
+const sendReport = document.getElementById("sendReport");
+const closeReport = document.getElementById("closeReport");
+const reportMsg = document.getElementById("reportMsg");
+
+reportBtn.onclick = () => { reportModal.style.display = "block"; };
+closeReport.onclick = () => { reportModal.style.display = "none"; reportMsg.value = ""; };
+sendReport.onclick = () => {
+  const msg = reportMsg.value.trim();
+  if (!msg) { alert("Please write your message before sending."); return; }
+  const whatsappNumber = "916003582005";
+  const message = `⚠️ Reported Mistake\n\n📘 Quiz Title: ${quizTitle}\n👤 Student: ${student || "Anonymous"}\n\n📝 Message:\n${msg}`;
+  const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  window.open(waUrl, "_blank");
+  reportModal.style.display = "none";
+  reportMsg.value = "";
+};
+</script>
+
+</body>
+</html>
