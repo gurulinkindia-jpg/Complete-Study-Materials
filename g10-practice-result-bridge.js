@@ -167,6 +167,66 @@
     };
   }
 
+  function scoredQuizResult() {
+    var scoreCard = document.getElementById("scoreCard");
+    if (!scoreCard || !scoreCard.querySelector("#scoreText")) return null;
+
+    try {
+      if (typeof quizData === "undefined" || !Array.isArray(quizData) || !quizData.length
+        || typeof scores === "undefined" || !scores || typeof scores !== "object") return null;
+
+      var correct = 0;
+      var incorrect = 0;
+      var unanswered = 0;
+      var answers = quizData.slice(0, 500).map(function (question, index) {
+        var questionNumber = index + 1;
+        var selectedInput = document.querySelector("input[name='q" + questionNumber + "']:checked");
+        var selected = text(selectedInput && selectedInput.value);
+        var correctAnswer = text(question && question.correctOption);
+        var answerStatus;
+
+        if (!selected) {
+          unanswered += 1;
+          answerStatus = "unanswered";
+        } else if (selected.toUpperCase() === correctAnswer.toUpperCase()) {
+          correct += 1;
+          answerStatus = "correct";
+        } else {
+          incorrect += 1;
+          answerStatus = "incorrect";
+        }
+
+        return {
+          question: text(question && question.question || questionNumber).slice(0, 100),
+          selected: selected,
+          correct: correctAnswer,
+          status: answerStatus
+        };
+      });
+
+      var score = Object.keys(scores).reduce(function (total, key) {
+        return total + numeric(scores[key], 0);
+      }, 0);
+      var elapsed = 0;
+      if (typeof quizStartTime !== "undefined" && quizStartTime) {
+        elapsed = Math.max(0, Math.round((Date.now() - new Date(quizStartTime).getTime()) / 1000));
+      }
+
+      return {
+        score: score,
+        maxScore: quizData.length,
+        totalQuestions: quizData.length,
+        correct: correct,
+        incorrect: incorrect,
+        unanswered: unanswered,
+        timeSpentSeconds: Math.min(86400, elapsed),
+        answers: answers
+      };
+    } catch (_) {
+      return null;
+    }
+  }
+
   function notice(message, kind) {
     var item = document.getElementById("g10-result-save-notice");
     if (!item) {
@@ -198,7 +258,7 @@
   }
 
   function captureResult() {
-    var result = modernResult() || legacyResult();
+    var result = modernResult() || legacyResult() || scoredQuizResult();
     if (result) send(result);
     else notice("This result could not be read automatically. Please inform G10 support.", "error");
   }
@@ -215,6 +275,7 @@
     var onclick = String(target.getAttribute("onclick") || "");
     var isFinalSubmit = target.id === "submitBtn"
       || /finalSubmit\s*\(/.test(onclick)
+      || /showScore\s*\(/.test(onclick)
       || /^(final\s+submit|submit\s*&\s*score)$/i.test(label);
     if (isFinalSubmit) window.setTimeout(captureResult, 180);
   }, true);

@@ -1,7 +1,7 @@
 # G10 practice-test HTML inventory
 
-Last updated: 4 September 2026  
-Tracking-enabled HTML files: **103**
+Last updated: 5 September 2026  
+Tracking-enabled HTML files: **104**
 
 Every file below loads the shared `g10-practice-result-bridge.js` script. When a signed-in student submits one of these tests inside the G10 platform, the result is saved to the student's progress report.
 
@@ -12,10 +12,10 @@ Every file below loads the shared `g10-practice-result-bridge.js` script. When a
 | Class 10 / Science | 10 |
 | Class 11 / Chemistry | 12 |
 | Class 11 / Physics | 4 |
-| Class 12 / Chemistry | 17 |
+| Class 12 / Chemistry | 18 |
 | Class 9 / Science | 18 |
 | IIT JEE / Chemistry | 42 |
-| **Total** | **103** |
+| **Total** | **104** |
 
 ## Adding another HTML test
 
@@ -149,3 +149,4 @@ window.G10PracticeResults.save({
 101. `IIT JEE/Chemistry/Practice Test/Chapter 4/Medium/1.  General chrecterstice-7.html`
 102. `IIT JEE/Chemistry/Practice Test/Chapter 4/Medium/1.  General chrecterstice-8.html`
 103. `IIT JEE/Chemistry/Practice Test/Chapter 4/Medium/1.  General chrecterstice-9.html`
+104. `Class 12/Chemistry/Practice Test/Chapter 1/PYQ/CBSE_Chemistry_Solutions_PYQ_2024_2026_All_MCQ (1).html`

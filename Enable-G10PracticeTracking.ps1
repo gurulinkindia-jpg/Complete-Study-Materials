@@ -5,7 +5,7 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
-$bridgeUrl = 'https://gurulinkindia-jpg.github.io/Complete-Study-Materials/g10-practice-result-bridge.js?v=20260904'
+$bridgeUrl = 'https://gurulinkindia-jpg.github.io/Complete-Study-Materials/g10-practice-result-bridge.js?v=20260905'
 $bridgeTag = '  <script src="' + $bridgeUrl + '" defer></script>'
 $files = @(Get-ChildItem -LiteralPath $Path -Recurse -Filter '*.html' -File)
 $missing = [System.Collections.Generic.List[string]]::new()
