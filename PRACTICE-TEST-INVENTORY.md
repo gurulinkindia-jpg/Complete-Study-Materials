@@ -1,6 +1,6 @@
 # G10 practice-test HTML inventory
 
-Last updated: 5 September 2026  
+Last updated: 5 September 2026
 Tracking-enabled HTML files: **104**
 
 Every file below loads the shared `g10-practice-result-bridge.js` script. When a signed-in student submits one of these tests inside the G10 platform, the result is saved to the student's progress report.
