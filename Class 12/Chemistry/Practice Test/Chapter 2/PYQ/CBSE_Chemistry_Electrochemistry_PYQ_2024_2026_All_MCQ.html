@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  
+  <title>CBSE Chemistry Electrochemistry PYQ Quiz 2024–2026</title>
+  <style>
+    @media (max-width: 768px) {
+
+  /* 🔹 Question & solution images fit mobile */
+  .question-media img,
+  .solution img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+}
+  
+   body {
+  font-family: Arial, sans-serif;
+  padding: 0;                 /* ✅ REMOVE SIDE AREA */
+  background-color: #a8a5a5;
+  color: #080707;
+}
+@media (max-width: 768px) {
+  #quizContainer {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+    .question {
+      border: 1px solid #333;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      background-color: #f5f2f2;
+      display: none;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .question.active { display: block; }
+    .question-media { display: none; }
+    .options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .options label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 4px;
+      background-color: #2a2a2a;
+      color: #ccc;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .options label:hover {
+      background-color: #444;
+      transform: scale(1.02);
+    }
+    .options input[type="radio"] { margin: 0; }
+    .nav-button, .submit-button, .final-submit-button, .start-button, .toggle-button {
+      margin-top: 10px;
+      padding: 6px 12px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform 0.2s ease;
+    }
+    .nav-button:hover, .submit-button:hover, .final-submit-button:hover,
+    .start-button:hover, .toggle-button:hover {
+      opacity: 0.9;
+      transform: scale(1.03);
+    }
+    .final-submit-button {
+      background-color: red;
+    }
+    .pause-active {
+      background-color: orange !important;
+    }
+    .back-button {
+      background-color: #8205f7;
+    }
+    .toggle-button {
+      background-color: #28a745;
+      display: none;
+    }
+    .toggle-button.video-btn {
+      background-color: #17a2b8;
+      display: none;
+    }
+    img, iframe.pdf {
+      max-width: 100%;
+      margin-top: 10px;
+      border: 1px solid #c3c3d4;
+    }
+    iframe.pdf {
+      height: 500px;
+    }
+    .solution, .video {
+      display: none;
+      margin-top: 10px;
+      background: #f0e9e9;
+      padding: 10px;
+      border-left: 4px solid #bcbcc4;
+    }
+    .timer {
+      margin-top: 10px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .score-section {
+      margin-top: 30px;
+      padding: 20px;
+      background: #fff;
+      border: 2px solid #007BFF;
+      border-radius: 9px;
+    }
+    .icon {
+      width: 18px;
+      height: 18px;
+    }
+    @media print {
+      .score-section table tr {
+        page-break-inside: avoid;
+      }
+    }
+
+    .dont-know-button {
+      margin-top: 10px;
+      padding: 6px 12px;
+      background-color: #6c757d;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .dont-know-button:hover {
+      opacity: 0.9;
+      transform: scale(1.03);
+    }
+	/* 🔍 ENLARGE ONLY QUESTION & SOLUTION IMAGES */
+.question-media img,
+.solution img {
+  width: 100%;
+  max-width: none;        /* allow image to exceed container width */
+}
+  
+    .question-text{font-size:18px;line-height:1.55;font-weight:700;background:#fff;padding:14px;border-left:5px solid #007BFF;border-radius:6px;margin-top:10px}
+    .question-meta{font-size:13px;color:#555;margin:4px 0 8px}
+    .options label{line-height:1.35;align-items:flex-start}
+    .solution{font-size:16px;line-height:1.55;color:#111}
+    .worked-solution p{margin:8px 0 4px}
+    .math-line{overflow-x:auto;background:#fff;padding:5px 8px;margin:3px 0 9px;border-radius:5px}
+    .final-answer{background:#e7f3ff;border-left:4px solid #007BFF;padding:10px;margin-top:10px;font-size:17px}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:true}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <!-- MAIN QUIZ: access is controlled by the parent website -->
+  <div id="mainContent">
+
+<!-- Instruction Section -->
+<div id="instructionsBox" style="
+  background:#f9fbfd;
+  padding:20px;
+  border-radius:12px;
+  margin:20px auto;
+  width:90%;
+  max-width:800px;
+  box-shadow:0 8px 16px rgba(0,0,0,0.1);
+  border-left:6px solid #4A90E2;
+  animation: fadeIn 0.8s ease-in-out;
+">
+  <h3 style="font-size:22px; color:#4A90E2; margin-bottom:15px;">📘 IMPORTANT INSTRUCTIONS</h3>
+  <ul style="line-height:1.8; font-size:16px; padding-left:20px; color:#3d3d3d;">
+    <li>Each question has a dedicated timer. Once time is up, that question gets locked.</li>
+    <li>Click <b>Show Question</b> to begin answering the question.</li>
+    <li>You can temporarily pause the timer, but it resumes automatically when navigating.</li>
+    <li>Once you select an answer or choose <b>Don't Know</b>, your response is locked.</li>
+    <li>Solutions are visible immediately after answering/skipping.</li>
+    <li>Click <b>Final Submit</b> to save your score and download the scorecard.</li>
+  </ul>
+  <button onclick="hideInstructions()" style="
+    background:#4A90E2;
+    color:white;
+    padding:12px 20px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:15px;
+    transition: background 0.3s;
+  ">I Understand – Continue</button>
+</div>
+
+<!-- Name Entry Section -->
+<div id="nameSection" style="display:none; text-align:center; margin-top:20px;">
+  <input type="text" id="studentName" placeholder="Enter Your Name" required style="
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    width:250px;
+    text-align:center;
+    font-size:16px;
+    margin-bottom:10px;
+  ">
+  <br>
+  <button class="start-button" onclick="startQuiz()" style="
+    background:#27ae60;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:10px;
+    transition: background 0.3s;
+  ">Start Quiz</button>
+</div>
+
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<script>
+  function hideInstructions() {
+    document.getElementById("instructionsBox").style.display = "none";
+    document.getElementById("nameSection").style.display = "block";
+  }
+</script>
+
+
+
+
+  <div id="quizContainer"></div>
+
+  <!-- ✅ Keep this one only -->
+  <div style="margin-top: 20px;">
+    <button class="final-submit-button" onclick="showScore()">Final Submit</button>
+  </div>
+
+  <!-- ✅ Score Section -->
+  <div class="score-section" id="scoreCard"></div>
+
+  <!-- ✅ Hidden buttons until submit -->
+  <div id="afterSubmitBtns" style="margin-top:15px; display:none;">
+  <button id="downloadPdfBtn" class="nav-button">📄 Download Scorecard (PDF)</button>
+  <button id="shareWhatsappBtn" class="nav-button">📲 Share on WhatsApp</button>
+  <button id="printBtn" class="nav-button">🖨 Print All Questions & Solutions</button>
+</div>
+
+
+</div>
+
+  <script>
+    const quizData = [
+  {
+    "year": 2026,
+    "sourceQuestion": "Q1",
+    "kind": "MCQ",
+    "question": "During electrolysis of aqueous \\(\\mathrm{CuCl_2}\\) using platinum electrodes, what occurs at the anode?",
+    "options": [
+      "Copper is deposited",
+      "Hydrogen gas is released",
+      "Oxygen gas is released",
+      "Chlorine gas is released"
+    ],
+    "correctOption": "D",
+    "solution": "<p><strong>Correct concept:</strong> Chlorine gas is released.</p><p>At the inert anode chloride ions are oxidised: \\(2\\mathrm{Cl^-}\\rightarrow\\mathrm{Cl_2}+2e^-\\).</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2026,
+    "sourceQuestion": "Q2(a)",
+    "kind": "Theory converted to MCQ",
+    "question": "Which option correctly answers all three statements? (i) \\(K_c\\) is related to \\(E^\\circ_{cell}\\), not \\(E_{cell}\\). (ii) Metals A and B have \\(E^\\circ=-0.24\\,V\\) and \\(+0.80\\,V\\); identify the metal liberating \\(H_2\\) from dilute acid. (iii) Select the charging reaction of a lead storage battery.",
+    "options": [
+      "At equilibrium \\(E_{cell}=0\\); A liberates \\(H_2\\); \\(2PbSO_4+2H_2O\\rightarrow Pb+PbO_2+2H_2SO_4\\)",
+      "At equilibrium \\(E^\\circ_{cell}=0\\); B liberates \\(H_2\\); discharge reaction occurs",
+      "\\(K_c\\) depends on concentration only; both metals liberate \\(H_2\\); no reaction",
+      "At equilibrium \\(E_{cell}=E^\\circ_{cell}\\); B liberates \\(H_2\\); \\(PbO_2\\rightarrow Pb\\)"
+    ],
+    "correctOption": "A",
+    "solution": "<p><strong>Correct concept:</strong> Option A.</p><p>At equilibrium \\(E_{cell}=0\\), giving \\(\\Delta G^\\circ=-RT\\ln K=-nFE^\\circ\\). A has a negative reduction potential and can reduce \\(H^+\\). Charging reverses the discharge reaction.</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2026,
+    "sourceQuestion": "Q2(b)",
+    "kind": "Theory converted to MCQ",
+    "question": "Which description of a mercury cell is correct?",
+    "options": [
+      "Secondary cell; voltage falls rapidly; \\(Zn+MnO_2\\rightarrow\\cdots\\)",
+      "Primary cell; nearly constant voltage; \\(Zn(Hg)+HgO\\rightarrow ZnO+Hg\\)",
+      "Fuel cell; rechargeable; \\(H_2+O_2\\rightarrow H_2O\\)",
+      "Electrolytic cell; produces chlorine"
+    ],
+    "correctOption": "B",
+    "solution": "<p><strong>Correct concept:</strong> Primary cell with nearly constant potential.</p><p>Its overall reaction does not change the concentration of ions appreciably: \\(\\mathrm{Zn(Hg)+HgO(s)\\rightarrow ZnO(s)+Hg(l)}\\).</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2026,
+    "sourceQuestion": "Q3(a)",
+    "kind": "Numerical MCQ",
+    "question": "For \\(\\mathrm{Mg|Mg^{2+}(0.01M)||Ag^+(0.001M)|Ag}\\), \\(E^\\circ_{Mg^{2+}/Mg}=-2.37\\,V\\), \\(E^\\circ_{Ag^+/Ag}=+0.80\\,V\\). The values of \\(E_{cell}\\) and \\(\\Delta G\\) at 298 K are approximately:",
+    "options": [
+      "3.17 V and −612 kJ mol⁻¹",
+      "3.05 V and −589 kJ mol⁻¹",
+      "3.05 V and +589 kJ mol⁻¹",
+      "2.93 V and −283 kJ mol⁻¹"
+    ],
+    "correctOption": "B",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(E^\\circ_{cell}=0.80-(-2.37)=3.17\\,V,\\ n=2,\\ Q=[Mg^{2+}]/[Ag^+]^2=10^4\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[E=E^\\circ-\\frac{0.0591}{n}\\log Q,\\qquad \\Delta G=-nFE\\]</div><p><strong>Step 1: Calculate cell emf</strong></p><div class=\"math-line\">\\[E=3.17-\\frac{0.0591}{2}\\log10^4=3.17-0.1182=3.052\\,V\\]</div><p><strong>Step 2: Calculate Gibbs energy</strong></p><div class=\"math-line\">\\[\\Delta G=-2(96500)(3.052)=-5.890\\times10^5\\,J\\,mol^{-1}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(E_{cell}\\approx3.05\\,V\\), \\(\\Delta G\\approx-589\\,kJ\\,mol^{-1}\\) (Option B).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2026,
+    "sourceQuestion": "Q3(b)",
+    "kind": "Numerical MCQ",
+    "question": "For \\(2AgCl(s)+H_2(0.4\\,atm)\\rightarrow2Ag+2H^+(0.1M)+2Cl^-(0.2M)\\), \\(\\Delta G^\\circ=-43500\\,J\\,mol^{-1}\\). The emf at 25 °C is:",
+    "options": [
+      "0.1365 V",
+      "0.2250 V",
+      "0.3135 V",
+      "0.4350 V"
+    ],
+    "correctOption": "C",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(\\Delta G^\\circ=-43500\\,J\\,mol^{-1},\\ n=2,\\ Q=\\frac{(0.1)^2(0.2)^2}{0.4}=10^{-3}\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[E^\\circ=-\\frac{\\Delta G^\\circ}{nF},\\qquad E=E^\\circ-\\frac{0.0591}{n}\\log Q\\]</div><p><strong>Step 1: Find standard emf</strong></p><div class=\"math-line\">\\[E^\\circ=\\frac{43500}{2\\times96500}=0.2254\\,V\\]</div><p><strong>Step 2: Apply Nernst equation</strong></p><div class=\"math-line\">\\[E=0.2254-\\frac{0.0591}{2}\\log10^{-3}=0.2254+0.08865=0.3141\\,V\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(E\\approx0.314\\,V\\), i.e. \\(0.3135\\,V\\) by the rounded data (Option C).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q1",
+    "kind": "Numerical MCQ",
+    "question": "Given \\(E^\\circ_{Sn^{4+}/Sn^{2+}}=+0.15\\,V\\) and \\(E^\\circ_{Cr^{3+}/Cr}=-0.74\\,V\\), the standard cell potential is:",
+    "options": [
+      "+0.89 V",
+      "+0.18 V",
+      "+1.83 V",
+      "+1.19 V"
+    ],
+    "correctOption": "A",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(E^\\circ_c=+0.15\\,V,\\ E^\\circ_a=-0.74\\,V\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[E^\\circ_{cell}=E^\\circ_{cathode}-E^\\circ_{anode}\\]</div><p><strong>Step 1: Substitute</strong></p><div class=\"math-line\">\\[E^\\circ_{cell}=0.15-(-0.74)=0.89\\,V\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(+0.89\\,V\\) (Option A).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q2",
+    "kind": "MCQ",
+    "question": "During electrolysis of dilute \\(\\mathrm{H_2SO_4}\\) using platinum electrodes, the gas at the anode is:",
+    "options": [
+      "\\(O_2\\)",
+      "\\(H_2\\)",
+      "\\(SO_3\\)",
+      "\\(SO_2\\)"
+    ],
+    "correctOption": "A",
+    "solution": "<p><strong>Correct concept:</strong> \\(O_2\\).</p><p>Water is oxidised at the anode: \\(2H_2O\\rightarrow O_2+4H^++4e^-\\).</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q3",
+    "kind": "MCQ",
+    "question": "Match the cells with uses: (i) lead storage, (ii) mercury, (iii) dry cell, (iv) fuel cell; (a) wall clock, (b) Apollo programme, (c) wristwatch, (d) inverter.",
+    "options": [
+      "i-b, ii-a, iii-d, iv-c",
+      "i-d, ii-c, iii-a, iv-b",
+      "i-a, ii-b, iii-c, iv-d",
+      "i-c, ii-d, iii-b, iv-a"
+    ],
+    "correctOption": "B",
+    "solution": "<p><strong>Correct concept:</strong> i-d, ii-c, iii-a, iv-b.</p><p>Lead storage batteries are used in inverters; mercury cells in wristwatches; dry cells in wall clocks; hydrogen–oxygen fuel cells in Apollo missions.</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q4",
+    "kind": "Assertion–Reason",
+    "question": "Assertion (A): An AC source is used to measure resistance of an ionic solution. Reason (R): The concentration of the ionic solution would change if a DC source were used.",
+    "options": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "correctOption": "A",
+    "solution": "<p><strong>Correct concept:</strong> Both are true, and R explains A.</p><p>DC causes continuous electrolysis and electrode polarisation, changing composition; AC avoids net chemical change.</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q5",
+    "kind": "Numerical MCQ",
+    "question": "Charge required to reduce 1 mol \\(MnO_4^-\\) to \\(MnO_2\\) is:",
+    "options": [
+      "5 F",
+      "1 F",
+      "3 F",
+      "6 F"
+    ],
+    "correctOption": "C",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> Mn changes from \\(+7\\) in \\(MnO_4^-\\) to \\(+4\\) in \\(MnO_2\\).</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[\\text{Charge in faradays}=\\text{electrons gained per ion}\\]</div><p><strong>Step 1: Find oxidation-state change</strong></p><div class=\"math-line\">\\[+7\\rightarrow+4:\\quad 3e^-\\text{ gained}\\]</div><p><strong>Step 2: Convert for one mole</strong></p><div class=\"math-line\">\\[1\\,mol\\ MnO_4^-\\text{ requires }3\\,mol\\ e^-=3F\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(3F\\) (Option C).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q6",
+    "kind": "Assertion–Reason",
+    "question": "Assertion (A): Cu cannot liberate \\(H_2\\) from dilute mineral acids. Reason (R): Cu has a positive standard reduction potential.",
+    "options": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "correctOption": "A",
+    "solution": "<p><strong>Correct concept:</strong> Both are true, and R explains A.</p><p>Since \\(E^\\circ_{Cu^{2+}/Cu}>E^\\circ_{H^+/H_2}\\), oxidation of Cu by \\(H^+\\) is not spontaneous.</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q7",
+    "kind": "MCQ",
+    "question": "For \\(2Cu^+(aq)+Zn(s)\\rightarrow2Cu(s)+Zn^{2+}(aq)\\), what happens to cell voltage as the reaction proceeds?",
+    "options": [
+      "It increases as \\([Zn^{2+}]\\) increases",
+      "It remains constant",
+      "It decreases as \\([Zn^{2+}]\\) increases",
+      "It increases as \\([Cu^+]\\) increases"
+    ],
+    "correctOption": "C",
+    "solution": "<p><strong>Correct concept:</strong> It decreases.</p><p>\\(Q=[Zn^{2+}]/[Cu^+]^2\\) increases as products form; \\(E=E^\\circ-(0.0591/n)\\log Q\\) therefore decreases.</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q8",
+    "kind": "Numerical MCQ",
+    "question": "Charge required to reduce 1 mol \\(MnO_4^-\\) to \\(Mn^{2+}\\) in acidic medium is:",
+    "options": [
+      "5 F",
+      "1 F",
+      "4 F",
+      "6 F"
+    ],
+    "correctOption": "A",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> Mn changes from \\(+7\\) to \\(+2\\).</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[\\text{Required charge}=nF\\]</div><p><strong>Step 1: Find electrons gained</strong></p><div class=\"math-line\">\\[+7\\rightarrow+2:\\quad n=5\\]</div><p><strong>Step 2: Find charge for one mole</strong></p><div class=\"math-line\">\\[Q=5F\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(5F\\) (Option A).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q9",
+    "kind": "Assertion–Reason",
+    "question": "Assertion (A): Electrolysis of aqueous NaCl gives \\(H_2\\) at the cathode and \\(Cl_2\\) at the anode. Reason (R): Chloride oxidation is favoured over water oxidation because oxygen evolution has a high overpotential.",
+    "options": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "correctOption": "A",
+    "solution": "<p><strong>Correct concept:</strong> Both are true, and R explains the anode product.</p><p>Water is preferentially reduced at the cathode. At the anode, oxygen overvoltage permits chloride oxidation to chlorine.</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q10",
+    "kind": "MCQ",
+    "question": "Which cell directly converts the energy of fuel combustion into electrical energy?",
+    "options": [
+      "Dry cell",
+      "Fuel cell",
+      "Lead storage cell",
+      "Mercury cell"
+    ],
+    "correctOption": "B",
+    "solution": "<p><strong>Correct concept:</strong> Fuel cell.</p><p>Reactants are supplied continuously and their redox reaction directly produces electricity.</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q11",
+    "kind": "Theory converted to MCQ",
+    "question": "On dilution of KCl solution, conductivity \\(\\kappa\\) and molar conductivity \\(\\Lambda_m\\) change as:",
+    "options": [
+      "Both increase",
+      "\\(\\kappa\\) decreases and \\(\\Lambda_m\\) increases",
+      "\\(\\kappa\\) increases and \\(\\Lambda_m\\) decreases",
+      "Both decrease"
+    ],
+    "correctOption": "B",
+    "solution": "<p><strong>Correct concept:</strong> \\(\\kappa\\) decreases; \\(\\Lambda_m\\) increases.</p><p>Ions per unit volume decrease, lowering conductivity; reduced interionic attraction increases ionic mobility and molar conductivity.</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q12",
+    "kind": "Theory converted to MCQ",
+    "question": "Which option correctly defines a fuel cell and gives two advantages?",
+    "options": [
+      "Converts electrical to chemical energy; low efficiency and pollution",
+      "Converts fuel-combustion energy directly to electrical energy; high efficiency and low pollution",
+      "A primary dry cell; rechargeable and heavy",
+      "A concentration cell; no reactants required"
+    ],
+    "correctOption": "B",
+    "solution": "<p><strong>Correct concept:</strong> Direct chemical-to-electrical conversion with high efficiency and low pollution.</p><p>The hydrogen–oxygen fuel cell produces water and can operate continuously while reactants are supplied.</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q13",
+    "kind": "Theory converted to MCQ",
+    "question": "Which combined statement is correct? (i) Kohlrausch’s law states that limiting molar conductivity is the sum of independent ionic contributions. (ii) Faraday’s first law gives \\(m\\propto Q\\). (iii) Of coatings X (−2.36 V) and Y (−0.14 V) for iron (−0.44 V), X gives sacrificial protection.",
+    "options": [
+      "Only (i)",
+      "Only (i) and (ii)",
+      "Only (ii) and (iii)",
+      "(i), (ii) and (iii)"
+    ],
+    "correctOption": "D",
+    "solution": "<p><strong>Correct concept:</strong> All three statements are correct.</p><p>X has a more negative reduction potential than iron and oxidises preferentially if the coating is damaged.</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q14",
+    "kind": "Theory converted to MCQ",
+    "question": "Which cell is used in inverters, and which discharge reactions are correct?",
+    "options": [
+      "Mercury cell; \\(Zn+HgO\\rightarrow ZnO+Hg\\)",
+      "Lead storage battery; anode \\(Pb+SO_4^{2-}\\rightarrow PbSO_4+2e^-\\), cathode \\(PbO_2+SO_4^{2-}+4H^++2e^-\\rightarrow PbSO_4+2H_2O\\)",
+      "Dry cell; sodium is deposited",
+      "Fuel cell; lead sulphate forms"
+    ],
+    "correctOption": "B",
+    "solution": "<p><strong>Correct concept:</strong> Lead storage battery with the stated half-reactions.</p><p>Overall during discharge: \\(Pb+PbO_2+2H_2SO_4\\rightarrow2PbSO_4+2H_2O\\).</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q15",
+    "kind": "Theory converted to MCQ",
+    "question": "Why does aqueous NaCl electrolysis give \\(H_2\\) at the cathode and \\(Cl_2\\) at the anode?",
+    "options": [
+      "Na metal forms first; oxygen has no overpotential",
+      "Water is reduced instead of \\(Na^+\\); chloride oxidation occurs because oxygen evolution has high overpotential",
+      "\\(Na^+\\) is reduced and water is oxidised",
+      "Only NaCl molecules discharge"
+    ],
+    "correctOption": "B",
+    "solution": "<p><strong>Correct concept:</strong> Water reduction and chloride oxidation.</p><p>Cathode: \\(2H_2O+2e^-\\rightarrow H_2+2OH^-\\). Anode: \\(2Cl^-\\rightarrow Cl_2+2e^-\\). Overall: \\(2NaCl+2H_2O\\rightarrow2NaOH+H_2+Cl_2\\).</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q16",
+    "kind": "Numerical MCQ",
+    "question": "A 0.05 M NaOH column has \\(R=5.0\\times10^3\\,\\Omega\\), length 40 cm and area 0.8 cm². \\(\\rho,\\kappa,\\Lambda_m\\) are:",
+    "options": [
+      "100 Ω cm, 0.010 S cm⁻¹, 200 S cm² mol⁻¹",
+      "250 Ω cm, 0.004 S cm⁻¹, 80 S cm² mol⁻¹",
+      "100 Ω cm, 0.100 S cm⁻¹, 20 S cm² mol⁻¹",
+      "6250 Ω cm, 0.00016 S cm⁻¹, 3.2 S cm² mol⁻¹"
+    ],
+    "correctOption": "A",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(R=5.0\\times10^3\\,\\Omega,\\ A=0.8\\,cm^2,\\ l=40\\,cm,\\ C=0.05\\,mol\\,L^{-1}\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[\\rho=R\\frac{A}{l},\\quad \\kappa=\\frac1\\rho,\\quad \\Lambda_m=\\frac{1000\\kappa}{C}\\]</div><p><strong>Step 1: Find resistivity</strong></p><div class=\"math-line\">\\[\\rho=5000\\times\\frac{0.8}{40}=100\\,\\Omega\\,cm\\]</div><p><strong>Step 2: Find conductivity</strong></p><div class=\"math-line\">\\[\\kappa=\\frac1{100}=0.010\\,S\\,cm^{-1}\\]</div><p><strong>Step 3: Find molar conductivity</strong></p><div class=\"math-line\">\\[\\Lambda_m=\\frac{1000(0.010)}{0.05}=200\\,S\\,cm^2\\,mol^{-1}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(100\\,\\Omega cm,\\ 0.010\\,S\\,cm^{-1},\\ 200\\,S\\,cm^2\\,mol^{-1}\\) (Option A).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q17",
+    "kind": "Numerical MCQ",
+    "question": "For \\(Al|Al^{3+}(0.001M)||Ni^{2+}(0.1M)|Ni\\), \\(E^\\circ_{Ni^{2+}/Ni}=-0.25V\\), \\(E^\\circ_{Al^{3+}/Al}=-1.66V\\), the cell voltage at 25 °C is:",
+    "options": [
+      "1.380 V",
+      "1.410 V",
+      "1.440 V",
+      "1.660 V"
+    ],
+    "correctOption": "C",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(E^\\circ=1.41V,\\ n=6,\\ Q=[Al^{3+}]^2/[Ni^{2+}]^3=10^{-3}\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[E=E^\\circ-\\frac{0.0591}{6}\\log Q\\]</div><p><strong>Step 1: Substitute Q</strong></p><div class=\"math-line\">\\[E=1.41-\\frac{0.0591}{6}\\log10^{-3}\\]</div><p><strong>Step 2: Calculate</strong></p><div class=\"math-line\">\\[E=1.41+0.02955=1.43955\\,V\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(E\\approx1.44\\,V\\) (Option C).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q18",
+    "kind": "Theory converted to MCQ",
+    "question": "Which set of reasons is correct? (a) NaCl electrolysis raises pH because \\(OH^-\\) forms. (b) Mercury-cell voltage stays constant because no solution-ion concentration changes appreciably. (c) Conductivity falls on dilution because ions per unit volume decrease.",
+    "options": [
+      "Only (a)",
+      "Only (a) and (b)",
+      "Only (b) and (c)",
+      "(a), (b) and (c)"
+    ],
+    "correctOption": "D",
+    "solution": "<p><strong>Correct concept:</strong> All are correct.</p><p>These respectively explain cathodic water reduction, constant mercury-cell potential, and the concentration dependence of conductivity.</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q19",
+    "kind": "Numerical MCQ",
+    "question": "For \\(Sn|Sn^{2+}(0.004M)||H^+(0.02M)|H_2(1bar)|Pt\\), with \\(E^\\circ_{Sn^{2+}/Sn}=-0.14V\\), the emf at 298 K is:",
+    "options": [
+      "0.081 V",
+      "0.111 V",
+      "0.140 V",
+      "0.170 V"
+    ],
+    "correctOption": "B",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(E^\\circ=0-(-0.14)=0.14V,\\ n=2,\\ Q=\\frac{0.004}{(0.02)^2}=10\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[E=E^\\circ-\\frac{0.0591}{2}\\log Q\\]</div><p><strong>Step 1: Substitute</strong></p><div class=\"math-line\">\\[E=0.14-\\frac{0.0591}{2}\\log10\\]</div><p><strong>Step 2: Calculate</strong></p><div class=\"math-line\">\\[E=0.14-0.02955=0.11045\\,V\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(E\\approx0.111\\,V\\) (Option B).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q20",
+    "kind": "Numerical MCQ",
+    "question": "A dichromate half-cell has \\([Cr_2O_7^{2-}]=0.01M\\), \\([Cr^{3+}]=0.01M\\), \\([H^+]=10^{-4}M\\), \\(E^\\circ=1.33V\\). Its reduction potential is approximately:",
+    "options": [
+      "0.798 V",
+      "1.064 V",
+      "1.330 V",
+      "1.862 V"
+    ],
+    "correctOption": "A",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(Cr_2O_7^{2-}+14H^++6e^-\\rightarrow2Cr^{3+}+7H_2O\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[E=E^\\circ-\\frac{0.0591}{6}\\log\\frac{[Cr^{3+}]^2}{[Cr_2O_7^{2-}][H^+]^{14}}\\]</div><p><strong>Step 1: Find reaction quotient</strong></p><div class=\"math-line\">\\[Q=\\frac{(10^{-2})^2}{(10^{-2})(10^{-4})^{14}}=10^{54}\\]</div><p><strong>Step 2: Apply Nernst equation</strong></p><div class=\"math-line\">\\[E=1.33-\\frac{0.0591}{6}(54)=0.7981\\,V\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(E\\approx0.798\\,V\\) (Option A).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q21",
+    "kind": "Numerical MCQ",
+    "question": "For \\(Zn|Zn^{2+}(0.1M)||H^+(0.01M)|H_2(1bar)|Pt\\), \\(E^\\circ_{Zn^{2+}/Zn}=-0.76V\\), the emf is:",
+    "options": [
+      "0.671 V",
+      "0.701 V",
+      "0.760 V",
+      "0.849 V"
+    ],
+    "correctOption": "A",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(E^\\circ=0.76V,\\ n=2,\\ Q=0.1/(0.01)^2=10^3\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[E=E^\\circ-\\frac{0.0591}{2}\\log Q\\]</div><p><strong>Step 1: Substitute</strong></p><div class=\"math-line\">\\[E=0.76-\\frac{0.0591}{2}\\log10^3\\]</div><p><strong>Step 2: Calculate</strong></p><div class=\"math-line\">\\[E=0.76-0.08865=0.67135\\,V\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(E\\approx0.671\\,V\\) (Option A).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q22",
+    "kind": "Multi-part numerical MCQ",
+    "question": "Which set correctly gives: (i) \\(\\Lambda_m\\) and \\(\\alpha\\) for 0.20 M KCl with \\(\\kappa=2.48\\times10^{-2}S\\,cm^{-1}\\) and \\(\\Lambda_m^\\circ=150\\); (ii) \\(\\Delta G^\\circ\\) for \\(Mg+Cu^{2+}\\rightarrow Mg^{2+}+Cu\\), where \\(E^\\circ=2.71V\\); and (iii) the nature of a mercury cell?",
+    "options": [
+      "124 S cm² mol⁻¹, 0.827; −523 kJ mol⁻¹; primary cell with nearly constant potential",
+      "150 S cm² mol⁻¹, 1.00; +523 kJ mol⁻¹; secondary cell",
+      "12.4 S cm² mol⁻¹, 0.083; −52.3 kJ mol⁻¹; fuel cell",
+      "248 S cm² mol⁻¹, 1.65; +52.3 kJ mol⁻¹; electrolytic cell"
+    ],
+    "correctOption": "A",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(C=0.20M,\\ \\kappa=2.48\\times10^{-2},\\ \\Lambda_m^\\circ=150,\\ n=2,\\ E^\\circ=2.71V\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[\\Lambda_m=\\frac{1000\\kappa}{C},\\quad \\alpha=\\frac{\\Lambda_m}{\\Lambda_m^\\circ},\\quad \\Delta G^\\circ=-nFE^\\circ\\]</div><p><strong>Step 1: Molar conductivity</strong></p><div class=\"math-line\">\\[\\Lambda_m=\\frac{1000(2.48\\times10^{-2})}{0.20}=124\\,S\\,cm^2\\,mol^{-1}\\]</div><p><strong>Step 2: Degree of dissociation</strong></p><div class=\"math-line\">\\[\\alpha=124/150=0.8267\\]</div><p><strong>Step 3: Gibbs energy</strong></p><div class=\"math-line\">\\[\\Delta G^\\circ=-2(96500)(2.71)=-523030\\,J\\,mol^{-1}\\approx-523\\,kJ\\,mol^{-1}\\]</div><p><strong>Step 4: Cell type</strong></p><div class=\"math-line\">\\[\\text{A mercury cell is a primary cell and gives nearly constant potential.}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(124\\,S\\,cm^2\\,mol^{-1},\\ 0.827;\\ -523\\,kJ\\,mol^{-1};\\) primary constant-potential cell (Option A).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q23",
+    "kind": "Theory converted to MCQ",
+    "question": "For half-reactions \\(Cr^{3+}+3e^-\\rightarrow Cr\\;(E^\\circ=-0.74V)\\) and \\(Fe^{2+}+2e^-\\rightarrow Fe\\;(E^\\circ=-0.44V)\\), which is correct?",
+    "options": [
+      "Cr reaction stays reduction; Fe reverses",
+      "Fe reaction stays reduction; Cr reverses to oxidation",
+      "Both stay reduction",
+      "Both reverse"
+    ],
+    "correctOption": "B",
+    "solution": "<p><strong>Correct concept:</strong> Fe²⁺ is reduced and Cr is oxidised.</p><p>The half-cell with the higher (more positive) reduction potential operates as the cathode.</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q24",
+    "kind": "Numerical MCQ",
+    "question": "For 0.01 M \\(NH_4OH\\), \\(\\Lambda_m=9.33\\) and the given limiting values yield \\(\\Lambda_m^\\circ=129.8+217.4-108.9\\). Degree of dissociation is:",
+    "options": [
+      "0.0392 (3.92%)",
+      "0.392 (39.2%)",
+      "0.8267 (82.67%)",
+      "0.933 (93.3%)"
+    ],
+    "correctOption": "A",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(\\Lambda_m=9.33,\\ \\Lambda_m^\\circ(NH_4Cl)=129.8,\\ \\Lambda_m^\\circ(NaOH)=217.4,\\ \\Lambda_m^\\circ(NaCl)=108.9\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[\\Lambda_m^\\circ(NH_4OH)=\\Lambda_m^\\circ(NH_4Cl)+\\Lambda_m^\\circ(NaOH)-\\Lambda_m^\\circ(NaCl),\\quad \\alpha=\\frac{\\Lambda_m}{\\Lambda_m^\\circ}\\]</div><p><strong>Step 1: Find limiting molar conductivity</strong></p><div class=\"math-line\">\\[\\Lambda_m^\\circ=129.8+217.4-108.9=238.3\\]</div><p><strong>Step 2: Find dissociation</strong></p><div class=\"math-line\">\\[\\alpha=\\frac{9.33}{238.3}=0.0392=3.92\\%\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(\\alpha\\approx0.0392\\) or \\(3.92\\%\\) (Option A).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q25",
+    "kind": "Numerical MCQ",
+    "question": "For \\(2Au+3Ca^{2+}\\rightarrow2Au^{3+}+3Ca\\), \\(E^\\circ_{Au^{3+}/Au}=+1.50V\\), \\(E^\\circ_{Ca^{2+}/Ca}=-2.87V\\). Which is correct?",
+    "options": [
+      "\\(E^\\circ=+4.37V\\), \\(\\Delta G^\\circ<0\\), spontaneous",
+      "\\(E^\\circ=-4.37V\\), \\(\\Delta G^\\circ=+2530kJ\\,mol^{-1}\\), non-spontaneous",
+      "\\(E^\\circ=-1.37V\\), spontaneous",
+      "\\(E^\\circ=+1.37V\\), non-spontaneous"
+    ],
+    "correctOption": "B",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(n=6,\\ E^\\circ_c=-2.87V,\\ E^\\circ_a=+1.50V\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[E^\\circ=E^\\circ_c-E^\\circ_a,\\qquad \\Delta G^\\circ=-nFE^\\circ\\]</div><p><strong>Step 1: Find standard emf</strong></p><div class=\"math-line\">\\[E^\\circ=-2.87-1.50=-4.37\\,V\\]</div><p><strong>Step 2: Find Gibbs energy</strong></p><div class=\"math-line\">\\[\\Delta G^\\circ=-6(96500)(-4.37)=+2.530\\times10^6\\,J\\,mol^{-1}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(+2530\\,kJ\\,mol^{-1}\\); reaction is non-spontaneous (Option B).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q26",
+    "kind": "Numerical MCQ",
+    "question": "For \\(Zn|Zn^{2+}(0.1M)||Cd^{2+}(0.01M)|Cd\\), \\(E^\\circ_{Cd^{2+}/Cd}=-0.40V\\), \\(E^\\circ_{Zn^{2+}/Zn}=-0.76V\\), emf is:",
+    "options": [
+      "0.301 V",
+      "0.331 V",
+      "0.360 V",
+      "0.390 V"
+    ],
+    "correctOption": "B",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(E^\\circ=0.36V,\\ n=2,\\ Q=[Zn^{2+}]/[Cd^{2+}]=10\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[E=E^\\circ-\\frac{0.0591}{2}\\log Q\\]</div><p><strong>Step 1: Substitute</strong></p><div class=\"math-line\">\\[E=0.36-\\frac{0.0591}{2}\\log10\\]</div><p><strong>Step 2: Calculate</strong></p><div class=\"math-line\">\\[E=0.36-0.02955=0.33045\\,V\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(E\\approx0.331\\,V\\) (Option B).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q27",
+    "kind": "Numerical MCQ",
+    "question": "For \\(Zn+Pb^{2+}(0.02M)\\rightarrow Zn^{2+}(0.1M)+Pb\\), \\(E^\\circ_{Zn^{2+}/Zn}=-0.76V\\), \\(E^\\circ_{Pb^{2+}/Pb}=-0.13V\\), emf is:",
+    "options": [
+      "0.59 V",
+      "0.61 V",
+      "0.63 V",
+      "0.65 V"
+    ],
+    "correctOption": "B",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(E^\\circ=0.63V,\\ n=2,\\ Q=0.1/0.02=5\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[E=E^\\circ-\\frac{0.0591}{2}\\log Q\\]</div><p><strong>Step 1: Substitute</strong></p><div class=\"math-line\">\\[E=0.63-0.02955\\log5\\]</div><p><strong>Step 2: Calculate</strong></p><div class=\"math-line\">\\[E=0.63-0.02955(0.6990)=0.6093\\,V\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(E\\approx0.61\\,V\\) (Option B).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "sourceQuestion": "Q28",
+    "kind": "Multi-part numerical MCQ",
+    "question": "Which set is correct? A conductivity cell has \\(R=1000\\Omega\\), \\(\\kappa=0.125\\times10^{-3}S\\,cm^{-1}\\); a Mg electrode has \\([Mg^{2+}]=10^{-4}M\\) and the paper gives \\(E^\\circ_{Mg^{2+}/Mg}=+2.36V\\); metallic conductance is considered as temperature rises.",
+    "options": [
+      "Cell constant 0.125 cm⁻¹; \\(E=2.242V\\); metallic conductance decreases",
+      "Cell constant 1.25 cm⁻¹; \\(E=2.478V\\); metallic conductance increases",
+      "Cell constant 0.0125 cm⁻¹; \\(E=2.360V\\); metallic conductance is unchanged",
+      "Cell constant 8.00 cm⁻¹; \\(E=2.124V\\); metallic conductance increases"
+    ],
+    "correctOption": "A",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(R=1000\\Omega,\\ \\kappa=0.125\\times10^{-3},\\ [Mg^{2+}]=10^{-4}M\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[G^*=\\kappa R,\\qquad E=E^\\circ+\\frac{0.0591}{2}\\log[Mg^{2+}]\\]</div><p><strong>Step 1: Cell constant</strong></p><div class=\"math-line\">\\[G^*=(0.125\\times10^{-3})(1000)=0.125\\,cm^{-1}\\]</div><p><strong>Step 2: Electrode potential</strong></p><div class=\"math-line\">\\[E=2.36+\\frac{0.0591}{2}\\log10^{-4}=2.36-0.1182=2.2418\\,V\\]</div><p><strong>Step 3: Temperature effect</strong></p><div class=\"math-line\">\\[\\text{In metals, lattice vibrations increase with temperature, so conductance decreases.}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(G^*=0.125\\,cm^{-1},\\ E\\approx2.242V\\); metallic conductance decreases (Option A).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "sourceQuestion": "Q1",
+    "kind": "MCQ",
+    "question": "Which cell was used in the Apollo space programme?",
+    "options": [
+      "Mercury cell",
+      "\\(H_2-O_2\\) fuel cell",
+      "Ni-Cd cell",
+      "Dry cell"
+    ],
+    "correctOption": "B",
+    "solution": "<p><strong>Correct concept:</strong> \\(H_2-O_2\\) fuel cell.</p><p>It provided electrical energy and water as a useful product.</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "sourceQuestion": "Q2",
+    "kind": "MCQ",
+    "question": "Effect of dilution on conductivity and molar conductivity is:",
+    "options": [
+      "Conductivity decreases; molar conductivity increases",
+      "Both increase",
+      "Conductivity increases; molar conductivity decreases",
+      "Both decrease"
+    ],
+    "correctOption": "A",
+    "solution": "<p><strong>Correct concept:</strong> Conductivity decreases while molar conductivity increases.</p><p>Dilution reduces ions per unit volume but increases mobility and, for weak electrolytes, ionisation.</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "sourceQuestion": "Q3",
+    "kind": "MCQ",
+    "question": "During electrolysis of aqueous NaCl, the cathodic reaction is:",
+    "options": [
+      "Oxidation of water",
+      "Reduction of \\(Na^+\\)",
+      "Reduction of water",
+      "Oxidation of \\(Cl^-\\)"
+    ],
+    "correctOption": "C",
+    "solution": "<p><strong>Correct concept:</strong> Reduction of water.</p><p>\\(2H_2O+2e^-\\rightarrow H_2+2OH^-\\).</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "sourceQuestion": "Q4",
+    "kind": "Numerical MCQ",
+    "question": "If \\(\\lambda^\\circ_{Ca^{2+}}=119.0\\) and \\(\\lambda^\\circ_{Cl^-}=76.3\\,S\\,cm^2mol^{-1}\\), \\(\\Lambda_m^\\circ(CaCl_2)\\) is:",
+    "options": [
+      "271.6",
+      "43.3",
+      "314.3",
+      "195.3"
+    ],
+    "correctOption": "A",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(\\lambda^\\circ_{Ca^{2+}}=119.0,\\ \\lambda^\\circ_{Cl^-}=76.3\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[\\Lambda_m^\\circ(CaCl_2)=\\lambda^\\circ_{Ca^{2+}}+2\\lambda^\\circ_{Cl^-}\\]</div><p><strong>Step 1: Substitute</strong></p><div class=\"math-line\">\\[\\Lambda_m^\\circ=119.0+2(76.3)=271.6\\,S\\,cm^2\\,mol^{-1}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(271.6\\,S\\,cm^2\\,mol^{-1}\\) (Option A).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "sourceQuestion": "Q5",
+    "kind": "Assertion–Reason",
+    "question": "Assertion (A): If opposing potential greater than 1.1 V is applied to a Daniell cell, electrons flow from Cu to Zn. Reason (R): The cell then acts as a galvanic cell.",
+    "options": [
+      "Both A and R are true, and R is the correct explanation of A.",
+      "Both A and R are true, but R is not the correct explanation of A.",
+      "A is true, but R is false.",
+      "A is false, but R is true."
+    ],
+    "correctOption": "C",
+    "solution": "<p><strong>Correct concept:</strong> A is true but R is false.</p><p>An opposing voltage greater than the cell emf reverses the reaction; the cell behaves as an electrolytic cell, not a galvanic cell.</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "sourceQuestion": "Q6",
+    "kind": "MCQ",
+    "question": "During electrolysis of aqueous NaCl:",
+    "options": [
+      "Na forms at cathode",
+      "\\(Cl_2\\) forms at cathode",
+      "\\(O_2\\) necessarily forms at anode",
+      "\\(H_2\\) forms at cathode"
+    ],
+    "correctOption": "D",
+    "solution": "<p><strong>Correct concept:</strong> \\(H_2\\) forms at the cathode.</p><p>Water is more readily reduced than \\(Na^+\\) in aqueous solution.</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "sourceQuestion": "Q7",
+    "kind": "Theory converted to MCQ",
+    "question": "Which option correctly states Kohlrausch’s law and Faraday’s first law?",
+    "options": [
+      "\\(\\Lambda_m^\\circ\\) is the sum of independent ionic contributions; deposited mass is proportional to charge",
+      "Conductivity is independent of ions; mass is inversely proportional to charge",
+      "Only cations conduct; mass is proportional to voltage",
+      "\\(\\Lambda_m\\) is constant at all concentrations; mass is independent of current"
+    ],
+    "correctOption": "A",
+    "solution": "<p><strong>Correct concept:</strong> Option A.</p><p>\\(\\Lambda_m^\\circ=\\nu_+\\lambda_+^\\circ+\\nu_-\\lambda_-^\\circ\\), and \\(m=ZIt=ZQ\\).</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "sourceQuestion": "Q8",
+    "kind": "Numerical MCQ",
+    "question": "A cell has \\(R=200\\Omega\\) with 0.2 M KCl of \\(\\kappa=0.0248S\\,cm^{-1}\\). With 0.05 M KCl, \\(R=620\\Omega\\). The latter \\(\\kappa\\) and \\(\\Lambda_m\\) are:",
+    "options": [
+      "0.008 S cm⁻¹ and 160 S cm² mol⁻¹",
+      "0.080 S cm⁻¹ and 1600 S cm² mol⁻¹",
+      "0.004 S cm⁻¹ and 80 S cm² mol⁻¹",
+      "0.0248 S cm⁻¹ and 496 S cm² mol⁻¹"
+    ],
+    "correctOption": "A",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(R_1=200\\Omega,\\ \\kappa_1=0.0248,\\ R_2=620\\Omega,\\ C_2=0.05M\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[G^*=\\kappa R,\\quad \\kappa_2=G^*/R_2,\\quad \\Lambda_m=1000\\kappa_2/C_2\\]</div><p><strong>Step 1: Find cell constant</strong></p><div class=\"math-line\">\\[G^*=0.0248\\times200=4.96\\,cm^{-1}\\]</div><p><strong>Step 2: Find conductivity</strong></p><div class=\"math-line\">\\[\\kappa_2=\\frac{4.96}{620}=0.008\\,S\\,cm^{-1}\\]</div><p><strong>Step 3: Find molar conductivity</strong></p><div class=\"math-line\">\\[\\Lambda_m=\\frac{1000(0.008)}{0.05}=160\\,S\\,cm^2\\,mol^{-1}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(0.008\\,S\\,cm^{-1}\\) and \\(160\\,S\\,cm^2\\,mol^{-1}\\) (Option A).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "sourceQuestion": "Q9",
+    "kind": "Numerical MCQ",
+    "question": "For \\(Fe^{2+}(0.01M)+2e^-\\rightleftharpoons Fe\\), \\(E^\\circ=-0.45V\\). Electrode potential at 298 K is:",
+    "options": [
+      "−0.391 V",
+      "−0.450 V",
+      "−0.509 V",
+      "−0.568 V"
+    ],
+    "correctOption": "C",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(E^\\circ=-0.45V,\\ [Fe^{2+}]=0.01M,\\ n=2\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[E=E^\\circ-\\frac{0.0591}{2}\\log\\frac1{[Fe^{2+}]}\\]</div><p><strong>Step 1: Substitute concentration</strong></p><div class=\"math-line\">\\[E=-0.45-\\frac{0.0591}{2}\\log100\\]</div><p><strong>Step 2: Calculate</strong></p><div class=\"math-line\">\\[E=-0.45-0.0591=-0.5091\\,V\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(-0.509\\,V\\) (Option C).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "sourceQuestion": "Q10",
+    "kind": "Numerical MCQ",
+    "question": "For \\(Ni+2Ag^+(0.01M)\\rightarrow Ni^{2+}(0.1M)+2Ag\\), \\(E^\\circ_{cell}=1.05V\\). The emf is:",
+    "options": [
+      "0.873 V",
+      "0.932 V",
+      "0.962 V",
+      "1.139 V"
+    ],
+    "correctOption": "C",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(E^\\circ=1.05V,\\ n=2,\\ Q=0.1/(0.01)^2=10^3\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[E=E^\\circ-\\frac{0.0591}{2}\\log Q\\]</div><p><strong>Step 1: Substitute</strong></p><div class=\"math-line\">\\[E=1.05-\\frac{0.0591}{2}\\log10^3\\]</div><p><strong>Step 2: Calculate</strong></p><div class=\"math-line\">\\[E=1.05-0.08865=0.96135\\,V\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(E\\approx0.962\\,V\\) (Option C).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "sourceQuestion": "Q11",
+    "kind": "Numerical MCQ",
+    "question": "A cell gives \\(R=100\\Omega\\) with 0.05 M KCl, \\(\\kappa=1.35\\times10^{-2}S\\,cm^{-1}\\). With 0.02 M \\(AgNO_3\\), \\(R=90\\Omega\\). Its \\(\\kappa\\) and \\(\\Lambda_m\\) are:",
+    "options": [
+      "0.015 S cm⁻¹ and 750 S cm² mol⁻¹",
+      "0.135 S cm⁻¹ and 6750 S cm² mol⁻¹",
+      "0.0015 S cm⁻¹ and 75 S cm² mol⁻¹",
+      "0.012 S cm⁻¹ and 600 S cm² mol⁻¹"
+    ],
+    "correctOption": "A",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(R_1=100\\Omega,\\ \\kappa_1=1.35\\times10^{-2},\\ R_2=90\\Omega,\\ C_2=0.02M\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[G^*=\\kappa_1R_1,\\quad \\kappa_2=G^*/R_2,\\quad \\Lambda_m=1000\\kappa_2/C_2\\]</div><p><strong>Step 1: Find cell constant</strong></p><div class=\"math-line\">\\[G^*=1.35\\times10^{-2}\\times100=1.35\\,cm^{-1}\\]</div><p><strong>Step 2: Find conductivity</strong></p><div class=\"math-line\">\\[\\kappa_2=1.35/90=0.015\\,S\\,cm^{-1}\\]</div><p><strong>Step 3: Find molar conductivity</strong></p><div class=\"math-line\">\\[\\Lambda_m=1000(0.015)/0.02=750\\,S\\,cm^2\\,mol^{-1}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(0.015\\,S\\,cm^{-1}\\), \\(750\\,S\\,cm^2\\,mol^{-1}\\) (Option A).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "sourceQuestion": "Q12",
+    "kind": "Numerical MCQ",
+    "question": "For 0.20 M KCl with \\(\\kappa=2.48\\times10^{-2}S\\,cm^{-1}\\) and \\(\\Lambda_m^\\circ=150\\), \\(\\Lambda_m\\) and \\(\\alpha\\) are:",
+    "options": [
+      "124 and 0.827",
+      "150 and 1.00",
+      "24.8 and 0.165",
+      "248 and 1.65"
+    ],
+    "correctOption": "A",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(C=0.20M,\\ \\kappa=2.48\\times10^{-2},\\ \\Lambda_m^\\circ=73.5+76.5=150\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[\\Lambda_m=1000\\kappa/C,\\quad\\alpha=\\Lambda_m/\\Lambda_m^\\circ\\]</div><p><strong>Step 1: Find molar conductivity</strong></p><div class=\"math-line\">\\[\\Lambda_m=1000(2.48\\times10^{-2})/0.20=124\\]</div><p><strong>Step 2: Find degree of dissociation</strong></p><div class=\"math-line\">\\[\\alpha=124/150=0.8267\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(124\\,S\\,cm^2\\,mol^{-1}\\), \\(\\alpha\\approx0.827\\) (Option A).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "sourceQuestion": "Q13",
+    "kind": "Numerical MCQ",
+    "question": "For \\(Sn|Sn^{2+}(0.001M)||H^+(0.01M)|H_2(1bar)|Pt\\), \\(E^\\circ_{Sn^{2+}/Sn}=-0.14V\\), emf is:",
+    "options": [
+      "0.081 V",
+      "0.111 V",
+      "0.140 V",
+      "0.199 V"
+    ],
+    "correctOption": "B",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(E^\\circ=0.14V,\\ Q=0.001/(0.01)^2=10,\\ n=2\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[E=E^\\circ-\\frac{0.0591}{2}\\log Q\\]</div><p><strong>Step 1: Substitute</strong></p><div class=\"math-line\">\\[E=0.14-0.02955\\log10\\]</div><p><strong>Step 2: Calculate</strong></p><div class=\"math-line\">\\[E=0.11045\\,V\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(E\\approx0.111\\,V\\) (Option B).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "sourceQuestion": "Q14",
+    "kind": "Numerical MCQ",
+    "question": "For \\(Zn|Zn^{2+}(0.1M)||Sn^{2+}(0.001M)|Sn\\), with standard potentials −0.76 V and −0.14 V, emf is:",
+    "options": [
+      "0.502 V",
+      "0.561 V",
+      "0.620 V",
+      "0.679 V"
+    ],
+    "correctOption": "B",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(E^\\circ=0.62V,\\ Q=0.1/0.001=100,\\ n=2\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[E=E^\\circ-\\frac{0.0591}{2}\\log Q\\]</div><p><strong>Step 1: Substitute</strong></p><div class=\"math-line\">\\[E=0.62-0.02955\\log100\\]</div><p><strong>Step 2: Calculate</strong></p><div class=\"math-line\">\\[E=0.62-0.0591=0.5609\\,V\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(E\\approx0.561\\,V\\) (Option B).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "sourceQuestion": "Q15",
+    "kind": "Theory converted to MCQ",
+    "question": "Which combined statement about batteries/fuel cells is correct?",
+    "options": [
+      "Primary batteries are rechargeable; mercury voltage changes greatly",
+      "Secondary batteries are rechargeable; mercury-cell voltage is constant; charging reverses the lead-battery reaction; fuel cells are efficient and cleaner",
+      "Fuel cells store all reactants permanently and cannot operate continuously",
+      "Lead batteries are primary cells"
+    ],
+    "correctOption": "B",
+    "solution": "<p><strong>Correct concept:</strong> Option B.</p><p>Charging reaction: \\(2PbSO_4+2H_2O\\rightarrow Pb+PbO_2+2H_2SO_4\\). Mercury-cell ion concentrations remain essentially unchanged.</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "sourceQuestion": "Q16",
+    "kind": "Theory converted to MCQ",
+    "question": "Which statement is correct for a Daniell cell?",
+    "options": [
+      "Salt bridge supplies electrons",
+      "Salt bridge maintains electrical neutrality; an opposing voltage greater than \\(E_{cell}\\) reverses the cell; Zn cannot safely store \\(CuSO_4\\)",
+      "Zn can store \\(CuSO_4\\) because \\(E^\\circ=0\\)",
+      "The cathode is always negative"
+    ],
+    "correctOption": "B",
+    "solution": "<p><strong>Correct concept:</strong> Option B.</p><p>For \\(Zn+Cu^{2+}\\rightarrow Zn^{2+}+Cu\\), \\(E^\\circ=0.34-(-0.76)=1.10V>0\\), so zinc would dissolve in copper sulphate.</p>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "sourceQuestion": "Q17",
+    "kind": "Multi-part numerical MCQ",
+    "question": "Which set is correct? Faraday’s second law is considered; electrolysis of aqueous NaCl is performed; and the emf of \\(Zn|Zn^{2+}(0.001M)||Cd^{2+}(0.1M)|Cd\\) is calculated.",
+    "options": [
+      "Equal charge deposits masses proportional to equivalent masses; cathode solution becomes alkaline; emf = 0.419 V",
+      "Equal charge deposits equal masses; cathode solution becomes acidic; emf = 0.360 V",
+      "Masses are proportional to molar masses; solution remains neutral; emf = 0.301 V",
+      "Mass is independent of equivalent mass; anode becomes alkaline; emf = 0.478 V"
+    ],
+    "correctOption": "A",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(E^\\circ=0.36V,\\ Q=0.001/0.1=0.01,\\ n=2\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[E=E^\\circ-\\frac{0.0591}{2}\\log Q\\]</div><p><strong>Step 1: Faraday’s second law</strong></p><div class=\"math-line\">\\[\\text{For the same charge, deposited masses are proportional to their equivalent masses.}\\]</div><p><strong>Step 2: Aqueous NaCl</strong></p><div class=\"math-line\">\\[2H_2O+2e^-\\rightarrow H_2+2OH^-\\quad\\Rightarrow\\quad\\text{the cathode region becomes alkaline.}\\]</div><p><strong>Step 3: Apply Nernst equation</strong></p><div class=\"math-line\">\\[E=0.36-0.02955\\log10^{-2}=0.4191\\,V\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(E\\approx0.419\\,V\\), with the stated law and alkaline cathode solution (Option A).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "sourceQuestion": "Q18",
+    "kind": "Multi-part numerical MCQ",
+    "question": "For \\(Fe+2Ag^+\\rightarrow Fe^{2+}+2Ag\\), which set correctly gives \\(\\Delta G^\\circ\\), \\(\\log K\\), two advantages of a fuel cell, and charge needed to oxidise 1 mol \\(H_2O\\) to \\(O_2\\)?",
+    "options": [
+      "−239 kJ mol⁻¹; 42; high efficiency and low pollution; 2 F",
+      "+239 kJ mol⁻¹; −42; low efficiency and high pollution; 1 F",
+      "−120 kJ mol⁻¹; 21; non-continuous operation; 4 F",
+      "−239 kJ mol⁻¹; 2; rechargeable only; 1 F"
+    ],
+    "correctOption": "A",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(E^\\circ=1.24V,\\ n=2,\\ F=96500\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[\\Delta G^\\circ=-nFE^\\circ,\\qquad \\log K=\\frac{nE^\\circ}{0.0591}\\]</div><p><strong>Step 1: Gibbs energy</strong></p><div class=\"math-line\">\\[\\Delta G^\\circ=-2(96500)(1.24)\\approx-239\\,kJ\\,mol^{-1}\\]</div><p><strong>Step 2: Equilibrium constant</strong></p><div class=\"math-line\">\\[\\log K=2(1.24)/0.0591\\approx42\\]</div><p><strong>Step 3: Fuel-cell advantages</strong></p><div class=\"math-line\">\\[\\text{High efficiency and comparatively low pollution.}\\]</div><p><strong>Step 4: Charge for water oxidation</strong></p><div class=\"math-line\">\\[2H_2O\\rightarrow O_2+4H^++4e^-\\Rightarrow 1\\,mol\\ H_2O\\text{ needs }2F\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(-239\\,kJ\\,mol^{-1},\\ \\log K\\approx42\\), high efficiency/low pollution, and \\(2F\\) (Option A).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "sourceQuestion": "Q19",
+    "kind": "Multi-part numerical MCQ",
+    "question": "Which set correctly gives the molar conductivity of 0.05 M \\(CH_3COOH\\) with \\(R=100\\Omega\\), cell constant \\(0.0354cm^{-1}\\), Faraday’s first law, and charge for \\(MnO_4^-\\rightarrow Mn^{2+}\\)?",
+    "options": [
+      "7.08 S cm² mol⁻¹; \\(m\\propto Q\\); 5 F per mole",
+      "70.8 S cm² mol⁻¹; \\(m\\propto1/Q\\); 2 F per mole",
+      "0.708 S cm² mol⁻¹; mass independent of charge; 1 F per mole",
+      "708 S cm² mol⁻¹; \\(m\\propto V\\); 7 F per mole"
+    ],
+    "correctOption": "A",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(R=100\\Omega,\\ G^*=0.0354cm^{-1},\\ C=0.05M\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[\\kappa=\\frac{G^*}{R},\\qquad\\Lambda_m=\\frac{1000\\kappa}{C}\\]</div><p><strong>Step 1: Conductivity</strong></p><div class=\"math-line\">\\[\\kappa=0.0354/100=3.54\\times10^{-4}\\,S\\,cm^{-1}\\]</div><p><strong>Step 2: Molar conductivity</strong></p><div class=\"math-line\">\\[\\Lambda_m=1000(3.54\\times10^{-4})/0.05=7.08\\,S\\,cm^2\\,mol^{-1}\\]</div><p><strong>Step 3: Faraday’s first law</strong></p><div class=\"math-line\">\\[m=ZQ=ZIt\\Rightarrow m\\propto Q\\]</div><p><strong>Step 4: Permanganate reduction</strong></p><div class=\"math-line\">\\[MnO_4^-+8H^++5e^-\\rightarrow Mn^{2+}+4H_2O\\Rightarrow5F\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(7.08\\,S\\,cm^2\\,mol^{-1};\\ m\\propto Q;\\ 5F\\) (Option A).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "sourceQuestion": "Q20",
+    "kind": "Multi-part numerical MCQ",
+    "question": "Which set correctly gives the dissociation of 0.0025 M acetic acid (\\(\\kappa=5.25\\times10^{-5}S\\,cm^{-1},\\ \\Lambda_m^\\circ=390\\)) and the lead-storage-battery reactions during discharge?",
+    "options": [
+      "5.38%; anode \\(Pb+SO_4^{2-}\\rightarrow PbSO_4+2e^-\\), cathode \\(PbO_2+4H^++SO_4^{2-}+2e^-\\rightarrow PbSO_4+2H_2O\\)",
+      "0.538%; both electrodes form PbO₂",
+      "53.8%; anode forms PbO₂ and cathode forms Pb",
+      "82.6%; no PbSO₄ is formed"
+    ],
+    "correctOption": "A",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(C=0.0025M,\\ \\kappa=5.25\\times10^{-5},\\ \\Lambda_m^\\circ=390\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[\\Lambda_m=\\frac{1000\\kappa}{C},\\qquad\\alpha=\\frac{\\Lambda_m}{\\Lambda_m^\\circ}\\]</div><p><strong>Step 1: Molar conductivity</strong></p><div class=\"math-line\">\\[\\Lambda_m=1000(5.25\\times10^{-5})/0.0025=21\\,S\\,cm^2\\,mol^{-1}\\]</div><p><strong>Step 2: Degree of dissociation</strong></p><div class=\"math-line\">\\[\\alpha=21/390=0.0538=5.38\\%\\]</div><p><strong>Step 3: Anode during discharge</strong></p><div class=\"math-line\">\\[Pb+SO_4^{2-}\\rightarrow PbSO_4+2e^-\\]</div><p><strong>Step 4: Cathode during discharge</strong></p><div class=\"math-line\">\\[PbO_2+4H^++SO_4^{2-}+2e^-\\rightarrow PbSO_4+2H_2O\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(\\alpha=5.38\\%\\) with the stated lead-battery half-reactions (Option A).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  }
+];
+
+    let scores = {}, attempts = {}, timers = {}, timerStates = {};
+    let studentName = "";
+	let quizStartTime = null;
+
+
+    function startQuiz() {
+      const nameInput = document.getElementById("studentName");
+      if (!nameInput.value.trim()) return alert("Please enter your name.");
+      studentName = nameInput.value.trim();
+      nameInput.disabled = true;
+      document.querySelector(".start-button").style.display = "none";
+      quizStartTime = new Date();
+loadQuiz();
+    }
+
+    function loadQuiz() {
+      const container = document.getElementById("quizContainer");
+      quizData.forEach((q, i) => {
+        const qNum = i + 1;
+        const question = document.createElement("div");
+        question.className = "question" + (i === 0 ? " active" : "");
+        question.id = `q${qNum}`;
+        let media = `<div class="question-meta">${q.kind} &nbsp;•&nbsp; <strong>${q.year}</strong></div><div class="question-text">${q.question}</div>`;
+        let solMedia = `<strong>Correct answer: ${q.correctOption}</strong><br>${q.solution}`;
+        const optionLabels = q.options.map((opt, idx) => {
+          const letter = String.fromCharCode(65 + idx);
+          return `<label><input type="radio" name="q${qNum}" value="${letter}"> <strong>${letter}.</strong>&nbsp; ${opt}</label>`;
+        }).join("");
+        question.innerHTML = `
+          <h3>Q${qNum}:</h3>
+          <div class="question-media" id="media${qNum}">${media}</div>
+          <div class="timer" id="timer${qNum}">⏱ Time left: ${q.time}s</div>
+         <button class="start-button" id="showBtn${qNum}" onclick="startTimer(${qNum}, ${q.time})">Show Question</button>
+
+          <button class="start-button" id="pauseBtn${qNum}" onclick="pauseTimer(${qNum})" style="display: none;">Pause</button>
+
+          <div class="options" id="options${qNum}" style="display: none;">
+            ${optionLabels}
+          </div>
+          <button class="submit-button" id="submitBtn${qNum}" style="display: none;" onclick="submitAnswer('q${qNum}', '${q.correctOption}', ${qNum})">Submit</button>
+
+<button class="dont-know-button" id="dontKnow${qNum}" onclick="dontKnow(${qNum})" style="display: none;">Don't Know</button>
+
+          <button class="toggle-button" onclick="showSolution(${qNum})">Show Solution</button>
+          <div class="solution" id="sol${qNum}">${solMedia}</div>
+		  
+          
+<div class="video" id="vid${qNum}">${q.videoUrl ? `<iframe width="300" height="170" src="${q.videoUrl}" allowfullscreen></iframe>` : ''}</div>
+	${i !== 0 ? `<button class="nav-button back-button" onclick="navigate(${qNum}, ${qNum - 1})">Back</button>` : ""}
+          ${i < quizData.length - 1 ? `<button class="nav-button" onclick="navigate(${qNum}, ${qNum + 1})">Next</button>` : ""}
+        `;
+        container.appendChild(question);
+        if (window.MathJax?.typesetPromise) MathJax.typesetPromise([question]);
+        attempts[qNum] = 0;
+        scores[`q${qNum}`] = 0;
+      });
+    }
+function showSolution(qNum) {
+  const solution = document.getElementById(`sol${qNum}`);
+  solution.style.display = "block";
+  if (window.MathJax?.typesetPromise) {
+    MathJax.typesetPromise([solution]);
+  }
+}
+
+function dontKnow(qNum) {
+  // Disable options
+  const options = document.querySelectorAll(`#q${qNum} .options input[type="radio"]`);
+  options.forEach(opt => {
+    opt.disabled = true;
+    opt.parentElement.style.backgroundColor = "#6c757d"; // grey
+    opt.parentElement.style.color = "white";
+  });
+
+  // Hide Submit & Don't Know buttons
+  document.getElementById(`submitBtn${qNum}`).style.display = "none";
+  document.getElementById(`dontKnow${qNum}`).style.display = "none";
+
+  // Show Solution + Video buttons
+  document.querySelector(`#q${qNum} .toggle-button`).style.display = "inline-block";
+  const videoBtn = document.querySelector(`#q${qNum} .toggle-button.video-btn`);
+  if (videoBtn) videoBtn.style.display = "inline-block";
+
+  // 🛑 Force stop ANY timer for this question
+  if (timers[qNum]) {
+    clearInterval(timers[qNum]);
+    delete timers[qNum];
+  }
+
+  // 🛑 Also double-check if multiple timers exist in global scope
+  for (const key in timers) {
+    if (key === qNum.toString()) {
+      clearInterval(timers[key]);
+      delete timers[key];
+    }
+  }
+
+  // 🧭 Update timer display
+  const timerElem = document.getElementById(`timer${qNum}`);
+  if (timerElem) timerElem.textContent = "⏱ Time left: 0s";
+
+  // 🧮 Record time spent
+  if (timerStates[qNum]) {
+    const endTime = Date.now();
+    const timeSpent = Math.round((endTime - timerStates[qNum].startTime) / 1000);
+    timerStates[qNum].timeSpent = timeSpent;
+    timerStates[qNum].remaining = 0;
+    timerStates[qNum].running = false;
+    timerStates[qNum].submitted = true;
+  }
+
+  // ✅ Mark as skipped in scorecard
+  updateScorecard(qNum, "skipped");
+}
+
+
+
+    function startTimer(qNum, duration) {
+      const timerElem = document.getElementById(`timer${qNum}`);
+      const mediaElem = document.getElementById(`media${qNum}`);
+      const optionsElem = document.getElementById(`options${qNum}`);
+      const pauseBtn = document.getElementById(`pauseBtn${qNum}`);
+      optionsElem.style.display = "grid";
+      mediaElem.style.display = "block";
+document.getElementById(`showBtn${qNum}`).style.display = "none";
+document.getElementById(`dontKnow${qNum}`).style.display = "inline-block";
+document.getElementById(`submitBtn${qNum}`).style.display = "inline-block";
+document.getElementById(`pauseBtn${qNum}`).style.display = "inline-block";
+
+
+
+      if (!timerStates[qNum]) timerStates[qNum] = { remaining: duration, running: false };
+      if (timerStates[qNum].remaining === undefined) {
+  timerStates[qNum].remaining = duration;
+}
+
+	  timerStates[qNum].totalDuration = duration;
+		timerStates[qNum].startTime = Date.now();
+      timerStates[qNum].running = true;
+      pauseBtn.textContent = "Pause";
+      pauseBtn.classList.remove("pause-active");
+      timers[qNum] = setInterval(() => {
+        if (timerStates[qNum].remaining > 0 && timerStates[qNum].running) {
+          timerStates[qNum].remaining--;
+          timerElem.textContent = `⏱ Time left: ${timerStates[qNum].remaining}s`;
+        } else if (timerStates[qNum].remaining <= 0) {
+          clearInterval(timers[qNum]);
+          alert("Time's up!");
+        }
+      }, 1000);
+    }
+
+    function pauseTimer(qNum) {
+      const btn = document.getElementById(`pauseBtn${qNum}`);
+      if (!timerStates[qNum]) return;
+      timerStates[qNum].running = !timerStates[qNum].running;
+      btn.textContent = timerStates[qNum].running ? "Pause" : "Resume";
+      btn.classList.toggle("pause-active");
+    }
+
+function submitAnswer(qId, correctOption, qNum) {
+  if (attempts[qNum] >= 1) return alert("You already submitted.");
+  const selected = document.querySelector(`input[name='${qId}']:checked`);
+  if (!selected) return alert("Select an option first.");
+  attempts[qNum]++;
+
+  const options = document.querySelectorAll(`input[name='${qId}']`);
+  options.forEach(opt => {
+    opt.disabled = true;
+    const label = opt.parentElement;
+    label.style.backgroundColor = '#2a2a2a';
+    label.style.color = '#ccc';
+    if (opt.checked) {
+      if (opt.value === correctOption) {
+        scores[qId] = 1;
+        label.style.backgroundColor = "#007BFF";
+        label.style.color = "white";
+      } else {
+        label.style.backgroundColor = "#dc3545";
+        label.style.color = "white";
+      }
+    }
+  });
+
+  // 🛑 STOP the timer
+  if (timerStates[qNum]) {
+    const endTime = Date.now();
+    const timeSpent = Math.round((endTime - timerStates[qNum].startTime) / 1000);
+    timerStates[qNum].timeSpent = timeSpent;
+    timerStates[qNum].running = false;
+    timerStates[qNum].submitted = true;
+    if (timers[qNum]) {
+      clearInterval(timers[qNum]);
+      delete timers[qNum];
+    }
+  }
+
+  // ✅ Hide Don't Know button after submit
+  document.getElementById(`dontKnow${qNum}`).style.display = "none";
+
+  // Show solution + video buttons
+  document.querySelector(`#q${qNum} .toggle-button`).style.display = "inline-block";
+  const optionalVideoBtn = document.querySelector(`#q${qNum} .toggle-button.video-btn`);
+  if (optionalVideoBtn) optionalVideoBtn.style.display = "inline-block";
+}
+
+
+
+function navigate(current, target) {
+  const currEl = document.getElementById(`q${current}`);
+  const targetEl = document.getElementById(`q${target}`);
+  if (!targetEl) return;
+
+  // Pause timer of current question
+  if (timerStates[current]?.running) {
+    timerStates[current].running = false;
+    document.getElementById(`pauseBtn${current}`).textContent = "Resume";
+    document.getElementById(`pauseBtn${current}`).classList.add("pause-active");
+  }
+
+  currEl.classList.remove("active");
+  targetEl.classList.add("active");
+
+  // Auto-resume timer of target question
+if (
+  timerStates[target] &&
+  timerStates[target].remaining > 0 &&
+  !timerStates[target].running &&
+  !timerStates[target].submitted // ✅ only resume if not submitted
+)
+{
+    timerStates[target].running = true;
+    document.getElementById(`pauseBtn${target}`).textContent = "Pause";
+    document.getElementById(`pauseBtn${target}`).classList.remove("pause-active");
+
+    // ✅ Restart countdown for resumed timer
+    // ✅ Clear existing interval if any before starting a new one
+if (timers[target]) clearInterval(timers[target]);
+
+timers[target] = setInterval(() => {
+
+      if (timerStates[target].remaining > 0 && timerStates[target].running) {
+        timerStates[target].remaining--;
+        document.getElementById(`timer${target}`).textContent =
+          `⏱ Time left: ${timerStates[target].remaining}s`;
+      } else if (timerStates[target].remaining <= 0) {
+        clearInterval(timers[target]);
+        alert("Time's up!");
+      }
+    }, 1000);
+  }
+}
+
+
+
+
+async function showScore() {
+  const total = Object.values(scores).reduce((a, b) => a + b, 0);
+  const scoreCard = document.getElementById("scoreCard");
+  const dateStr = new Date().toLocaleDateString();
+  const startTimeStr = quizStartTime ? quizStartTime.toLocaleTimeString() : "N/A";
+  
+  
+  
+  
+  
+  
+  const quizTitle = "CBSE Chemistry: Electrochemistry PYQ Quiz 2024–2026";
+
+
+
+
+
+  scoreCard.innerHTML = `
+    <div id="printWrapper" style="margin: 1; padding: 10px; background: white; font-size: 12px; color: black;">
+      <img src="https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png" alt="Logo" style="width: 100px; height: auto; margin-bottom: 10px;">
+      <h2>G10 EDUCTIONAL PLATFORM (WHATSAPP No. 9706380357)</h2>
+      <h3>Scorecard</h3>
+      <p><strong>Name:</strong> ${studentName}</p>
+      <p><strong>Date:</strong> ${dateStr}</p>
+      <p><strong>Start Time:</strong> ${startTimeStr}</p>
+      <p><strong>Quiz Title:</strong> ${quizTitle}</p>
+
+      <table style="width:100%; border-collapse:collapse;" border="1" cellpadding="6">
+        <thead>
+          <tr style="background:#007BFF; color:white;">
+            <th>Question</th>
+            <th>Status</th>
+            <th>Score</th>
+            <th>Time Spent (s)</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${Object.keys(scores).map((k, i) => `
+            <tr style="page-break-inside: avoid;">
+              <td>Q${i + 1}</td>
+              <td>${scores[k] ? "✔️ Correct" : "❌ Incorrect"}</td>
+              <td>${scores[k]}</td>
+              <td>${timerStates[i + 1]?.timeSpent ?? "N/A"}</td>
+            </tr>`).join("")}
+        </tbody>
+      </table>
+
+      <h4 id="scoreText">⭐ Score: ${total} / ${quizData.length}</h4>
+    </div>
+  `;
+
+  // ✅ Show buttons after final submit
+  document.getElementById("afterSubmitBtns").style.display = "block";
+
+  // PDF download logic
+  document.getElementById("downloadPdfBtn").onclick = async function () {
+    const wrapper = document.getElementById("printWrapper");
+    const imgs = wrapper.querySelectorAll("img");
+    const loadPromises = Array.from(imgs).map(img => img.complete ? Promise.resolve() : new Promise(res => { img.onload = img.onerror = res; }));
+    await Promise.all(loadPromises);
+
+    html2canvas(wrapper, { scale: 2, useCORS: true }).then(canvas => {
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const imgData = canvas.toDataURL("image/jpeg", 1.0);
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const imgProps = pdf.getImageProperties(imgData);
+      const imgHeight = (imgProps.height * pageWidth) / imgProps.width;
+      let y = 0;
+      pdf.addImage(imgData, 'JPEG', 0, y, pageWidth, imgHeight);
+      if (imgHeight > pdf.internal.pageSize.getHeight()) {
+        while (y + pdf.internal.pageSize.getHeight() < imgHeight) {
+          y += pdf.internal.pageSize.getHeight();
+          pdf.addPage();
+          pdf.addImage(imgData, 'JPEG', 0, -y, pageWidth, imgHeight);
+        }
+      }
+      pdf.save(`${studentName}-Scorecard.pdf`);
+    });
+  };
+
+  // WhatsApp Share logic
+  document.getElementById("shareWhatsappBtn").onclick = function () {
+    const whatsappNumber = "916003582005"; // Must include country code
+    const scoreText = document.getElementById('scoreText').innerText;
+
+    let details = "📋 Question-wise Performance:\n";
+    quizData.forEach((q, i) => {
+      const qNum = i + 1;
+      const selected = document.querySelector(`input[name="q${qNum}"]:checked`);
+      const userAns = selected ? selected.value : "Not Answered";
+      const correctAns = q.correctOption;
+
+      if (userAns === correctAns) {
+        details += `Q${qNum} → ✅ Correct (Your Ans: ${userAns})\n`;
+      } else if (userAns === "Not Answered") {
+        details += `Q${qNum} → ⏭ Skipped\n`;
+      } else {
+        details += `Q${qNum} → ❌ Wrong (Your Ans: ${userAns} | Correct: ${correctAns})\n`;
+      }
+    });
+
+    const message = `Sir, I have shared my Test Result for checking. Thank you!\n\n` +
+                    `📘 Quiz: ${quizTitle}\n` +
+                    `👤 Student: ${studentName}\n` +
+                    `${scoreText}\n\n${details}`;
+
+    const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(waUrl, "_blank");
+  };
+}
+
+
+
+
+
+async function showScore() {
+  const total = Object.values(scores).reduce((a, b) => a + b, 0);
+  const scoreCard = document.getElementById("scoreCard");
+  const dateStr = new Date().toLocaleDateString();
+  const startTimeStr = quizStartTime ? quizStartTime.toLocaleTimeString() : "N/A";
+  
+  
+  
+  
+  
+  const quizTitle = "___________________________________________";
+  
+  
+  
+  
+  
+  
+    disableAllOptions();  // ⛔ Disable all option buttons after final submit
+
+  // ... rest of your existing showScore() code stays EXACTLY SAME ...
+
+  
+  
+  
+  
+
+  scoreCard.innerHTML = `
+    <div id="printWrapper" style="margin: 1; padding: 10px; background: white; font-size: 12px; color: black;">
+      <img src="https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png" alt="Logo" style="width: 100px; height: auto; margin-bottom: 10px;">
+      <h2>G10 EDUCTIONAL PLATFORM</h2>
+      <h3>Scorecard</h3>
+      <p><strong>Name:</strong> ${studentName}</p>
+      <p><strong>Date:</strong> ${dateStr}</p>
+      <p><strong>Start Time:</strong> ${startTimeStr}</p>
+      <p><strong>Quiz Title:</strong> ${quizTitle}</p>
+
+      <table style="width:100%; border-collapse:collapse;" border="1" cellpadding="6">
+        <thead>
+          <tr style="background:#007BFF; color:white;">
+            <th>Question</th>
+            <th>Status</th>
+            <th>Score</th>
+            <th>Time Spent (s)</th>
+          </tr>
+        </thead>
+        <tbody>
+        ${Object.keys(scores).map((k, i) => {
+  const qNum = i + 1;
+  const score = scores[k];
+  const attemptsCount = attempts[qNum] || 0;
+  const wasSubmitted = timerStates[qNum]?.submitted;
+
+  let statusText = "";
+
+  if (wasSubmitted && score === 1) {
+    statusText = "✔️ Correct";
+  } else if (wasSubmitted && score === 0 && attemptsCount > 0) {
+    statusText = "❌ Incorrect";
+  } else if (wasSubmitted && score === 0 && attemptsCount === 0) {
+    statusText = "🤔 I Don't Know";
+  } else {
+    statusText = "⏭️ Not Attempted";
+  }
+
+  return `
+    <tr style="page-break-inside: avoid;">
+      <td>Q${qNum}</td>
+      <td>${statusText}</td>
+      <td>${score}</td>
+      <td>${timerStates[qNum]?.timeSpent ?? "N/A"}</td>
+    </tr>`;
+}).join("")}
+
+
+        </tbody>
+      </table>
+
+      <h4 id="scoreText">⭐ Score: ${total} / ${quizData.length}</h4>
+    </div>
+  `;
+
+  // ✅ Show buttons after final submit
+  document.getElementById("afterSubmitBtns").style.display = "block";
+
+  // 📄 PDF download
+  document.getElementById("downloadPdfBtn").onclick = async function () {
+    const wrapper = document.getElementById("printWrapper");
+    const imgs = wrapper.querySelectorAll("img");
+    const loadPromises = Array.from(imgs).map(img => img.complete ? Promise.resolve() : new Promise(res => { img.onload = img.onerror = res; }));
+    await Promise.all(loadPromises);
+
+    html2canvas(wrapper, { scale: 2, useCORS: true }).then(canvas => {
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const imgData = canvas.toDataURL("image/jpeg", 1.0);
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const imgProps = pdf.getImageProperties(imgData);
+      const imgHeight = (imgProps.height * pageWidth) / imgProps.width;
+      let y = 0;
+      pdf.addImage(imgData, 'JPEG', 0, y, pageWidth, imgHeight);
+      if (imgHeight > pdf.internal.pageSize.getHeight()) {
+        while (y + pdf.internal.pageSize.getHeight() < imgHeight) {
+          y += pdf.internal.pageSize.getHeight();
+          pdf.addPage();
+          pdf.addImage(imgData, 'JPEG', 0, -y, pageWidth, imgHeight);
+        }
+      }
+      pdf.save(`${studentName}-Scorecard.pdf`);
+    });
+  };
+
+  // 📲 WhatsApp Share
+  document.getElementById("shareWhatsappBtn").onclick = function () {
+    const whatsappNumber = "916003582005";
+    const scoreText = document.getElementById('scoreText').innerText;
+
+    let details = "📋 Question-wise Performance:\n";
+    quizData.forEach((q, i) => {
+      const qNum = i + 1;
+      const selected = document.querySelector(`input[name="q${qNum}"]:checked`);
+      const userAns = selected ? selected.value : "Not Answered";
+      const correctAns = q.correctOption;
+
+      if (userAns === correctAns) {
+        details += `Q${qNum} → ✅ Correct (Your Ans: ${userAns})\n`;
+      } else if (userAns === "Not Answered") {
+        details += `Q${qNum} → ⏭ Skipped\n`;
+      } else {
+        details += `Q${qNum} → ❌ Wrong (Your Ans: ${userAns} | Correct: ${correctAns})\n`;
+      }
+    });
+
+    const message = `Sir, I have shared my Test Result for checking. Thank you!\n\n` +
+                    `📘 Quiz: ${quizTitle}\n` +
+                    `👤 Student: ${studentName}\n` +
+                    `${scoreText}\n\n${details}`;
+
+    const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(waUrl, "_blank");
+  };
+}
+
+document.getElementById("printBtn").onclick = function () {
+  const studentName = document.getElementById("studentName").value || "Student";
+
+  // Collect HTML for all questions and solutions
+  let printContent = '';
+  const allQuestions = document.querySelectorAll(".question");
+  allQuestions.forEach(q => {
+    const qClone = q.cloneNode(true);
+
+    // Show solution
+    const sol = qClone.querySelector(".solution");
+    if (sol) sol.style.display = "block";
+
+    // Remove buttons
+    qClone.querySelectorAll("button").forEach(btn => btn.remove());
+
+    // Remove video sections
+    const video = qClone.querySelector(".video");
+    if (video) video.remove();
+
+    printContent += qClone.outerHTML;
+  });
+
+  // Open new window for print
+  const printWindow = window.open('', '', 'width=900,height=700');
+  printWindow.document.write(`
+    <html>
+      <head>
+        <title>Print Quiz</title>
+        <style>
+          @page {
+            margin: 100mm 15mm 100mm 15mm; /* Top Right Bottom Left */
+          }
+          body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            background: #fff;
+            color: #000;
+          }
+          .question {
+            border: 1px solid #333;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #f5f2f2;
+          }
+          img { max-width: 100%; margin-top: 10px; border: 1px solid #c3c3d4; }
+          table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+          h2 { margin-bottom: 10px; }
+        </style>
+      </head>
+      <body>
+        <div style="text-align:center; margin-bottom: 20px;">
+          <img src="https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png" alt="Logo" style="width:120px; height:auto; display:block; margin:10px auto;">
+          <h2 style="margin-top:0;">${studentName}</h2>
+        </div>
+        ${printContent}
+        <div style="height:20px;"></div> <!-- Extra bottom spacing -->
+      </body>
+    </html>
+  `);
+  printWindow.document.close();
+  printWindow.focus();
+  printWindow.print();
+  printWindow.close();
+};
+
+function disableAllOptions() {
+  const allOptions = document.querySelectorAll("input[type='radio']");
+  allOptions.forEach(opt => {
+    opt.disabled = true;
+    opt.parentElement.style.opacity = "0.6";
+    opt.parentElement.style.cursor = "not-allowed";
+  });
+}
+
+
+  </script>
+</body>
+</html>
