@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  
+  <title>CBSE Chemistry Solutions PYQ Quiz 2024–2026</title>
+  <style>
+    @media (max-width: 768px) {
+
+  /* 🔹 Question & solution images fit mobile */
+  .question-media img,
+  .solution img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+}
+  
+   body {
+  font-family: Arial, sans-serif;
+  padding: 0;                 /* ✅ REMOVE SIDE AREA */
+  background-color: #a8a5a5;
+  color: #080707;
+}
+@media (max-width: 768px) {
+  #quizContainer {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+    .question {
+      border: 1px solid #333;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      background-color: #f5f2f2;
+      display: none;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .question.active { display: block; }
+    .question-media { display: none; }
+    .options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .options label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 4px;
+      background-color: #2a2a2a;
+      color: #ccc;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .options label:hover {
+      background-color: #444;
+      transform: scale(1.02);
+    }
+    .options input[type="radio"] { margin: 0; }
+    .nav-button, .submit-button, .final-submit-button, .start-button, .toggle-button {
+      margin-top: 10px;
+      padding: 6px 12px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform 0.2s ease;
+    }
+    .nav-button:hover, .submit-button:hover, .final-submit-button:hover,
+    .start-button:hover, .toggle-button:hover {
+      opacity: 0.9;
+      transform: scale(1.03);
+    }
+    .final-submit-button {
+      background-color: red;
+    }
+    .pause-active {
+      background-color: orange !important;
+    }
+    .back-button {
+      background-color: #8205f7;
+    }
+    .toggle-button {
+      background-color: #28a745;
+      display: none;
+    }
+    .toggle-button.video-btn {
+      background-color: #17a2b8;
+      display: none;
+    }
+    img, iframe.pdf {
+      max-width: 100%;
+      margin-top: 10px;
+      border: 1px solid #c3c3d4;
+    }
+    iframe.pdf {
+      height: 500px;
+    }
+    .solution, .video {
+      display: none;
+      margin-top: 10px;
+      background: #f0e9e9;
+      padding: 10px;
+      border-left: 4px solid #bcbcc4;
+    }
+    .timer {
+      margin-top: 10px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .score-section {
+      margin-top: 30px;
+      padding: 20px;
+      background: #fff;
+      border: 2px solid #007BFF;
+      border-radius: 9px;
+    }
+    .icon {
+      width: 18px;
+      height: 18px;
+    }
+    @media print {
+      .score-section table tr {
+        page-break-inside: avoid;
+      }
+    }
+
+    .dont-know-button {
+      margin-top: 10px;
+      padding: 6px 12px;
+      background-color: #6c757d;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .dont-know-button:hover {
+      opacity: 0.9;
+      transform: scale(1.03);
+    }
+	/* 🔍 ENLARGE ONLY QUESTION & SOLUTION IMAGES */
+.question-media img,
+.solution img {
+  width: 100%;
+  max-width: none;        /* allow image to exceed container width */
+}
+  
+    .question-text{font-size:18px;line-height:1.55;font-weight:700;background:#fff;padding:14px;border-left:5px solid #007BFF;border-radius:6px;margin-top:10px}
+    .question-meta{font-size:13px;color:#555;margin:4px 0 8px}
+    .options label{line-height:1.35;align-items:flex-start}
+    .solution{font-size:16px;line-height:1.55;color:#111}
+    .worked-solution p{margin:8px 0 4px}
+    .math-line{overflow-x:auto;background:#fff;padding:5px 8px;margin:3px 0 9px;border-radius:5px}
+    .final-answer{background:#e7f3ff;border-left:4px solid #007BFF;padding:10px;margin-top:10px;font-size:17px}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:true}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <!-- MAIN QUIZ: access is controlled by the parent website -->
+  <div id="mainContent">
+
+<!-- Instruction Section -->
+<div id="instructionsBox" style="
+  background:#f9fbfd;
+  padding:20px;
+  border-radius:12px;
+  margin:20px auto;
+  width:90%;
+  max-width:800px;
+  box-shadow:0 8px 16px rgba(0,0,0,0.1);
+  border-left:6px solid #4A90E2;
+  animation: fadeIn 0.8s ease-in-out;
+">
+  <h3 style="font-size:22px; color:#4A90E2; margin-bottom:15px;">📘 IMPORTANT INSTRUCTIONS</h3>
+  <ul style="line-height:1.8; font-size:16px; padding-left:20px; color:#3d3d3d;">
+    <li>Each question has a dedicated timer. Once time is up, that question gets locked.</li>
+    <li>Click <b>Show Question</b> to begin answering the question.</li>
+    <li>You can temporarily pause the timer, but it resumes automatically when navigating.</li>
+    <li>Once you select an answer or choose <b>Don't Know</b>, your response is locked.</li>
+    <li>Solutions are visible immediately after answering/skipping.</li>
+    <li>Click <b>Final Submit</b> to save your score and download the scorecard.</li>
+  </ul>
+  <button onclick="hideInstructions()" style="
+    background:#4A90E2;
+    color:white;
+    padding:12px 20px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:15px;
+    transition: background 0.3s;
+  ">I Understand – Continue</button>
+</div>
+
+<!-- Name Entry Section -->
+<div id="nameSection" style="display:none; text-align:center; margin-top:20px;">
+  <input type="text" id="studentName" placeholder="Enter Your Name" required style="
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    width:250px;
+    text-align:center;
+    font-size:16px;
+    margin-bottom:10px;
+  ">
+  <br>
+  <button class="start-button" onclick="startQuiz()" style="
+    background:#27ae60;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:10px;
+    transition: background 0.3s;
+  ">Start Quiz</button>
+</div>
+
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<script>
+  function hideInstructions() {
+    document.getElementById("instructionsBox").style.display = "none";
+    document.getElementById("nameSection").style.display = "block";
+  }
+</script>
+
+
+
+
+  <div id="quizContainer"></div>
+
+  <!-- ✅ Keep this one only -->
+  <div style="margin-top: 20px;">
+    <button class="final-submit-button" onclick="showScore()">Final Submit</button>
+  </div>
+
+  <!-- ✅ Score Section -->
+  <div class="score-section" id="scoreCard"></div>
+
+  <!-- ✅ Hidden buttons until submit -->
+  <div id="afterSubmitBtns" style="margin-top:15px; display:none;">
+  <button id="downloadPdfBtn" class="nav-button">📄 Download Scorecard (PDF)</button>
+  <button id="shareWhatsappBtn" class="nav-button">📲 Share on WhatsApp</button>
+  <button id="printBtn" class="nav-button">🖨 Print All Questions & Solutions</button>
+</div>
+
+
+</div>
+
+  <script>
+    const quizData = [
+  {
+    "year": 2026,
+    "kind": "MCQ",
+    "question": "Which solution will have the lowest freezing point in water?",
+    "options": [
+      "0.1 M glucose",
+      "0.1 M CaCl₂",
+      "0.1 M KCl",
+      "0.1 M urea"
+    ],
+    "correctOption": "B",
+    "solution": "For equal concentration, ΔT_f = iK_fm. CaCl₂ has the largest van’t Hoff factor (approximately 3), so it produces the greatest depression and the lowest freezing point.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2026,
+    "kind": "Assertion–Reason",
+    "question": "Assertion (A): Components of an azeotrope cannot be separated by fractional distillation. Reason (R): An azeotrope has the same composition in liquid and vapour phases and boils at a constant temperature.",
+    "options": [
+      "Both Assertion (A) and Reason (R) are true, and R is the correct explanation of A.",
+      "Both Assertion (A) and Reason (R) are true, but R is not the correct explanation of A.",
+      "Assertion (A) is true, but Reason (R) is false.",
+      "Assertion (A) is false, but Reason (R) is true."
+    ],
+    "correctOption": "A",
+    "solution": "Both statements are true. Fractional distillation cannot enrich either component because liquid and vapour compositions are identical at the azeotropic composition.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2026,
+    "kind": "Theory converted to MCQ",
+    "question": "Phenol and aniline are mixed. Which statement is correct?",
+    "options": [
+      "They show positive deviation and the boiling point decreases.",
+      "They form an ideal solution.",
+      "They show negative deviation because phenol–aniline attraction is stronger, and the boiling point increases.",
+      "They show negative deviation but the boiling point decreases."
+    ],
+    "correctOption": "C",
+    "solution": "Strong hydrogen bonding forms between the phenolic O–H group and the lone pair on aniline nitrogen. Vapour pressure decreases and boiling point increases.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2026,
+    "kind": "Numerical MCQ",
+    "question": "0.61 g benzoic acid (M = 122 g mol⁻¹) is dissolved in 5 g CS₂. It dimerises to 88%. If K_b = 2.3 K kg mol⁻¹ and the normal boiling point is 46.2 °C, the solution boils at:",
+    "options": [
+      "46.76 °C",
+      "47.49 °C",
+      "48.50 °C",
+      "49.20 °C"
+    ],
+    "correctOption": "B",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(w_2=0.61\\,\\mathrm{g},\\ M_2=122\\,\\mathrm{g\\,mol^{-1}},\\ w_1=5\\,\\mathrm{g}=0.005\\,\\mathrm{kg},\\ \\alpha=0.88,\\ K_b=2.3\\,\\mathrm{K\\,kg\\,mol^{-1}}\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[\\Delta T_b=iK_bm,\\qquad i=1-\\frac{\\alpha}{2}\\ \\text{(dimerisation)}\\]</div><p><strong>Step 1: Calculate moles and molality</strong></p><div class=\"math-line\">\\[n_2=\\frac{0.61}{122}=0.005\\,\\mathrm{mol},\\qquad m=\\frac{0.005}{0.005}=1.00\\,\\mathrm{mol\\,kg^{-1}}\\]</div><p><strong>Step 2: Calculate the van’t Hoff factor</strong></p><div class=\"math-line\">\\[i=1-\\frac{0.88}{2}=0.56\\]</div><p><strong>Step 3: Calculate elevation in boiling point</strong></p><div class=\"math-line\">\\[\\Delta T_b=0.56\\times2.3\\times1.00=1.288\\,\\mathrm{K}\\]</div><p><strong>Step 4: Calculate the new boiling point</strong></p><div class=\"math-line\">\\[T_b=46.2+1.288=47.488\\,{}^\\circ\\mathrm{C}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(T_b\\approx47.49\\,{}^\\circ\\mathrm{C}\\) (Option B).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "MCQ",
+    "question": "In association, the abnormal (observed) molar mass of a solute will:",
+    "options": [
+      "Remain the same",
+      "Increase",
+      "Decrease",
+      "First increase and then decrease"
+    ],
+    "correctOption": "B",
+    "solution": "Association reduces the number of particles, so i<1. Since M_observed=M_normal/i, the observed molar mass increases.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "MCQ",
+    "question": "An unripe mango placed in concentrated salt solution shrivels because:",
+    "options": [
+      "It loses water by osmosis",
+      "It gains water by osmosis",
+      "It gains water by reverse osmosis",
+      "It loses water by reverse osmosis"
+    ],
+    "correctOption": "A",
+    "solution": "The concentrated salt solution is hypertonic. Water leaves mango cells by exosmosis.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "MCQ",
+    "question": "Which 1% aqueous solution has the highest boiling point?",
+    "options": [
+      "Glucose",
+      "Urea",
+      "KCl",
+      "CaCl₂"
+    ],
+    "correctOption": "D",
+    "solution": "For the same mass percentage, the effective particle concentration is greatest for CaCl₂ because it dissociates into three ions.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "Assertion–Reason",
+    "question": "Assertion (A): Cooking time is reduced in a pressure cooker. Reason (R): The boiling point of water inside a pressure cooker is elevated.",
+    "options": [
+      "Both Assertion (A) and Reason (R) are true, and R is the correct explanation of A.",
+      "Both Assertion (A) and Reason (R) are true, but R is not the correct explanation of A.",
+      "Assertion (A) is true, but Reason (R) is false.",
+      "Assertion (A) is false, but Reason (R) is true."
+    ],
+    "correctOption": "A",
+    "solution": "Both are true, and R explains A. Higher pressure raises the boiling point, allowing cooking at a temperature above 100 °C.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "MCQ",
+    "question": "Which 1.0 M aqueous solution has the highest freezing point?",
+    "options": [
+      "AlCl₃",
+      "Na₂SO₄",
+      "Glucose",
+      "KCl"
+    ],
+    "correctOption": "C",
+    "solution": "The highest freezing point corresponds to the smallest ΔT_f. Glucose is a non-electrolyte (i=1), whereas the salts dissociate.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "Assertion–Reason",
+    "question": "Assertion (A): Henry’s law constant K_H decreases with increase in temperature. Reason (R): Solubility of gases in liquids generally decreases with increase in temperature.",
+    "options": [
+      "Both Assertion (A) and Reason (R) are true, and R is the correct explanation of A.",
+      "Both Assertion (A) and Reason (R) are true, but R is not the correct explanation of A.",
+      "Assertion (A) is true, but Reason (R) is false.",
+      "Assertion (A) is false, but Reason (R) is true."
+    ],
+    "correctOption": "D",
+    "solution": "The assertion is false and the reason is true. From p=K_Hx, a decrease in x at fixed p means K_H increases.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "MCQ",
+    "question": "Henry’s law constant K_H is generally:",
+    "options": [
+      "The same for all gases",
+      "Greater for gases having lower solubility",
+      "Greater for gases having higher solubility",
+      "Unrelated to gas solubility"
+    ],
+    "correctOption": "B",
+    "solution": "At fixed pressure, x=p/K_H. Therefore, a larger K_H means a smaller dissolved mole fraction.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "Numerical MCQ",
+    "question": "The freezing point of 1 molal KCl, assuming complete dissociation (K_f for water = 1.86 K kg mol⁻¹), is:",
+    "options": [
+      "−3.72 °C",
+      "−1.86 °C",
+      "+2.72 °C",
+      "+3.72 °C"
+    ],
+    "correctOption": "A",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(m=1\\,\\mathrm{mol\\,kg^{-1}},\\ K_f=1.86\\,\\mathrm{K\\,kg\\,mol^{-1}}\\); complete dissociation of KCl.</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[\\Delta T_f=iK_fm\\]</div><p><strong>Step 1: Find van’t Hoff factor</strong></p><div class=\"math-line\">\\[\\mathrm{KCl\\rightarrow K^+ + Cl^-},\\qquad i=2\\]</div><p><strong>Step 2: Calculate depression</strong></p><div class=\"math-line\">\\[\\Delta T_f=2\\times1.86\\times1=3.72\\,\\mathrm{K}\\]</div><p><strong>Step 3: Calculate freezing point</strong></p><div class=\"math-line\">\\[T_f=0-3.72=-3.72\\,{}^\\circ\\mathrm{C}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(-3.72\\,{}^\\circ\\mathrm{C}\\) (Option A).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "MCQ",
+    "question": "A solution of acetone in ethanol:",
+    "options": [
+      "Obeys Raoult’s law exactly",
+      "Shows positive deviation from Raoult’s law",
+      "Is always ideal",
+      "Shows negative deviation from Raoult’s law"
+    ],
+    "correctOption": "B",
+    "solution": "Acetone disrupts strong ethanol–ethanol hydrogen bonding. The new unlike interaction is weaker, increasing vapour pressure.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "Theory converted to MCQ",
+    "question": "Which option correctly describes (i) cooking in a pressure cooker and (ii) a liquid mixture that contracts and becomes warm on mixing?",
+    "options": [
+      "Lower boiling point; positive deviation",
+      "Higher boiling point; negative deviation with stronger A–B forces",
+      "Higher boiling point; positive deviation with weaker A–B forces",
+      "Lower boiling point; negative deviation"
+    ],
+    "correctOption": "B",
+    "solution": "Pressure raises water’s boiling point. Volume contraction and heat evolution indicate stronger unlike forces, ΔV_mix<0, ΔH_mix<0 and negative deviation.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "Theory converted to MCQ",
+    "question": "A negative deviation from Raoult’s law may form which azeotrope?",
+    "options": [
+      "Minimum-boiling; ethanol–water",
+      "Maximum-boiling; HNO₃–water",
+      "Minimum-boiling; HNO₃–water",
+      "No azeotrope is possible"
+    ],
+    "correctOption": "B",
+    "solution": "Negative deviation lowers vapour pressure and raises boiling point, producing a maximum-boiling azeotrope; HNO₃–water is an example.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "Theory converted to MCQ",
+    "question": "Positive deviation from Raoult’s law is correctly represented by:",
+    "options": [
+      "Observed vapour pressure lower than ideal; maximum-boiling azeotrope",
+      "Observed vapour pressure higher than ideal; minimum-boiling azeotrope",
+      "Observed vapour pressure equal to ideal; maximum-boiling azeotrope",
+      "Zero vapour pressure; no boiling"
+    ],
+    "correctOption": "B",
+    "solution": "Weaker A–B forces increase escaping tendency and vapour pressure, lowering boiling point and allowing a minimum-boiling azeotrope.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "Numerical MCQ",
+    "question": "3 g CaCl₂ (M=111 g mol⁻¹) is dissolved in 260 g water. Assuming complete dissociation and K_b=0.52 K kg mol⁻¹, ΔT_b is:",
+    "options": [
+      "0.054 K",
+      "0.108 K",
+      "0.162 K",
+      "0.324 K"
+    ],
+    "correctOption": "C",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(w_2=3\\,\\mathrm{g},\\ M_2=111\\,\\mathrm{g\\,mol^{-1}},\\ w_1=260\\,\\mathrm{g}=0.260\\,\\mathrm{kg},\\ K_b=0.52\\,\\mathrm{K\\,kg\\,mol^{-1}}\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[\\Delta T_b=iK_bm\\]</div><p><strong>Step 1: Find molality</strong></p><div class=\"math-line\">\\[n_2=\\frac{3}{111}=0.02703\\,\\mathrm{mol},\\qquad m=\\frac{0.02703}{0.260}=0.10395\\,\\mathrm{mol\\,kg^{-1}}\\]</div><p><strong>Step 2: Find i for complete dissociation</strong></p><div class=\"math-line\">\\[\\mathrm{CaCl_2\\rightarrow Ca^{2+}+2Cl^-},\\qquad i=3\\]</div><p><strong>Step 3: Calculate elevation</strong></p><div class=\"math-line\">\\[\\Delta T_b=3\\times0.52\\times0.10395=0.162\\,\\mathrm{K}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(\\Delta T_b\\approx0.162\\,\\mathrm{K}\\) (Option C).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "Numerical MCQ",
+    "question": "Pure X and Y have vapour pressures 120 and 160 mm Hg. An ideal solution contains equal moles. Its total vapour pressure is:",
+    "options": [
+      "120 mm Hg",
+      "130 mm Hg",
+      "140 mm Hg",
+      "160 mm Hg"
+    ],
+    "correctOption": "C",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(p_X^\\circ=120\\,\\mathrm{mmHg},\\ p_Y^\\circ=160\\,\\mathrm{mmHg},\\ x_X=x_Y=0.5\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[p_{\\mathrm{total}}=x_Xp_X^\\circ+x_Yp_Y^\\circ\\]</div><p><strong>Step 1: Substitute the values</strong></p><div class=\"math-line\">\\[p_{\\mathrm{total}}=(0.5)(120)+(0.5)(160)\\]</div><p><strong>Step 2: Simplify</strong></p><div class=\"math-line\">\\[p_{\\mathrm{total}}=60+80=140\\,\\mathrm{mmHg}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(140\\,\\mathrm{mmHg}\\) (Option C).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "Theory converted to MCQ",
+    "question": "Which statement correctly gives Henry’s law and explains why aquatic species prefer cold water?",
+    "options": [
+      "p=x/K_H; gases are less soluble in cold water",
+      "p=K_Hx; gases, including O₂, are more soluble in cold water",
+      "p=K_H/x; O₂ is absent in warm water",
+      "p is independent of x; temperature has no effect"
+    ],
+    "correctOption": "B",
+    "solution": "Henry’s law is p=K_Hx. Gas solubility generally decreases with temperature, so cold water contains more dissolved oxygen.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "Numerical MCQ",
+    "question": "A glucose solution boils at 100.20 °C. Given K_b=0.512 and K_f=1.86 K kg mol⁻¹, its freezing point is:",
+    "options": [
+      "−0.20 °C",
+      "−0.39 °C",
+      "−0.73 °C",
+      "−1.86 °C"
+    ],
+    "correctOption": "C",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(T_b=100.20\\,{}^\\circ\\mathrm{C},\\ T_b^\\circ=100.00\\,{}^\\circ\\mathrm{C},\\ K_b=0.512,\\ K_f=1.86\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[\\Delta T_b=K_bm,\\qquad \\Delta T_f=K_fm\\]</div><p><strong>Step 1: Find boiling-point elevation</strong></p><div class=\"math-line\">\\[\\Delta T_b=100.20-100.00=0.20\\,\\mathrm{K}\\]</div><p><strong>Step 2: Find molality</strong></p><div class=\"math-line\">\\[m=\\frac{0.20}{0.512}=0.390625\\,\\mathrm{mol\\,kg^{-1}}\\]</div><p><strong>Step 3: Find freezing-point depression</strong></p><div class=\"math-line\">\\[\\Delta T_f=1.86\\times0.390625=0.7266\\,\\mathrm{K}\\]</div><p><strong>Step 4: Find freezing point</strong></p><div class=\"math-line\">\\[T_f=0-0.7266=-0.7266\\,{}^\\circ\\mathrm{C}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(T_f\\approx-0.73\\,{}^\\circ\\mathrm{C}\\) (Option C).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "Numerical MCQ",
+    "question": "0.3 g acetic acid (M=60) in 30 g benzene gives ΔT_f=0.45 °C; K_f=5.12. If dimers form, percentage association is:",
+    "options": [
+      "47.3%",
+      "72.5%",
+      "88.0%",
+      "94.5%"
+    ],
+    "correctOption": "D",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(w_2=0.3\\,\\mathrm{g},\\ M_2=60\\,\\mathrm{g\\,mol^{-1}},\\ w_1=30\\,\\mathrm{g}=0.030\\,\\mathrm{kg},\\ \\Delta T_f=0.45\\,\\mathrm{K},\\ K_f=5.12\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[\\Delta T_f=iK_fm,\\qquad i=1-\\frac{\\alpha}{2}\\]</div><p><strong>Step 1: Find molality</strong></p><div class=\"math-line\">\\[n_2=\\frac{0.3}{60}=0.005\\,\\mathrm{mol},\\qquad m=\\frac{0.005}{0.030}=0.1667\\,\\mathrm{mol\\,kg^{-1}}\\]</div><p><strong>Step 2: Find ideal depression</strong></p><div class=\"math-line\">\\[(\\Delta T_f)_{\\mathrm{ideal}}=5.12\\times0.1667=0.8533\\,\\mathrm{K}\\]</div><p><strong>Step 3: Find van’t Hoff factor</strong></p><div class=\"math-line\">\\[i=\\frac{0.45}{0.8533}=0.5273\\]</div><p><strong>Step 4: Find degree of dimerisation</strong></p><div class=\"math-line\">\\[\\alpha=2(1-i)=2(1-0.5273)=0.9454\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(\\%\\text{ association}=0.9454\\times100\\approx94.5\\%\\) (Option D).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "Theory converted to MCQ",
+    "question": "10 mL each of liquids A and B give 20.2 mL after mixing. Which conclusion is correct?",
+    "options": [
+      "Negative deviation; temperature rises",
+      "Positive deviation; temperature falls; example ethanol–acetone",
+      "Ideal solution; no heat change",
+      "Negative deviation; temperature falls"
+    ],
+    "correctOption": "B",
+    "solution": "Expansion means ΔV_mix>0 and weaker A–B forces. Mixing is endothermic, so temperature falls; this corresponds to positive deviation.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "Theory converted to MCQ",
+    "question": "Which set of statements is correct? (i) Salt helps melt road snow by lowering freezing point. (ii) RBCs swell in 0.5% NaCl. (iii) Reverse osmosis is used in desalination.",
+    "options": [
+      "Only (i)",
+      "Only (i) and (ii)",
+      "Only (ii) and (iii)",
+      "(i), (ii) and (iii)"
+    ],
+    "correctOption": "D",
+    "solution": "All are correct. A 0.5% NaCl solution is hypotonic relative to RBC fluid, so water enters the cells.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "Numerical MCQ",
+    "question": "At 25 °C, p° of water is 24 mm Hg. Vapour pressure of a 5% (w/w) aqueous urea solution is approximately:",
+    "options": [
+      "22.40 mm Hg",
+      "23.63 mm Hg",
+      "24.00 mm Hg",
+      "24.37 mm Hg"
+    ],
+    "correctOption": "B",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> For \\(100\\,\\mathrm{g}\\) solution: \\(w_{\\mathrm{urea}}=5\\,\\mathrm{g}\\), \\(w_{\\mathrm{water}}=95\\,\\mathrm{g}\\), \\(p^\\circ=24\\,\\mathrm{mmHg}\\).</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[p=x_{\\mathrm{water}}p^\\circ\\]</div><p><strong>Step 1: Calculate moles</strong></p><div class=\"math-line\">\\[n_{\\mathrm{urea}}=\\frac{5}{60}=0.08333,\\qquad n_{\\mathrm{water}}=\\frac{95}{18}=5.2778\\]</div><p><strong>Step 2: Find mole fraction of water</strong></p><div class=\"math-line\">\\[x_{\\mathrm{water}}=\\frac{5.2778}{5.2778+0.08333}=0.98446\\]</div><p><strong>Step 3: Calculate vapour pressure</strong></p><div class=\"math-line\">\\[p=0.98446\\times24=23.63\\,\\mathrm{mmHg}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(p\\approx23.63\\,\\mathrm{mmHg}\\) (Option B).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "Numerical MCQ",
+    "question": "NaOH has observed molar mass 25 g mol⁻¹ from osmotic pressure. Its normal molar mass is 40 g mol⁻¹. Percentage dissociation is:",
+    "options": [
+      "25%",
+      "40%",
+      "60%",
+      "80%"
+    ],
+    "correctOption": "C",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(M_{\\mathrm{normal}}=40\\,\\mathrm{g\\,mol^{-1}},\\ M_{\\mathrm{observed}}=25\\,\\mathrm{g\\,mol^{-1}}\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[i=\\frac{M_{\\mathrm{normal}}}{M_{\\mathrm{observed}}},\\qquad i=1+\\alpha\\ \\text{for NaOH}\\]</div><p><strong>Step 1: Calculate i</strong></p><div class=\"math-line\">\\[i=\\frac{40}{25}=1.60\\]</div><p><strong>Step 2: Calculate dissociation</strong></p><div class=\"math-line\">\\[\\alpha=i-1=1.60-1=0.60\\]</div><p><strong>Step 3: Convert to percentage</strong></p><div class=\"math-line\">\\[\\%\\text{ dissociation}=0.60\\times100=60\\%\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(60\\%\\) (Option C).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "Numerical MCQ",
+    "question": "A solution freezes at −0.3 °C. If K_f=1.86 K kg mol⁻¹ and p°(water)=24.8 mm Hg, the lowering in vapour pressure is approximately:",
+    "options": [
+      "0.0072 mm Hg",
+      "0.072 mm Hg",
+      "0.72 mm Hg",
+      "7.2 mm Hg"
+    ],
+    "correctOption": "B",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(\\Delta T_f=0.3\\,\\mathrm{K},\\ K_f=1.86\\,\\mathrm{K\\,kg\\,mol^{-1}},\\ p^\\circ=24.8\\,\\mathrm{mmHg}\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[\\Delta T_f=K_fm,\\qquad \\frac{\\Delta p}{p^\\circ}=x_2\\]</div><p><strong>Step 1: Find molality</strong></p><div class=\"math-line\">\\[m=\\frac{0.3}{1.86}=0.16129\\,\\mathrm{mol\\,kg^{-1}}\\]</div><p><strong>Step 2: Take 1 kg water and find moles</strong></p><div class=\"math-line\">\\[n_1=\\frac{1000}{18}=55.556\\,\\mathrm{mol},\\qquad n_2=0.16129\\,\\mathrm{mol}\\]</div><p><strong>Step 3: Find solute mole fraction</strong></p><div class=\"math-line\">\\[x_2=\\frac{0.16129}{55.556+0.16129}=0.002895\\]</div><p><strong>Step 4: Find lowering</strong></p><div class=\"math-line\">\\[\\Delta p=24.8\\times0.002895=0.0718\\,\\mathrm{mmHg}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(\\Delta p\\approx0.072\\,\\mathrm{mmHg}\\) (Option B).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "Theory converted to MCQ",
+    "question": "Which option correctly describes reverse osmosis and RBCs in 0.5% NaCl?",
+    "options": [
+      "Pressure less than π is applied; RBCs shrink",
+      "Pressure greater than π is applied to solution side; RBCs swell and may burst",
+      "No membrane is required; RBCs remain unchanged",
+      "Pressure is applied to pure-solvent side; RBCs shrink"
+    ],
+    "correctOption": "B",
+    "solution": "Reverse osmosis requires applied pressure greater than osmotic pressure on the solution side. A 0.5% NaCl medium is hypotonic, so RBCs swell.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2025,
+    "kind": "Theory converted to MCQ",
+    "question": "Which statement correctly describes chloroform + acetone and Raoult’s law?",
+    "options": [
+      "They show positive deviation; p_i=p_i°/x_i",
+      "They show negative deviation due to stronger A–B attraction; p_i=x_ip_i° for an ideal volatile component",
+      "They form an ideal solution because A–B attraction is zero",
+      "They show negative deviation because A–B attraction is weaker"
+    ],
+    "correctOption": "B",
+    "solution": "CHCl₃ and acetone have strong unlike interactions and show negative deviation. Raoult’s law for an ideal volatile component is p_i=x_ip_i°.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "kind": "MCQ",
+    "question": "Isotonic solutions have the same:",
+    "options": [
+      "Osmotic pressure",
+      "Volume",
+      "Density",
+      "Refractive index"
+    ],
+    "correctOption": "A",
+    "solution": "Isotonic solutions have equal osmotic pressure at the same temperature.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "kind": "MCQ",
+    "question": "For ideal complete ionisation of Na₂SO₄ in water, the chemically correct van’t Hoff factor is:",
+    "options": [
+      "2",
+      "3",
+      "11",
+      "22"
+    ],
+    "correctOption": "B",
+    "solution": "Na₂SO₄→2Na⁺+SO₄²⁻ gives three solute particles. Waters of crystallisation become solvent and are not counted in i. This corrects the inconsistent options/key in the source scan.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "kind": "MCQ",
+    "question": "For a solute undergoing association in a solvent, the van’t Hoff factor is:",
+    "options": [
+      "Always less than 1",
+      "Negative",
+      "Zero",
+      "Always greater than 1"
+    ],
+    "correctOption": "A",
+    "solution": "Association combines solute particles and reduces their number; hence i<1.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "kind": "Assertion–Reason",
+    "question": "Assertion (A): Adding NaCl to water depresses its freezing point. Reason (R): NaCl dissociates in water.",
+    "options": [
+      "Both Assertion (A) and Reason (R) are true, and R is the correct explanation of A.",
+      "Both Assertion (A) and Reason (R) are true, but R is not the correct explanation of A.",
+      "Assertion (A) is true, but Reason (R) is false.",
+      "Assertion (A) is false, but Reason (R) is true."
+    ],
+    "correctOption": "A",
+    "solution": "Both are true, and dissociation increases the number of solute particles, increasing the freezing-point depression.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "kind": "Numerical MCQ",
+    "question": "A 1% solution of X is isotonic with a 6% sucrose solution (M=342 g mol⁻¹). Molar mass of X is:",
+    "options": [
+      "57 g mol⁻¹",
+      "114 g mol⁻¹",
+      "3.42 g mol⁻¹",
+      "34.2 g mol⁻¹"
+    ],
+    "correctOption": "A",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(C_X=1\\%\\), \\(C_{\\mathrm{sucrose}}=6\\%\\), \\(M_{\\mathrm{sucrose}}=342\\,\\mathrm{g\\,mol^{-1}}\\); solutions are isotonic.</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[\\frac{C_X}{M_X}=\\frac{C_{\\mathrm{sucrose}}}{M_{\\mathrm{sucrose}}}\\]</div><p><strong>Step 1: Substitute</strong></p><div class=\"math-line\">\\[\\frac{1}{M_X}=\\frac{6}{342}\\]</div><p><strong>Step 2: Solve for molar mass</strong></p><div class=\"math-line\">\\[M_X=\\frac{342}{6}=57\\,\\mathrm{g\\,mol^{-1}}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(M_X=57\\,\\mathrm{g\\,mol^{-1}}\\) (Option A).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "kind": "Assertion–Reason",
+    "question": "Assertion (A): Addition of ethylene glycol lowers water’s freezing point. Reason (R): Ethylene glycol is insoluble in water because it cannot form hydrogen bonds.",
+    "options": [
+      "Both Assertion (A) and Reason (R) are true, and R is the correct explanation of A.",
+      "Both Assertion (A) and Reason (R) are true, but R is not the correct explanation of A.",
+      "Assertion (A) is true, but Reason (R) is false.",
+      "Assertion (A) is false, but Reason (R) is true."
+    ],
+    "correctOption": "C",
+    "solution": "The assertion is true, but the reason is false. Ethylene glycol is miscible with water and hydrogen-bonds with it.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "kind": "MCQ",
+    "question": "An azeotrope has a boiling point lower than either pure liquid when the solution:",
+    "options": [
+      "Shows no deviation",
+      "Shows positive deviation",
+      "Shows negative deviation",
+      "Is saturated"
+    ],
+    "correctOption": "B",
+    "solution": "Positive deviation raises total vapour pressure and lowers boiling point, producing a minimum-boiling azeotrope.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "kind": "MCQ",
+    "question": "Relative lowering of vapour pressure is 0.0225. The mole fraction of non-volatile solute is:",
+    "options": [
+      "0.0225",
+      "0.725",
+      "0.15",
+      "0.80"
+    ],
+    "correctOption": "A",
+    "solution": "For a non-volatile solute, (p°−p)/p°=x_solute.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "kind": "Theory converted to MCQ",
+    "question": "Which expression correctly relates molal depression constant K_f to enthalpy of fusion ΔH_fus?",
+    "options": [
+      "K_f=(RT_f²M₁)/(1000ΔH_fus)",
+      "K_f=(1000ΔH_fus)/(RT_f²M₁)",
+      "K_f=RT_f/ΔH_fus",
+      "K_f=ΔH_fus/(RT_f)"
+    ],
+    "correctOption": "A",
+    "solution": "The thermodynamic relation is K_f=RT_f²M₁/(1000ΔH_fus), with M₁ in g mol⁻¹.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "kind": "Theory converted to MCQ",
+    "question": "Ethanol + acetone shows:",
+    "options": [
+      "Negative deviation and maximum-boiling azeotrope",
+      "Positive deviation and minimum-boiling azeotrope",
+      "No deviation and no intermolecular forces",
+      "Negative deviation and minimum-boiling azeotrope"
+    ],
+    "correctOption": "B",
+    "solution": "Acetone disrupts ethanol hydrogen bonding; unlike attraction is weaker, so vapour pressure increases.",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "kind": "Numerical MCQ",
+    "question": "18 g non-volatile solute in 200 g water freezes at 272.07 K. K_f=1.86. Molar mass is approximately:",
+    "options": [
+      "77.5 g mol⁻¹",
+      "90 g mol⁻¹",
+      "155 g mol⁻¹",
+      "310 g mol⁻¹"
+    ],
+    "correctOption": "C",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(w_2=18\\,\\mathrm{g},\\ w_1=200\\,\\mathrm{g},\\ T_f=272.07\\,\\mathrm{K},\\ T_f^\\circ=273.15\\,\\mathrm{K},\\ K_f=1.86\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[M_2=\\frac{K_fw_2\\times1000}{\\Delta T_f\\,w_1}\\]</div><p><strong>Step 1: Find depression</strong></p><div class=\"math-line\">\\[\\Delta T_f=273.15-272.07=1.08\\,\\mathrm{K}\\]</div><p><strong>Step 2: Substitute</strong></p><div class=\"math-line\">\\[M_2=\\frac{1.86\\times18\\times1000}{1.08\\times200}\\]</div><p><strong>Step 3: Calculate</strong></p><div class=\"math-line\">\\[M_2=155\\,\\mathrm{g\\,mol^{-1}}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(155\\,\\mathrm{g\\,mol^{-1}}\\) (Option C).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "kind": "Numerical MCQ",
+    "question": "A 6% glucose solution (M=180) is isotonic with a 2.5% solution of an unknown non-electrolyte. Its molar mass is:",
+    "options": [
+      "60 g mol⁻¹",
+      "75 g mol⁻¹",
+      "90 g mol⁻¹",
+      "150 g mol⁻¹"
+    ],
+    "correctOption": "B",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(C_g=6\\%\\), \\(M_g=180\\,\\mathrm{g\\,mol^{-1}}\\), \\(C_X=2.5\\%\\); solutions are isotonic.</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[\\frac{C_g}{M_g}=\\frac{C_X}{M_X}\\]</div><p><strong>Step 1: Substitute</strong></p><div class=\"math-line\">\\[\\frac{6}{180}=\\frac{2.5}{M_X}\\]</div><p><strong>Step 2: Solve</strong></p><div class=\"math-line\">\\[M_X=\\frac{2.5\\times180}{6}=75\\,\\mathrm{g\\,mol^{-1}}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(75\\,\\mathrm{g\\,mol^{-1}}\\) (Option B).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "kind": "Numerical MCQ",
+    "question": "5 g solute in 200 g water has p=31.84 mm Hg when p°=32 mm Hg. Its molar mass is approximately:",
+    "options": [
+      "45 g mol⁻¹",
+      "75 g mol⁻¹",
+      "90 g mol⁻¹",
+      "180 g mol⁻¹"
+    ],
+    "correctOption": "C",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(w_2=5\\,\\mathrm{g},\\ w_1=200\\,\\mathrm{g},\\ p^\\circ=32,\\ p=31.84\\,\\mathrm{mmHg}\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[\\frac{p^\\circ-p}{p^\\circ}=x_2\\approx\\frac{n_2}{n_1}\\]</div><p><strong>Step 1: Find relative lowering</strong></p><div class=\"math-line\">\\[\\frac{32-31.84}{32}=0.005\\]</div><p><strong>Step 2: Find solvent moles</strong></p><div class=\"math-line\">\\[n_1=\\frac{200}{18}=11.111\\,\\mathrm{mol}\\]</div><p><strong>Step 3: Find solute moles</strong></p><div class=\"math-line\">\\[n_2\\approx0.005\\times11.111=0.05556\\,\\mathrm{mol}\\]</div><p><strong>Step 4: Find molar mass</strong></p><div class=\"math-line\">\\[M_2=\\frac{5}{0.05556}=90\\,\\mathrm{g\\,mol^{-1}}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(M_2\\approx90\\,\\mathrm{g\\,mol^{-1}}\\) (Option C).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "kind": "Numerical MCQ",
+    "question": "At 283 K, p°=100 mm Hg. A solution has 1 mol strong electrolyte AB in 50 mol solvent; AB dissociates completely. Vapour pressure is:",
+    "options": [
+      "50.00 mm Hg",
+      "94.34 mm Hg",
+      "96.15 mm Hg",
+      "98.04 mm Hg"
+    ],
+    "correctOption": "C",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(p^\\circ=100\\,\\mathrm{mmHg},\\ n_{\\mathrm{solvent}}=50\\,\\mathrm{mol},\\ n_{AB}=1\\,\\mathrm{mol}\\); AB dissociates completely.</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[p=x_{\\mathrm{solvent}}p^\\circ\\]</div><p><strong>Step 1: Find effective solute particles</strong></p><div class=\"math-line\">\\[\\mathrm{AB\\rightarrow A^+ + B^-},\\qquad i=2,\\qquad n_{\\mathrm{particles}}=2\\,\\mathrm{mol}\\]</div><p><strong>Step 2: Find solvent mole fraction</strong></p><div class=\"math-line\">\\[x_{\\mathrm{solvent}}=\\frac{50}{50+2}=\\frac{50}{52}\\]</div><p><strong>Step 3: Calculate vapour pressure</strong></p><div class=\"math-line\">\\[p=\\frac{50}{52}\\times100=96.15\\,\\mathrm{mmHg}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(p\\approx96.15\\,\\mathrm{mmHg}\\) (Option C).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "kind": "Numerical MCQ",
+    "question": "For 1.0 kg water, mass of ethylene glycol (M=62) needed to lower freezing point by 2.8 °C (K_f=1.86) is:",
+    "options": [
+      "46.7 g",
+      "62.0 g",
+      "93.3 g",
+      "186.0 g"
+    ],
+    "correctOption": "C",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(w_1=1.0\\,\\mathrm{kg},\\ \\Delta T_f=2.8\\,\\mathrm{K},\\ K_f=1.86,\\ M_{EG}=62\\,\\mathrm{g\\,mol^{-1}},\\ i=1\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[\\Delta T_f=K_fm,\\qquad w_2=m\\,w_1\\,M_2\\]</div><p><strong>Step 1: Find molality</strong></p><div class=\"math-line\">\\[m=\\frac{2.8}{1.86}=1.5054\\,\\mathrm{mol\\,kg^{-1}}\\]</div><p><strong>Step 2: Find moles in 1 kg water</strong></p><div class=\"math-line\">\\[n_2=1.5054\\times1.0=1.5054\\,\\mathrm{mol}\\]</div><p><strong>Step 3: Convert to mass</strong></p><div class=\"math-line\">\\[w_2=1.5054\\times62=93.33\\,\\mathrm{g}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(93.3\\,\\mathrm{g}\\) (Option C).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "kind": "Numerical MCQ",
+    "question": "At 750 mm Hg water boils at 99.68 °C. Mass of sucrose (M=342) in 500 g water needed for boiling at 100 °C, K_b=0.52, is:",
+    "options": [
+      "52.6 g",
+      "84.2 g",
+      "105.2 g",
+      "210.5 g"
+    ],
+    "correctOption": "C",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(T_b^\\circ=99.68\\,{}^\\circ\\mathrm{C},\\ T_b=100.00\\,{}^\\circ\\mathrm{C},\\ w_1=0.500\\,\\mathrm{kg},\\ K_b=0.52,\\ M=342\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[\\Delta T_b=K_bm,\\qquad n_2=mw_1,\\qquad w_2=n_2M_2\\]</div><p><strong>Step 1: Find elevation</strong></p><div class=\"math-line\">\\[\\Delta T_b=100.00-99.68=0.32\\,\\mathrm{K}\\]</div><p><strong>Step 2: Find molality</strong></p><div class=\"math-line\">\\[m=\\frac{0.32}{0.52}=0.61538\\,\\mathrm{mol\\,kg^{-1}}\\]</div><p><strong>Step 3: Find moles</strong></p><div class=\"math-line\">\\[n_2=0.61538\\times0.500=0.30769\\,\\mathrm{mol}\\]</div><p><strong>Step 4: Find mass</strong></p><div class=\"math-line\">\\[w_2=0.30769\\times342=105.23\\,\\mathrm{g}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(105.2\\,\\mathrm{g}\\) (Option C).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "kind": "Mixed theory/numerical MCQ",
+    "question": "Which combined statement is correct? (i) O₂ has higher K_H than more-soluble CO₂. (ii) Blood cells shrink in >0.9% NaCl. (iii) For 1 m A₂B₃, 60% ionised, boiling point is 101.77 °C when K_b=0.52.",
+    "options": [
+      "Only (i)",
+      "Only (i) and (ii)",
+      "Only (ii) and (iii)",
+      "(i), (ii) and (iii)"
+    ],
+    "correctOption": "D",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> For part (iii): \\(m=1\\,\\mathrm{mol\\,kg^{-1}},\\ \\alpha=0.60,\\ \\nu=5,\\ K_b=0.52\\).</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[i=1+\\alpha(\\nu-1),\\qquad \\Delta T_b=iK_bm\\]</div><p><strong>Step 1: Find van’t Hoff factor</strong></p><div class=\"math-line\">\\[i=1+0.60(5-1)=1+2.4=3.4\\]</div><p><strong>Step 2: Find boiling-point elevation</strong></p><div class=\"math-line\">\\[\\Delta T_b=3.4\\times0.52\\times1=1.768\\,\\mathrm{K}\\]</div><p><strong>Step 3: Find boiling point</strong></p><div class=\"math-line\">\\[T_b=100+1.768=101.768\\,{}^\\circ\\mathrm{C}\\]</div><p><strong>Explanation:</strong> O₂ has larger K_H because it is less soluble than CO₂; cells shrink in hypertonic (>0.9% NaCl) solution.</p><div class=\"final-answer\"><strong>Final answer:</strong> All statements are correct; \\(T_b\\approx101.77\\,{}^\\circ\\mathrm{C}\\) (Option D).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "kind": "Numerical MCQ",
+    "question": "p_A°=75 and p_B°=25 mm Hg; x_A=0.4. Mole fraction of B in vapour is:",
+    "options": [
+      "0.25",
+      "0.333",
+      "0.40",
+      "0.60"
+    ],
+    "correctOption": "B",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(p_A^\\circ=75\\,\\mathrm{mmHg},\\ p_B^\\circ=25\\,\\mathrm{mmHg},\\ x_A=0.4\\)</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[p_i=x_ip_i^\\circ,\\qquad y_B=\\frac{p_B}{p_A+p_B}\\]</div><p><strong>Step 1: Find liquid mole fraction of B</strong></p><div class=\"math-line\">\\[x_B=1-x_A=1-0.4=0.6\\]</div><p><strong>Step 2: Find partial pressures</strong></p><div class=\"math-line\">\\[p_A=0.4\\times75=30\\,\\mathrm{mmHg},\\qquad p_B=0.6\\times25=15\\,\\mathrm{mmHg}\\]</div><p><strong>Step 3: Find vapour-phase mole fraction</strong></p><div class=\"math-line\">\\[y_B=\\frac{15}{30+15}=\\frac{1}{3}=0.333\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(y_B=0.333\\) (Option B).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "kind": "Mixed theory/numerical MCQ",
+    "question": "Which combined statement is correct? (i) Reverse osmosis needs P>π on the solution side. (ii) Cold water contains more dissolved O₂. (iii) 2 g glucose in 100 g water at 303 K, p°=32.8 mm Hg, gives p≈32.73 mm Hg.",
+    "options": [
+      "Only (i)",
+      "Only (i) and (ii)",
+      "Only (ii) and (iii)",
+      "(i), (ii) and (iii)"
+    ],
+    "correctOption": "D",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> For part (iii): \\(w_g=2\\,\\mathrm{g},\\ M_g=180\\,\\mathrm{g\\,mol^{-1}},\\ w_w=100\\,\\mathrm{g},\\ p^\\circ=32.8\\,\\mathrm{mmHg}\\).</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[p=x_{\\mathrm{water}}p^\\circ\\]</div><p><strong>Step 1: Find moles</strong></p><div class=\"math-line\">\\[n_g=\\frac{2}{180}=0.01111,\\qquad n_w=\\frac{100}{18}=5.5556\\]</div><p><strong>Step 2: Find water mole fraction</strong></p><div class=\"math-line\">\\[x_w=\\frac{5.5556}{5.5556+0.01111}=0.99800\\]</div><p><strong>Step 3: Find solution vapour pressure</strong></p><div class=\"math-line\">\\[p=0.99800\\times32.8=32.73\\,\\mathrm{mmHg}\\]</div><p><strong>Explanation:</strong> Reverse osmosis requires applied pressure greater than π, and cold water dissolves more oxygen.</p><div class=\"final-answer\"><strong>Final answer:</strong> All statements are correct; \\(p\\approx32.73\\,\\mathrm{mmHg}\\) (Option D).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2024,
+    "kind": "Mixed theory/numerical MCQ",
+    "question": "Which combined statement is correct? (i) Ethanoic acid in benzene has i<1. (ii) An ideal solution obeys Raoult’s law throughout and has ΔH_mix=ΔV_mix=0. (iii) CaCl₂ needed in 500 g water for ΔT_f=2 K is about 19.9 g (K_f=1.86; complete dissociation).",
+    "options": [
+      "Only (i)",
+      "Only (i) and (ii)",
+      "Only (ii) and (iii)",
+      "(i), (ii) and (iii)"
+    ],
+    "correctOption": "D",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> For part (iii): \\(w_1=0.500\\,\\mathrm{kg},\\ \\Delta T_f=2\\,\\mathrm{K},\\ K_f=1.86,\\ M_{CaCl_2}=111\\,\\mathrm{g\\,mol^{-1}}\\).</p><p><strong>Formula used:</strong></p><div class=\"math-line\">\\[\\Delta T_f=iK_fm,\\qquad \\mathrm{CaCl_2\\rightarrow Ca^{2+}+2Cl^-},\\ i=3\\]</div><p><strong>Step 1: Find molality</strong></p><div class=\"math-line\">\\[m=\\frac{2}{3\\times1.86}=0.35842\\,\\mathrm{mol\\,kg^{-1}}\\]</div><p><strong>Step 2: Find moles</strong></p><div class=\"math-line\">\\[n_2=0.35842\\times0.500=0.17921\\,\\mathrm{mol}\\]</div><p><strong>Step 3: Find mass</strong></p><div class=\"math-line\">\\[w_2=0.17921\\times111=19.89\\,\\mathrm{g}\\]</div><p><strong>Explanation:</strong> Ethanoic acid associates in benzene (i<1). An ideal solution obeys Raoult’s law and has zero heat and volume change on mixing.</p><div class=\"final-answer\"><strong>Final answer:</strong> All statements are correct; \\(w_{CaCl_2}\\approx19.9\\,\\mathrm{g}\\) (Option D).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  }
+];
+
+    let scores = {}, attempts = {}, timers = {}, timerStates = {};
+    let studentName = "";
+	let quizStartTime = null;
+
+
+    function startQuiz() {
+      const nameInput = document.getElementById("studentName");
+      if (!nameInput.value.trim()) return alert("Please enter your name.");
+      studentName = nameInput.value.trim();
+      nameInput.disabled = true;
+      document.querySelector(".start-button").style.display = "none";
+      quizStartTime = new Date();
+loadQuiz();
+    }
+
+    function loadQuiz() {
+      const container = document.getElementById("quizContainer");
+      quizData.forEach((q, i) => {
+        const qNum = i + 1;
+        const question = document.createElement("div");
+        question.className = "question" + (i === 0 ? " active" : "");
+        question.id = `q${qNum}`;
+        let media = `<div class="question-meta">${q.kind} &nbsp;•&nbsp; <strong>${q.year}</strong></div><div class="question-text">${q.question}</div>`;
+        let solMedia = `<strong>Correct answer: ${q.correctOption}</strong><br>${q.solution}`;
+        const optionLabels = q.options.map((opt, idx) => {
+          const letter = String.fromCharCode(65 + idx);
+          return `<label><input type="radio" name="q${qNum}" value="${letter}"> <strong>${letter}.</strong>&nbsp; ${opt}</label>`;
+        }).join("");
+        question.innerHTML = `
+          <h3>Q${qNum}:</h3>
+          <div class="question-media" id="media${qNum}">${media}</div>
+          <div class="timer" id="timer${qNum}">⏱ Time left: ${q.time}s</div>
+         <button class="start-button" id="showBtn${qNum}" onclick="startTimer(${qNum}, ${q.time})">Show Question</button>
+
+          <button class="start-button" id="pauseBtn${qNum}" onclick="pauseTimer(${qNum})" style="display: none;">Pause</button>
+
+          <div class="options" id="options${qNum}" style="display: none;">
+            ${optionLabels}
+          </div>
+          <button class="submit-button" id="submitBtn${qNum}" style="display: none;" onclick="submitAnswer('q${qNum}', '${q.correctOption}', ${qNum})">Submit</button>
+
+<button class="dont-know-button" id="dontKnow${qNum}" onclick="dontKnow(${qNum})" style="display: none;">Don't Know</button>
+
+          <button class="toggle-button" onclick="showSolution(${qNum})">Show Solution</button>
+          <div class="solution" id="sol${qNum}">${solMedia}</div>
+		  
+          
+<div class="video" id="vid${qNum}">${q.videoUrl ? `<iframe width="300" height="170" src="${q.videoUrl}" allowfullscreen></iframe>` : ''}</div>
+	${i !== 0 ? `<button class="nav-button back-button" onclick="navigate(${qNum}, ${qNum - 1})">Back</button>` : ""}
+          ${i < quizData.length - 1 ? `<button class="nav-button" onclick="navigate(${qNum}, ${qNum + 1})">Next</button>` : ""}
+        `;
+        container.appendChild(question);
+        if (window.MathJax?.typesetPromise) MathJax.typesetPromise([question]);
+        attempts[qNum] = 0;
+        scores[`q${qNum}`] = 0;
+      });
+    }
+function showSolution(qNum) {
+  const solution = document.getElementById(`sol${qNum}`);
+  solution.style.display = "block";
+  if (window.MathJax?.typesetPromise) {
+    MathJax.typesetPromise([solution]);
+  }
+}
+
+function dontKnow(qNum) {
+  // Disable options
+  const options = document.querySelectorAll(`#q${qNum} .options input[type="radio"]`);
+  options.forEach(opt => {
+    opt.disabled = true;
+    opt.parentElement.style.backgroundColor = "#6c757d"; // grey
+    opt.parentElement.style.color = "white";
+  });
+
+  // Hide Submit & Don't Know buttons
+  document.getElementById(`submitBtn${qNum}`).style.display = "none";
+  document.getElementById(`dontKnow${qNum}`).style.display = "none";
+
+  // Show Solution + Video buttons
+  document.querySelector(`#q${qNum} .toggle-button`).style.display = "inline-block";
+  const videoBtn = document.querySelector(`#q${qNum} .toggle-button.video-btn`);
+  if (videoBtn) videoBtn.style.display = "inline-block";
+
+  // 🛑 Force stop ANY timer for this question
+  if (timers[qNum]) {
+    clearInterval(timers[qNum]);
+    delete timers[qNum];
+  }
+
+  // 🛑 Also double-check if multiple timers exist in global scope
+  for (const key in timers) {
+    if (key === qNum.toString()) {
+      clearInterval(timers[key]);
+      delete timers[key];
+    }
+  }
+
+  // 🧭 Update timer display
+  const timerElem = document.getElementById(`timer${qNum}`);
+  if (timerElem) timerElem.textContent = "⏱ Time left: 0s";
+
+  // 🧮 Record time spent
+  if (timerStates[qNum]) {
+    const endTime = Date.now();
+    const timeSpent = Math.round((endTime - timerStates[qNum].startTime) / 1000);
+    timerStates[qNum].timeSpent = timeSpent;
+    timerStates[qNum].remaining = 0;
+    timerStates[qNum].running = false;
+    timerStates[qNum].submitted = true;
+  }
+
+  // ✅ Mark as skipped in scorecard
+  updateScorecard(qNum, "skipped");
+}
+
+
+
+    function startTimer(qNum, duration) {
+      const timerElem = document.getElementById(`timer${qNum}`);
+      const mediaElem = document.getElementById(`media${qNum}`);
+      const optionsElem = document.getElementById(`options${qNum}`);
+      const pauseBtn = document.getElementById(`pauseBtn${qNum}`);
+      optionsElem.style.display = "grid";
+      mediaElem.style.display = "block";
+document.getElementById(`showBtn${qNum}`).style.display = "none";
+document.getElementById(`dontKnow${qNum}`).style.display = "inline-block";
+document.getElementById(`submitBtn${qNum}`).style.display = "inline-block";
+document.getElementById(`pauseBtn${qNum}`).style.display = "inline-block";
+
+
+
+      if (!timerStates[qNum]) timerStates[qNum] = { remaining: duration, running: false };
+      if (timerStates[qNum].remaining === undefined) {
+  timerStates[qNum].remaining = duration;
+}
+
+	  timerStates[qNum].totalDuration = duration;
+		timerStates[qNum].startTime = Date.now();
+      timerStates[qNum].running = true;
+      pauseBtn.textContent = "Pause";
+      pauseBtn.classList.remove("pause-active");
+      timers[qNum] = setInterval(() => {
+        if (timerStates[qNum].remaining > 0 && timerStates[qNum].running) {
+          timerStates[qNum].remaining--;
+          timerElem.textContent = `⏱ Time left: ${timerStates[qNum].remaining}s`;
+        } else if (timerStates[qNum].remaining <= 0) {
+          clearInterval(timers[qNum]);
+          alert("Time's up!");
+        }
+      }, 1000);
+    }
+
+    function pauseTimer(qNum) {
+      const btn = document.getElementById(`pauseBtn${qNum}`);
+      if (!timerStates[qNum]) return;
+      timerStates[qNum].running = !timerStates[qNum].running;
+      btn.textContent = timerStates[qNum].running ? "Pause" : "Resume";
+      btn.classList.toggle("pause-active");
+    }
+
+function submitAnswer(qId, correctOption, qNum) {
+  if (attempts[qNum] >= 1) return alert("You already submitted.");
+  const selected = document.querySelector(`input[name='${qId}']:checked`);
+  if (!selected) return alert("Select an option first.");
+  attempts[qNum]++;
+
+  const options = document.querySelectorAll(`input[name='${qId}']`);
+  options.forEach(opt => {
+    opt.disabled = true;
+    const label = opt.parentElement;
+    label.style.backgroundColor = '#2a2a2a';
+    label.style.color = '#ccc';
+    if (opt.checked) {
+      if (opt.value === correctOption) {
+        scores[qId] = 1;
+        label.style.backgroundColor = "#007BFF";
+        label.style.color = "white";
+      } else {
+        label.style.backgroundColor = "#dc3545";
+        label.style.color = "white";
+      }
+    }
+  });
+
+  // 🛑 STOP the timer
+  if (timerStates[qNum]) {
+    const endTime = Date.now();
+    const timeSpent = Math.round((endTime - timerStates[qNum].startTime) / 1000);
+    timerStates[qNum].timeSpent = timeSpent;
+    timerStates[qNum].running = false;
+    timerStates[qNum].submitted = true;
+    if (timers[qNum]) {
+      clearInterval(timers[qNum]);
+      delete timers[qNum];
+    }
+  }
+
+  // ✅ Hide Don't Know button after submit
+  document.getElementById(`dontKnow${qNum}`).style.display = "none";
+
+  // Show solution + video buttons
+  document.querySelector(`#q${qNum} .toggle-button`).style.display = "inline-block";
+  const optionalVideoBtn = document.querySelector(`#q${qNum} .toggle-button.video-btn`);
+  if (optionalVideoBtn) optionalVideoBtn.style.display = "inline-block";
+}
+
+
+
+function navigate(current, target) {
+  const currEl = document.getElementById(`q${current}`);
+  const targetEl = document.getElementById(`q${target}`);
+  if (!targetEl) return;
+
+  // Pause timer of current question
+  if (timerStates[current]?.running) {
+    timerStates[current].running = false;
+    document.getElementById(`pauseBtn${current}`).textContent = "Resume";
+    document.getElementById(`pauseBtn${current}`).classList.add("pause-active");
+  }
+
+  currEl.classList.remove("active");
+  targetEl.classList.add("active");
+
+  // Auto-resume timer of target question
+if (
+  timerStates[target] &&
+  timerStates[target].remaining > 0 &&
+  !timerStates[target].running &&
+  !timerStates[target].submitted // ✅ only resume if not submitted
+)
+{
+    timerStates[target].running = true;
+    document.getElementById(`pauseBtn${target}`).textContent = "Pause";
+    document.getElementById(`pauseBtn${target}`).classList.remove("pause-active");
+
+    // ✅ Restart countdown for resumed timer
+    // ✅ Clear existing interval if any before starting a new one
+if (timers[target]) clearInterval(timers[target]);
+
+timers[target] = setInterval(() => {
+
+      if (timerStates[target].remaining > 0 && timerStates[target].running) {
+        timerStates[target].remaining--;
+        document.getElementById(`timer${target}`).textContent =
+          `⏱ Time left: ${timerStates[target].remaining}s`;
+      } else if (timerStates[target].remaining <= 0) {
+        clearInterval(timers[target]);
+        alert("Time's up!");
+      }
+    }, 1000);
+  }
+}
+
+
+
+
+async function showScore() {
+  const total = Object.values(scores).reduce((a, b) => a + b, 0);
+  const scoreCard = document.getElementById("scoreCard");
+  const dateStr = new Date().toLocaleDateString();
+  const startTimeStr = quizStartTime ? quizStartTime.toLocaleTimeString() : "N/A";
+  
+  
+  
+  
+  
+  
+  const quizTitle = "CBSE Chemistry: Solutions PYQ Quiz 2024–2026";
+
+
+
+
+
+  scoreCard.innerHTML = `
+    <div id="printWrapper" style="margin: 1; padding: 10px; background: white; font-size: 12px; color: black;">
+      <img src="https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png" alt="Logo" style="width: 100px; height: auto; margin-bottom: 10px;">
+      <h2>G10 EDUCTIONAL PLATFORM (WHATSAPP No. 9706380357)</h2>
+      <h3>Scorecard</h3>
+      <p><strong>Name:</strong> ${studentName}</p>
+      <p><strong>Date:</strong> ${dateStr}</p>
+      <p><strong>Start Time:</strong> ${startTimeStr}</p>
+      <p><strong>Quiz Title:</strong> ${quizTitle}</p>
+
+      <table style="width:100%; border-collapse:collapse;" border="1" cellpadding="6">
+        <thead>
+          <tr style="background:#007BFF; color:white;">
+            <th>Question</th>
+            <th>Status</th>
+            <th>Score</th>
+            <th>Time Spent (s)</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${Object.keys(scores).map((k, i) => `
+            <tr style="page-break-inside: avoid;">
+              <td>Q${i + 1}</td>
+              <td>${scores[k] ? "✔️ Correct" : "❌ Incorrect"}</td>
+              <td>${scores[k]}</td>
+              <td>${timerStates[i + 1]?.timeSpent ?? "N/A"}</td>
+            </tr>`).join("")}
+        </tbody>
+      </table>
+
+      <h4 id="scoreText">⭐ Score: ${total} / ${quizData.length}</h4>
+    </div>
+  `;
+
+  // ✅ Show buttons after final submit
+  document.getElementById("afterSubmitBtns").style.display = "block";
+
+  // PDF download logic
+  document.getElementById("downloadPdfBtn").onclick = async function () {
+    const wrapper = document.getElementById("printWrapper");
+    const imgs = wrapper.querySelectorAll("img");
+    const loadPromises = Array.from(imgs).map(img => img.complete ? Promise.resolve() : new Promise(res => { img.onload = img.onerror = res; }));
+    await Promise.all(loadPromises);
+
+    html2canvas(wrapper, { scale: 2, useCORS: true }).then(canvas => {
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const imgData = canvas.toDataURL("image/jpeg", 1.0);
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const imgProps = pdf.getImageProperties(imgData);
+      const imgHeight = (imgProps.height * pageWidth) / imgProps.width;
+      let y = 0;
+      pdf.addImage(imgData, 'JPEG', 0, y, pageWidth, imgHeight);
+      if (imgHeight > pdf.internal.pageSize.getHeight()) {
+        while (y + pdf.internal.pageSize.getHeight() < imgHeight) {
+          y += pdf.internal.pageSize.getHeight();
+          pdf.addPage();
+          pdf.addImage(imgData, 'JPEG', 0, -y, pageWidth, imgHeight);
+        }
+      }
+      pdf.save(`${studentName}-Scorecard.pdf`);
+    });
+  };
+
+  // WhatsApp Share logic
+  document.getElementById("shareWhatsappBtn").onclick = function () {
+    const whatsappNumber = "916003582005"; // Must include country code
+    const scoreText = document.getElementById('scoreText').innerText;
+
+    let details = "📋 Question-wise Performance:\n";
+    quizData.forEach((q, i) => {
+      const qNum = i + 1;
+      const selected = document.querySelector(`input[name="q${qNum}"]:checked`);
+      const userAns = selected ? selected.value : "Not Answered";
+      const correctAns = q.correctOption;
+
+      if (userAns === correctAns) {
+        details += `Q${qNum} → ✅ Correct (Your Ans: ${userAns})\n`;
+      } else if (userAns === "Not Answered") {
+        details += `Q${qNum} → ⏭ Skipped\n`;
+      } else {
+        details += `Q${qNum} → ❌ Wrong (Your Ans: ${userAns} | Correct: ${correctAns})\n`;
+      }
+    });
+
+    const message = `Sir, I have shared my Test Result for checking. Thank you!\n\n` +
+                    `📘 Quiz: ${quizTitle}\n` +
+                    `👤 Student: ${studentName}\n` +
+                    `${scoreText}\n\n${details}`;
+
+    const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(waUrl, "_blank");
+  };
+}
+
+
+
+
+
+async function showScore() {
+  const total = Object.values(scores).reduce((a, b) => a + b, 0);
+  const scoreCard = document.getElementById("scoreCard");
+  const dateStr = new Date().toLocaleDateString();
+  const startTimeStr = quizStartTime ? quizStartTime.toLocaleTimeString() : "N/A";
+  
+  
+  
+  
+  
+  const quizTitle = "___________________________________________";
+  
+  
+  
+  
+  
+  
+    disableAllOptions();  // ⛔ Disable all option buttons after final submit
+
+  // ... rest of your existing showScore() code stays EXACTLY SAME ...
+
+  
+  
+  
+  
+
+  scoreCard.innerHTML = `
+    <div id="printWrapper" style="margin: 1; padding: 10px; background: white; font-size: 12px; color: black;">
+      <img src="https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png" alt="Logo" style="width: 100px; height: auto; margin-bottom: 10px;">
+      <h2>G10 EDUCTIONAL PLATFORM</h2>
+      <h3>Scorecard</h3>
+      <p><strong>Name:</strong> ${studentName}</p>
+      <p><strong>Date:</strong> ${dateStr}</p>
+      <p><strong>Start Time:</strong> ${startTimeStr}</p>
+      <p><strong>Quiz Title:</strong> ${quizTitle}</p>
+
+      <table style="width:100%; border-collapse:collapse;" border="1" cellpadding="6">
+        <thead>
+          <tr style="background:#007BFF; color:white;">
+            <th>Question</th>
+            <th>Status</th>
+            <th>Score</th>
+            <th>Time Spent (s)</th>
+          </tr>
+        </thead>
+        <tbody>
+        ${Object.keys(scores).map((k, i) => {
+  const qNum = i + 1;
+  const score = scores[k];
+  const attemptsCount = attempts[qNum] || 0;
+  const wasSubmitted = timerStates[qNum]?.submitted;
+
+  let statusText = "";
+
+  if (wasSubmitted && score === 1) {
+    statusText = "✔️ Correct";
+  } else if (wasSubmitted && score === 0 && attemptsCount > 0) {
+    statusText = "❌ Incorrect";
+  } else if (wasSubmitted && score === 0 && attemptsCount === 0) {
+    statusText = "🤔 I Don't Know";
+  } else {
+    statusText = "⏭️ Not Attempted";
+  }
+
+  return `
+    <tr style="page-break-inside: avoid;">
+      <td>Q${qNum}</td>
+      <td>${statusText}</td>
+      <td>${score}</td>
+      <td>${timerStates[qNum]?.timeSpent ?? "N/A"}</td>
+    </tr>`;
+}).join("")}
+
+
+        </tbody>
+      </table>
+
+      <h4 id="scoreText">⭐ Score: ${total} / ${quizData.length}</h4>
+    </div>
+  `;
+
+  // ✅ Show buttons after final submit
+  document.getElementById("afterSubmitBtns").style.display = "block";
+
+  // 📄 PDF download
+  document.getElementById("downloadPdfBtn").onclick = async function () {
+    const wrapper = document.getElementById("printWrapper");
+    const imgs = wrapper.querySelectorAll("img");
+    const loadPromises = Array.from(imgs).map(img => img.complete ? Promise.resolve() : new Promise(res => { img.onload = img.onerror = res; }));
+    await Promise.all(loadPromises);
+
+    html2canvas(wrapper, { scale: 2, useCORS: true }).then(canvas => {
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const imgData = canvas.toDataURL("image/jpeg", 1.0);
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const imgProps = pdf.getImageProperties(imgData);
+      const imgHeight = (imgProps.height * pageWidth) / imgProps.width;
+      let y = 0;
+      pdf.addImage(imgData, 'JPEG', 0, y, pageWidth, imgHeight);
+      if (imgHeight > pdf.internal.pageSize.getHeight()) {
+        while (y + pdf.internal.pageSize.getHeight() < imgHeight) {
+          y += pdf.internal.pageSize.getHeight();
+          pdf.addPage();
+          pdf.addImage(imgData, 'JPEG', 0, -y, pageWidth, imgHeight);
+        }
+      }
+      pdf.save(`${studentName}-Scorecard.pdf`);
+    });
+  };
+
+  // 📲 WhatsApp Share
+  document.getElementById("shareWhatsappBtn").onclick = function () {
+    const whatsappNumber = "916003582005";
+    const scoreText = document.getElementById('scoreText').innerText;
+
+    let details = "📋 Question-wise Performance:\n";
+    quizData.forEach((q, i) => {
+      const qNum = i + 1;
+      const selected = document.querySelector(`input[name="q${qNum}"]:checked`);
+      const userAns = selected ? selected.value : "Not Answered";
+      const correctAns = q.correctOption;
+
+      if (userAns === correctAns) {
+        details += `Q${qNum} → ✅ Correct (Your Ans: ${userAns})\n`;
+      } else if (userAns === "Not Answered") {
+        details += `Q${qNum} → ⏭ Skipped\n`;
+      } else {
+        details += `Q${qNum} → ❌ Wrong (Your Ans: ${userAns} | Correct: ${correctAns})\n`;
+      }
+    });
+
+    const message = `Sir, I have shared my Test Result for checking. Thank you!\n\n` +
+                    `📘 Quiz: ${quizTitle}\n` +
+                    `👤 Student: ${studentName}\n` +
+                    `${scoreText}\n\n${details}`;
+
+    const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(waUrl, "_blank");
+  };
+}
+
+document.getElementById("printBtn").onclick = function () {
+  const studentName = document.getElementById("studentName").value || "Student";
+
+  // Collect HTML for all questions and solutions
+  let printContent = '';
+  const allQuestions = document.querySelectorAll(".question");
+  allQuestions.forEach(q => {
+    const qClone = q.cloneNode(true);
+
+    // Show solution
+    const sol = qClone.querySelector(".solution");
+    if (sol) sol.style.display = "block";
+
+    // Remove buttons
+    qClone.querySelectorAll("button").forEach(btn => btn.remove());
+
+    // Remove video sections
+    const video = qClone.querySelector(".video");
+    if (video) video.remove();
+
+    printContent += qClone.outerHTML;
+  });
+
+  // Open new window for print
+  const printWindow = window.open('', '', 'width=900,height=700');
+  printWindow.document.write(`
+    <html>
+      <head>
+        <title>Print Quiz</title>
+        <style>
+          @page {
+            margin: 100mm 15mm 100mm 15mm; /* Top Right Bottom Left */
+          }
+          body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            background: #fff;
+            color: #000;
+          }
+          .question {
+            border: 1px solid #333;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #f5f2f2;
+          }
+          img { max-width: 100%; margin-top: 10px; border: 1px solid #c3c3d4; }
+          table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+          h2 { margin-bottom: 10px; }
+        </style>
+      </head>
+      <body>
+        <div style="text-align:center; margin-bottom: 20px;">
+          <img src="https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png" alt="Logo" style="width:120px; height:auto; display:block; margin:10px auto;">
+          <h2 style="margin-top:0;">${studentName}</h2>
+        </div>
+        ${printContent}
+        <div style="height:20px;"></div> <!-- Extra bottom spacing -->
+      </body>
+    </html>
+  `);
+  printWindow.document.close();
+  printWindow.focus();
+  printWindow.print();
+  printWindow.close();
+};
+
+function disableAllOptions() {
+  const allOptions = document.querySelectorAll("input[type='radio']");
+  allOptions.forEach(opt => {
+    opt.disabled = true;
+    opt.parentElement.style.opacity = "0.6";
+    opt.parentElement.style.cursor = "not-allowed";
+  });
+}
+
+
+  </script>
+</body>
+</html>
