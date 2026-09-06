@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  
+  <title>CBSE Class 10 Science - Electricity Quiz</title>
+  <style>
+    @media (max-width: 768px) {
+
+  /* 🔹 Question & solution images fit mobile */
+  .question-media img,
+  .solution img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+}
+  
+   body {
+  font-family: Arial, sans-serif;
+  padding: 0;                 /* ✅ REMOVE SIDE AREA */
+  background-color: #a8a5a5;
+  color: #080707;
+}
+@media (max-width: 768px) {
+  #quizContainer {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+    .question {
+      border: 1px solid #333;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      background-color: #f5f2f2;
+      display: none;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .question.active { display: block; }
+    .question-media { display: none; }
+    .options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .options label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 4px;
+      background-color: #2a2a2a;
+      color: #ccc;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .options label:hover {
+      background-color: #444;
+      transform: scale(1.02);
+    }
+    .options input[type="radio"] { margin: 0; }
+    .nav-button, .submit-button, .final-submit-button, .start-button, .toggle-button {
+      margin-top: 10px;
+      padding: 6px 12px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform 0.2s ease;
+    }
+    .nav-button:hover, .submit-button:hover, .final-submit-button:hover,
+    .start-button:hover, .toggle-button:hover {
+      opacity: 0.9;
+      transform: scale(1.03);
+    }
+    .final-submit-button {
+      background-color: red;
+    }
+    .pause-active {
+      background-color: orange !important;
+    }
+    .back-button {
+      background-color: #8205f7;
+    }
+    .toggle-button {
+      background-color: #28a745;
+      display: none;
+    }
+    .toggle-button.video-btn {
+      background-color: #17a2b8;
+      display: none;
+    }
+    img, iframe.pdf {
+      max-width: 100%;
+      margin-top: 10px;
+      border: 1px solid #c3c3d4;
+    }
+    iframe.pdf {
+      height: 500px;
+    }
+    .solution, .video {
+      display: none;
+      margin-top: 10px;
+      background: #f0e9e9;
+      padding: 10px;
+      border-left: 4px solid #bcbcc4;
+    }
+    .timer {
+      margin-top: 10px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .score-section {
+      margin-top: 30px;
+      padding: 20px;
+      background: #fff;
+      border: 2px solid #007BFF;
+      border-radius: 9px;
+    }
+    .icon {
+      width: 18px;
+      height: 18px;
+    }
+    @media print {
+      .score-section table tr {
+        page-break-inside: avoid;
+      }
+    }
+
+    .dont-know-button {
+      margin-top: 10px;
+      padding: 6px 12px;
+      background-color: #6c757d;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .dont-know-button:hover {
+      opacity: 0.9;
+      transform: scale(1.03);
+    }
+	/* 🔍 ENLARGE ONLY QUESTION & SOLUTION IMAGES */
+.question-media img,
+.solution img {
+  width: 100%;
+  max-width: none;        /* allow image to exceed container width */
+}
+  
+    .question-text{font-size:18px;line-height:1.55;font-weight:700;background:#fff;padding:14px;border-left:5px solid #007BFF;border-radius:6px;margin-top:10px}
+    .question-meta{font-size:13px;color:#555;margin:4px 0 8px}
+    .options label{line-height:1.35;align-items:flex-start}
+    .solution{font-size:16px;line-height:1.55;color:#111}
+    .worked-solution p{margin:8px 0 4px}
+    .math-line{overflow-x:auto;background:#fff;padding:5px 8px;margin:3px 0 9px;border-radius:5px}
+    .final-answer{background:#e7f3ff;border-left:4px solid #007BFF;padding:10px;margin-top:10px;font-size:17px}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:true}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <!-- MAIN QUIZ: access is controlled by the parent website -->
+  <div id="mainContent">
+
+<!-- Instruction Section -->
+<div id="instructionsBox" style="
+  background:#f9fbfd;
+  padding:20px;
+  border-radius:12px;
+  margin:20px auto;
+  width:90%;
+  max-width:800px;
+  box-shadow:0 8px 16px rgba(0,0,0,0.1);
+  border-left:6px solid #4A90E2;
+  animation: fadeIn 0.8s ease-in-out;
+">
+  <h3 style="font-size:22px; color:#4A90E2; margin-bottom:15px;">📘 IMPORTANT INSTRUCTIONS</h3>
+  <ul style="line-height:1.8; font-size:16px; padding-left:20px; color:#3d3d3d;">
+    <li>Each question has a dedicated timer. Once time is up, that question gets locked.</li>
+    <li>Click <b>Show Question</b> to begin answering the question.</li>
+    <li>You can temporarily pause the timer, but it resumes automatically when navigating.</li>
+    <li>Once you select an answer or choose <b>Don't Know</b>, your response is locked.</li>
+    <li>Solutions are visible immediately after answering/skipping.</li>
+    <li>Click <b>Final Submit</b> to save your score and download the scorecard.</li>
+  </ul>
+  <button onclick="hideInstructions()" style="
+    background:#4A90E2;
+    color:white;
+    padding:12px 20px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:15px;
+    transition: background 0.3s;
+  ">I Understand – Continue</button>
+</div>
+
+<!-- Name Entry Section -->
+<div id="nameSection" style="display:none; text-align:center; margin-top:20px;">
+  <input type="text" id="studentName" placeholder="Enter Your Name" required style="
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    width:250px;
+    text-align:center;
+    font-size:16px;
+    margin-bottom:10px;
+  ">
+  <br>
+  <button class="start-button" onclick="startQuiz()" style="
+    background:#27ae60;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:10px;
+    transition: background 0.3s;
+  ">Start Quiz</button>
+</div>
+
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<script>
+  function hideInstructions() {
+    document.getElementById("instructionsBox").style.display = "none";
+    document.getElementById("nameSection").style.display = "block";
+  }
+</script>
+
+
+
+
+  <div id="quizContainer"></div>
+
+  <!-- ✅ Keep this one only -->
+  <div style="margin-top: 20px;">
+    <button class="final-submit-button" onclick="showScore()">Final Submit</button>
+  </div>
+
+  <!-- ✅ Score Section -->
+  <div class="score-section" id="scoreCard"></div>
+
+  <!-- ✅ Hidden buttons until submit -->
+  <div id="afterSubmitBtns" style="margin-top:15px; display:none;">
+  <button id="downloadPdfBtn" class="nav-button">📄 Download Scorecard (PDF)</button>
+  <button id="shareWhatsappBtn" class="nav-button">📲 Share on WhatsApp</button>
+  <button id="printBtn" class="nav-button">🖨 Print All Questions & Solutions</button>
+</div>
+
+
+</div>
+
+  <script>
+    const quizData = [
+  {
+    "year": 2022,
+    "sourceNo": 1,
+    "kind": "MCQ",
+    "question": "The expressions that correctly relate (i) electric charge \\(Q\\), current \\(I\\) and time \\(t\\), and (ii) work done \\(W\\), potential difference \\(V\\) and charge \\(Q\\), are:",
+    "options": [
+      "\\(I=\\frac{Q}{t}\\) and \\(W=\\frac{V}{Q}\\)",
+      "\\(Q=It\\) and \\(W=VQ\\)",
+      "\\(Q=\\frac{I}{t}\\) and \\(V=\\frac{W}{Q}\\)",
+      "\\(I=\\frac{Q}{t}\\) and \\(Q=\\frac{V}{W}\\)"
+    ],
+    "correctOption": "B",
+    "solution": "<div class=\"worked-solution\"><p><strong>Formulae:</strong></p><div class=\"math-line\">\\[I=\\frac{Q}{t}\\Rightarrow Q=It\\]</div><div class=\"math-line\">\\[V=\\frac{W}{Q}\\Rightarrow W=VQ\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(Q=It\\) and \\(W=VQ\\) (Option B).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2020,
+    "sourceNo": 5,
+    "kind": "MCQ",
+    "question": "The graph shows \\(I-V\\) characteristics for three nichrome wires of resistances \\(R_1\\), \\(R_2\\) and \\(R_3\\). Which relation is correct?",
+    "options": [
+      "\\(R_1=R_2=R_3\\)",
+      "\\(R_1>R_2>R_3\\)",
+      "\\(R_3>R_2>R_1\\)",
+      "\\(R_2>R_1>R_3\\)"
+    ],
+    "correctOption": "D",
+    "solution": "<div class=\"worked-solution\"><p>For an \\(I-V\\) graph,</p><div class=\"math-line\">\\[I=\\frac{V}{R}\\Rightarrow \\text{slope}=\\frac{I}{V}=\\frac{1}{R}\\]</div><p>Hence, a larger slope means a smaller resistance. From the given graph, the resistance order is:</p><div class=\"math-line\">\\[R_2>R_1>R_3\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(R_2>R_1>R_3\\) (Option D).</div></div>",
+    "image": "data:image/png;base64,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",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2020,
+    "sourceNo": 13,
+    "kind": "Assertion–Reason",
+    "question": "Assertion (A): Metals and alloys are generally good conductors of electricity.<br>Reason (R): Bronze is an alloy of copper and tin and is not a good conductor of electricity.",
+    "options": [
+      "Both (A) and (R) are true and (R) is the correct explanation of (A).",
+      "Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+      "(A) is true, but (R) is false.",
+      "(A) is false, but (R) is true."
+    ],
+    "correctOption": "C",
+    "solution": "<p><strong>Correct concept:</strong> Metals and alloys conduct electricity. Bronze is an alloy of copper and tin and is also a conductor. Therefore, Assertion (A) is true but Reason (R) is false.</p><div class=\"final-answer\"><strong>Final answer:</strong> Option C.</div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2020,
+    "sourceNo": 14,
+    "kind": "Assertion–Reason",
+    "question": "Assertion (A): Alloys are commonly used in electrical heating devices such as electric irons and heaters.<br>Reason (R): The resistivity of an alloy is generally higher than that of its constituent metals, but alloys have lower melting points than their constituent metals.",
+    "options": [
+      "Both (A) and (R) are true and (R) is the correct explanation of (A).",
+      "Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+      "(A) is true, but (R) is false.",
+      "(A) is false, but (R) is true."
+    ],
+    "correctOption": "C",
+    "solution": "<p>Heating elements are made of alloys because alloys generally have high resistivity and can withstand high temperatures without oxidising easily. The statement that alloys necessarily have lower melting points is not the correct reason here.</p><div class=\"final-answer\"><strong>Final answer:</strong> Assertion is true but Reason is false (Option C).</div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2023,
+    "sourceNo": 26,
+    "kind": "MCQ",
+    "question": "Two LED bulbs rated \\(12\\,\\mathrm{W}\\) and \\(6\\,\\mathrm{W}\\) are connected in series. If the current through the \\(12\\,\\mathrm{W}\\) bulb is \\(0.06\\,\\mathrm{A}\\), the current through the \\(6\\,\\mathrm{W}\\) bulb is:",
+    "options": ["\\(0.04\\,\\mathrm{A}\\)", "\\(0.06\\,\\mathrm{A}\\)", "\\(0.08\\,\\mathrm{A}\\)", "\\(0.12\\,\\mathrm{A}\\)"],
+    "correctOption": "B",
+    "solution": "<p>In a series circuit, the same current flows through every component.</p><div class=\"math-line\">\\[I_1=I_2=0.06\\,\\mathrm{A}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(0.06\\,\\mathrm{A}\\) (Option B).</div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2020,
+    "sourceNo": 27,
+    "kind": "Numerical MCQ",
+    "question": "Five resistors, each of resistance \\(\\frac{1}{5}\\,\\Omega\\), are available. What is the maximum resistance that can be obtained by connecting all five resistors?",
+    "options": ["\\(1\\,\\Omega\\)", "\\(5\\,\\Omega\\)", "\\(10\\,\\Omega\\)", "\\(25\\,\\Omega\\)"],
+    "correctOption": "A",
+    "solution": "<div class=\"worked-solution\"><p>Maximum resistance is obtained by connecting all resistors in series.</p><div class=\"math-line\">\\[R_s=R_1+R_2+R_3+R_4+R_5\\]</div><div class=\"math-line\">\\[R_s=5\\left(\\frac{1}{5}\\right)=1\\,\\Omega\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(1\\,\\Omega\\) (Option A).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2020,
+    "sourceNo": 28,
+    "kind": "Numerical MCQ",
+    "question": "What is the maximum resistance that can be obtained using four resistors, each of resistance \\(2\\,\\Omega\\)?",
+    "options": ["\\(2\\,\\Omega\\)", "\\(4\\,\\Omega\\)", "\\(8\\,\\Omega\\)", "\\(16\\,\\Omega\\)"],
+    "correctOption": "C",
+    "solution": "<div class=\"worked-solution\"><p>For maximum resistance, connect the resistors in series:</p><div class=\"math-line\">\\[R_s=R_1+R_2+R_3+R_4\\]</div><div class=\"math-line\">\\[R_s=2+2+2+2=8\\,\\Omega\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(8\\,\\Omega\\) (Option C).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2020,
+    "sourceNo": 29,
+    "kind": "Numerical MCQ",
+    "question": "What is the maximum resistance that can be obtained using four resistors, each of resistance \\(\\frac{1}{2}\\,\\Omega\\)?",
+    "options": ["\\(2\\,\\Omega\\)", "\\(1\\,\\Omega\\)", "\\(2.5\\,\\Omega\\)", "\\(8\\,\\Omega\\)"],
+    "correctOption": "A",
+    "solution": "<div class=\"worked-solution\"><p>For maximum resistance, connect all four resistors in series:</p><div class=\"math-line\">\\[R_s=4\\left(\\frac{1}{2}\\right)=2\\,\\Omega\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(2\\,\\Omega\\) (Option A).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2023,
+    "sourceNo": 47,
+    "kind": "Numerical MCQ",
+    "question": "The resistance of a resistor is reduced to half its initial value. If the potential difference across it and the heating time remain unchanged, the heat produced becomes:",
+    "options": ["Four times", "Two times", "Half", "One-fourth"],
+    "correctOption": "B",
+    "solution": "<div class=\"worked-solution\"><p>Using Joule's law at constant potential difference:</p><div class=\"math-line\">\\[H=\\frac{V^2t}{R}\\]</div><p>If \\(R'=\\frac{R}{2}\\), then</p><div class=\"math-line\">\\[H'=\\frac{V^2t}{R/2}=2\\frac{V^2t}{R}=2H\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> The heat becomes two times (Option B).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2020,
+    "sourceNo": 48,
+    "kind": "Numerical MCQ",
+    "question": "A resistor has resistance \\(R\\) and produces heat \\(H\\) in time \\(t\\) when connected across a fixed potential difference \\(V\\). If its resistance becomes \\(\\frac{R}{2}\\), what will be the new heat produced in the same time?",
+    "options": ["\\(2H\\)", "\\(\\frac{H}{2}\\)", "\\(\\frac{H}{4}\\)", "\\(4H\\)"],
+    "correctOption": "A",
+    "solution": "<div class=\"worked-solution\"><p>At constant \\(V\\) and \\(t\\):</p><div class=\"math-line\">\\[H=\\frac{V^2t}{R}\\]</div><div class=\"math-line\">\\[H'=\\frac{V^2t}{R/2}=2H\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(2H\\) (Option A).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2023,
+    "sourceNo": 57,
+    "kind": "Numerical MCQ",
+    "question": "An electric kettle consumes \\(1\\,\\mathrm{kW}\\) of power when operated at \\(220\\,\\mathrm{V}\\). What is the minimum suitable fuse rating?",
+    "options": ["\\(1\\,\\mathrm{A}\\)", "\\(2\\,\\mathrm{A}\\)", "\\(4\\,\\mathrm{A}\\)", "\\(5\\,\\mathrm{A}\\)"],
+    "correctOption": "D",
+    "solution": "<div class=\"worked-solution\"><p><strong>Given:</strong> \\(P=1\\,\\mathrm{kW}=1000\\,\\mathrm{W}\\), \\(V=220\\,\\mathrm{V}\\)</p><div class=\"math-line\">\\[P=VI\\Rightarrow I=\\frac{P}{V}\\]</div><div class=\"math-line\">\\[I=\\frac{1000}{220}=4.55\\,\\mathrm{A}\\]</div><p>The fuse rating must be just above the normal operating current.</p><div class=\"final-answer\"><strong>Final answer:</strong> \\(5\\,\\mathrm{A}\\) (Option D).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2020,
+    "sourceNo": 58,
+    "kind": "MCQ",
+    "question": "Two bulbs rated \\(100\\,\\mathrm{W}\\) and \\(40\\,\\mathrm{W}\\) are connected in series. If the current through the \\(100\\,\\mathrm{W}\\) bulb is \\(1\\,\\mathrm{A}\\), the current through the \\(40\\,\\mathrm{W}\\) bulb is:",
+    "options": ["\\(0.4\\,\\mathrm{A}\\)", "\\(0.6\\,\\mathrm{A}\\)", "\\(0.8\\,\\mathrm{A}\\)", "\\(1\\,\\mathrm{A}\\)"],
+    "correctOption": "D",
+    "solution": "<p>Since the bulbs are connected in series, the same current flows through both.</p><div class=\"math-line\">\\[I_{100\\,W}=I_{40\\,W}=1\\,\\mathrm{A}\\]</div><div class=\"final-answer\"><strong>Final answer:</strong> \\(1\\,\\mathrm{A}\\) (Option D).</div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2022,
+    "sourceNo": 2,
+    "kind": "MCQ",
+    "question": "A complete circuit is left switched on for several minutes, causing a copper connecting wire to become hot. As the temperature of the wire increases, its electrical resistance:",
+    "options": ["Decreases", "Remains the same", "Increases", "First increases and then decreases"],
+    "correctOption": "C",
+    "solution": "<p>For a metallic conductor such as copper, resistance increases with temperature because increased lattice vibrations hinder the motion of electrons.</p><div class=\"final-answer\"><strong>Final answer:</strong> Resistance increases (Option C).</div>",
+    "videoUrl": "",
+    "time": 300
+  },
+  {
+    "year": 2022,
+    "sourceNo": 3,
+    "kind": "MCQ",
+    "question": "A wire has length \\(l\\), diameter \\(d\\), resistivity \\(\\rho\\), and resistance \\(R\\). Which change will decrease the resistance of the wire?",
+    "options": [
+      "Increase the length \\(l\\)",
+      "Increase the diameter \\(d\\)",
+      "Increase the temperature of the metallic wire",
+      "Increase only the thickness of the plastic insulation"
+    ],
+    "correctOption": "B",
+    "solution": "<div class=\"worked-solution\"><p>The resistance of a uniform wire is</p><div class=\"math-line\">\\[R=\\rho\\frac{l}{A}\\]</div><p>For a circular wire,</p><div class=\"math-line\">\\[A=\\pi\\left(\\frac{d}{2}\\right)^2=\\frac{\\pi d^2}{4}\\]</div><p>Therefore, increasing \\(d\\) increases \\(A\\), which decreases \\(R\\).</p><div class=\"final-answer\"><strong>Final answer:</strong> Increase the diameter \\(d\\) (Option B).</div></div>",
+    "videoUrl": "",
+    "time": 300
+  }
+];
+
+    let scores = {}, attempts = {}, timers = {}, timerStates = {};
+    let studentName = "";
+	let quizStartTime = null;
+
+
+    function startQuiz() {
+      const nameInput = document.getElementById("studentName");
+      if (!nameInput.value.trim()) return alert("Please enter your name.");
+      studentName = nameInput.value.trim();
+      nameInput.disabled = true;
+      document.querySelector(".start-button").style.display = "none";
+      quizStartTime = new Date();
+loadQuiz();
+    }
+
+    function loadQuiz() {
+      const container = document.getElementById("quizContainer");
+      quizData.forEach((q, i) => {
+        const qNum = i + 1;
+        const question = document.createElement("div");
+        question.className = "question" + (i === 0 ? " active" : "");
+        question.id = `q${qNum}`;
+        let media = `<div class="question-meta">${q.kind} &nbsp;•&nbsp; <strong>${q.year}</strong></div><div class="question-text">${q.question}</div>${q.image ? `<img src="${q.image}" alt="Question graph" style="display:block;max-width:520px;width:100%;height:auto;margin:14px auto 0;">` : ""}`;
+        let solMedia = `<strong>Correct answer: ${q.correctOption}</strong><br>${q.solution}`;
+        const optionLabels = q.options.map((opt, idx) => {
+          const letter = String.fromCharCode(65 + idx);
+          return `<label><input type="radio" name="q${qNum}" value="${letter}"> <strong>${letter}.</strong>&nbsp; ${opt}</label>`;
+        }).join("");
+        question.innerHTML = `
+          <h3>Q${qNum}:</h3>
+          <div class="question-media" id="media${qNum}">${media}</div>
+          <div class="timer" id="timer${qNum}">⏱ Time left: ${q.time}s</div>
+         <button class="start-button" id="showBtn${qNum}" onclick="startTimer(${qNum}, ${q.time})">Show Question</button>
+
+          <button class="start-button" id="pauseBtn${qNum}" onclick="pauseTimer(${qNum})" style="display: none;">Pause</button>
+
+          <div class="options" id="options${qNum}" style="display: none;">
+            ${optionLabels}
+          </div>
+          <button class="submit-button" id="submitBtn${qNum}" style="display: none;" onclick="submitAnswer('q${qNum}', '${q.correctOption}', ${qNum})">Submit</button>
+
+<button class="dont-know-button" id="dontKnow${qNum}" onclick="dontKnow(${qNum})" style="display: none;">Don't Know</button>
+
+          <button class="toggle-button" onclick="showSolution(${qNum})">Show Solution</button>
+          <div class="solution" id="sol${qNum}">${solMedia}</div>
+		  
+          
+<div class="video" id="vid${qNum}">${q.videoUrl ? `<iframe width="300" height="170" src="${q.videoUrl}" allowfullscreen></iframe>` : ''}</div>
+	${i !== 0 ? `<button class="nav-button back-button" onclick="navigate(${qNum}, ${qNum - 1})">Back</button>` : ""}
+          ${i < quizData.length - 1 ? `<button class="nav-button" onclick="navigate(${qNum}, ${qNum + 1})">Next</button>` : ""}
+        `;
+        container.appendChild(question);
+        if (window.MathJax?.typesetPromise) MathJax.typesetPromise([question]);
+        attempts[qNum] = 0;
+        scores[`q${qNum}`] = 0;
+      });
+    }
+function showSolution(qNum) {
+  const solution = document.getElementById(`sol${qNum}`);
+  solution.style.display = "block";
+  if (window.MathJax?.typesetPromise) {
+    MathJax.typesetPromise([solution]);
+  }
+}
+
+function dontKnow(qNum) {
+  // Disable options
+  const options = document.querySelectorAll(`#q${qNum} .options input[type="radio"]`);
+  options.forEach(opt => {
+    opt.disabled = true;
+    opt.parentElement.style.backgroundColor = "#6c757d"; // grey
+    opt.parentElement.style.color = "white";
+  });
+
+  // Hide Submit & Don't Know buttons
+  document.getElementById(`submitBtn${qNum}`).style.display = "none";
+  document.getElementById(`dontKnow${qNum}`).style.display = "none";
+
+  // Show Solution + Video buttons
+  document.querySelector(`#q${qNum} .toggle-button`).style.display = "inline-block";
+  const videoBtn = document.querySelector(`#q${qNum} .toggle-button.video-btn`);
+  if (videoBtn) videoBtn.style.display = "inline-block";
+
+  // 🛑 Force stop ANY timer for this question
+  if (timers[qNum]) {
+    clearInterval(timers[qNum]);
+    delete timers[qNum];
+  }
+
+  // 🛑 Also double-check if multiple timers exist in global scope
+  for (const key in timers) {
+    if (key === qNum.toString()) {
+      clearInterval(timers[key]);
+      delete timers[key];
+    }
+  }
+
+  // 🧭 Update timer display
+  const timerElem = document.getElementById(`timer${qNum}`);
+  if (timerElem) timerElem.textContent = "⏱ Time left: 0s";
+
+  // 🧮 Record time spent
+  if (timerStates[qNum]) {
+    const endTime = Date.now();
+    const timeSpent = Math.round((endTime - timerStates[qNum].startTime) / 1000);
+    timerStates[qNum].timeSpent = timeSpent;
+    timerStates[qNum].remaining = 0;
+    timerStates[qNum].running = false;
+    timerStates[qNum].submitted = true;
+  }
+
+  // ✅ Mark as skipped in scorecard
+  updateScorecard(qNum, "skipped");
+}
+
+
+
+    function startTimer(qNum, duration) {
+      const timerElem = document.getElementById(`timer${qNum}`);
+      const mediaElem = document.getElementById(`media${qNum}`);
+      const optionsElem = document.getElementById(`options${qNum}`);
+      const pauseBtn = document.getElementById(`pauseBtn${qNum}`);
+      optionsElem.style.display = "grid";
+      mediaElem.style.display = "block";
+document.getElementById(`showBtn${qNum}`).style.display = "none";
+document.getElementById(`dontKnow${qNum}`).style.display = "inline-block";
+document.getElementById(`submitBtn${qNum}`).style.display = "inline-block";
+document.getElementById(`pauseBtn${qNum}`).style.display = "inline-block";
+
+
+
+      if (!timerStates[qNum]) timerStates[qNum] = { remaining: duration, running: false };
+      if (timerStates[qNum].remaining === undefined) {
+  timerStates[qNum].remaining = duration;
+}
+
+	  timerStates[qNum].totalDuration = duration;
+		timerStates[qNum].startTime = Date.now();
+      timerStates[qNum].running = true;
+      pauseBtn.textContent = "Pause";
+      pauseBtn.classList.remove("pause-active");
+      timers[qNum] = setInterval(() => {
+        if (timerStates[qNum].remaining > 0 && timerStates[qNum].running) {
+          timerStates[qNum].remaining--;
+          timerElem.textContent = `⏱ Time left: ${timerStates[qNum].remaining}s`;
+        } else if (timerStates[qNum].remaining <= 0) {
+          clearInterval(timers[qNum]);
+          alert("Time's up!");
+        }
+      }, 1000);
+    }
+
+    function pauseTimer(qNum) {
+      const btn = document.getElementById(`pauseBtn${qNum}`);
+      if (!timerStates[qNum]) return;
+      timerStates[qNum].running = !timerStates[qNum].running;
+      btn.textContent = timerStates[qNum].running ? "Pause" : "Resume";
+      btn.classList.toggle("pause-active");
+    }
+
+function submitAnswer(qId, correctOption, qNum) {
+  if (attempts[qNum] >= 1) return alert("You already submitted.");
+  const selected = document.querySelector(`input[name='${qId}']:checked`);
+  if (!selected) return alert("Select an option first.");
+  attempts[qNum]++;
+
+  const options = document.querySelectorAll(`input[name='${qId}']`);
+  options.forEach(opt => {
+    opt.disabled = true;
+    const label = opt.parentElement;
+    label.style.backgroundColor = '#2a2a2a';
+    label.style.color = '#ccc';
+    if (opt.checked) {
+      if (opt.value === correctOption) {
+        scores[qId] = 1;
+        label.style.backgroundColor = "#007BFF";
+        label.style.color = "white";
+      } else {
+        label.style.backgroundColor = "#dc3545";
+        label.style.color = "white";
+      }
+    }
+  });
+
+  // 🛑 STOP the timer
+  if (timerStates[qNum]) {
+    const endTime = Date.now();
+    const timeSpent = Math.round((endTime - timerStates[qNum].startTime) / 1000);
+    timerStates[qNum].timeSpent = timeSpent;
+    timerStates[qNum].running = false;
+    timerStates[qNum].submitted = true;
+    if (timers[qNum]) {
+      clearInterval(timers[qNum]);
+      delete timers[qNum];
+    }
+  }
+
+  // ✅ Hide Don't Know button after submit
+  document.getElementById(`dontKnow${qNum}`).style.display = "none";
+
+  // Show solution + video buttons
+  document.querySelector(`#q${qNum} .toggle-button`).style.display = "inline-block";
+  const optionalVideoBtn = document.querySelector(`#q${qNum} .toggle-button.video-btn`);
+  if (optionalVideoBtn) optionalVideoBtn.style.display = "inline-block";
+}
+
+
+
+function navigate(current, target) {
+  const currEl = document.getElementById(`q${current}`);
+  const targetEl = document.getElementById(`q${target}`);
+  if (!targetEl) return;
+
+  // Pause timer of current question
+  if (timerStates[current]?.running) {
+    timerStates[current].running = false;
+    document.getElementById(`pauseBtn${current}`).textContent = "Resume";
+    document.getElementById(`pauseBtn${current}`).classList.add("pause-active");
+  }
+
+  currEl.classList.remove("active");
+  targetEl.classList.add("active");
+
+  // Auto-resume timer of target question
+if (
+  timerStates[target] &&
+  timerStates[target].remaining > 0 &&
+  !timerStates[target].running &&
+  !timerStates[target].submitted // ✅ only resume if not submitted
+)
+{
+    timerStates[target].running = true;
+    document.getElementById(`pauseBtn${target}`).textContent = "Pause";
+    document.getElementById(`pauseBtn${target}`).classList.remove("pause-active");
+
+    // ✅ Restart countdown for resumed timer
+    // ✅ Clear existing interval if any before starting a new one
+if (timers[target]) clearInterval(timers[target]);
+
+timers[target] = setInterval(() => {
+
+      if (timerStates[target].remaining > 0 && timerStates[target].running) {
+        timerStates[target].remaining--;
+        document.getElementById(`timer${target}`).textContent =
+          `⏱ Time left: ${timerStates[target].remaining}s`;
+      } else if (timerStates[target].remaining <= 0) {
+        clearInterval(timers[target]);
+        alert("Time's up!");
+      }
+    }, 1000);
+  }
+}
+
+
+
+
+async function showScore() {
+  const total = Object.values(scores).reduce((a, b) => a + b, 0);
+  const scoreCard = document.getElementById("scoreCard");
+  const dateStr = new Date().toLocaleDateString();
+  const startTimeStr = quizStartTime ? quizStartTime.toLocaleTimeString() : "N/A";
+  
+  
+  
+  
+  
+  
+  const quizTitle = "CBSE Chemistry: Electrochemistry PYQ Quiz 2024–2026";
+
+
+
+
+
+  scoreCard.innerHTML = `
+    <div id="printWrapper" style="margin: 1; padding: 10px; background: white; font-size: 12px; color: black;">
+      <img src="https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png" alt="Logo" style="width: 100px; height: auto; margin-bottom: 10px;">
+      <h2>G10 EDUCTIONAL PLATFORM (WHATSAPP No. 9706380357)</h2>
+      <h3>Scorecard</h3>
+      <p><strong>Name:</strong> ${studentName}</p>
+      <p><strong>Date:</strong> ${dateStr}</p>
+      <p><strong>Start Time:</strong> ${startTimeStr}</p>
+      <p><strong>Quiz Title:</strong> ${quizTitle}</p>
+
+      <table style="width:100%; border-collapse:collapse;" border="1" cellpadding="6">
+        <thead>
+          <tr style="background:#007BFF; color:white;">
+            <th>Question</th>
+            <th>Status</th>
+            <th>Score</th>
+            <th>Time Spent (s)</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${Object.keys(scores).map((k, i) => `
+            <tr style="page-break-inside: avoid;">
+              <td>Q${i + 1}</td>
+              <td>${scores[k] ? "✔️ Correct" : "❌ Incorrect"}</td>
+              <td>${scores[k]}</td>
+              <td>${timerStates[i + 1]?.timeSpent ?? "N/A"}</td>
+            </tr>`).join("")}
+        </tbody>
+      </table>
+
+      <h4 id="scoreText">⭐ Score: ${total} / ${quizData.length}</h4>
+    </div>
+  `;
+
+  // ✅ Show buttons after final submit
+  document.getElementById("afterSubmitBtns").style.display = "block";
+
+  // PDF download logic
+  document.getElementById("downloadPdfBtn").onclick = async function () {
+    const wrapper = document.getElementById("printWrapper");
+    const imgs = wrapper.querySelectorAll("img");
+    const loadPromises = Array.from(imgs).map(img => img.complete ? Promise.resolve() : new Promise(res => { img.onload = img.onerror = res; }));
+    await Promise.all(loadPromises);
+
+    html2canvas(wrapper, { scale: 2, useCORS: true }).then(canvas => {
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const imgData = canvas.toDataURL("image/jpeg", 1.0);
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const imgProps = pdf.getImageProperties(imgData);
+      const imgHeight = (imgProps.height * pageWidth) / imgProps.width;
+      let y = 0;
+      pdf.addImage(imgData, 'JPEG', 0, y, pageWidth, imgHeight);
+      if (imgHeight > pdf.internal.pageSize.getHeight()) {
+        while (y + pdf.internal.pageSize.getHeight() < imgHeight) {
+          y += pdf.internal.pageSize.getHeight();
+          pdf.addPage();
+          pdf.addImage(imgData, 'JPEG', 0, -y, pageWidth, imgHeight);
+        }
+      }
+      pdf.save(`${studentName}-Scorecard.pdf`);
+    });
+  };
+
+  // WhatsApp Share logic
+  document.getElementById("shareWhatsappBtn").onclick = function () {
+    const whatsappNumber = "916003582005"; // Must include country code
+    const scoreText = document.getElementById('scoreText').innerText;
+
+    let details = "📋 Question-wise Performance:\n";
+    quizData.forEach((q, i) => {
+      const qNum = i + 1;
+      const selected = document.querySelector(`input[name="q${qNum}"]:checked`);
+      const userAns = selected ? selected.value : "Not Answered";
+      const correctAns = q.correctOption;
+
+      if (userAns === correctAns) {
+        details += `Q${qNum} → ✅ Correct (Your Ans: ${userAns})\n`;
+      } else if (userAns === "Not Answered") {
+        details += `Q${qNum} → ⏭ Skipped\n`;
+      } else {
+        details += `Q${qNum} → ❌ Wrong (Your Ans: ${userAns} | Correct: ${correctAns})\n`;
+      }
+    });
+
+    const message = `Sir, I have shared my Test Result for checking. Thank you!\n\n` +
+                    `📘 Quiz: ${quizTitle}\n` +
+                    `👤 Student: ${studentName}\n` +
+                    `${scoreText}\n\n${details}`;
+
+    const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(waUrl, "_blank");
+  };
+}
+
+
+
+
+
+async function showScore() {
+  const total = Object.values(scores).reduce((a, b) => a + b, 0);
+  const scoreCard = document.getElementById("scoreCard");
+  const dateStr = new Date().toLocaleDateString();
+  const startTimeStr = quizStartTime ? quizStartTime.toLocaleTimeString() : "N/A";
+  
+  
+  
+  
+  
+  const quizTitle = "___________________________________________";
+  
+  
+  
+  
+  
+  
+    disableAllOptions();  // ⛔ Disable all option buttons after final submit
+
+  // ... rest of your existing showScore() code stays EXACTLY SAME ...
+
+  
+  
+  
+  
+
+  scoreCard.innerHTML = `
+    <div id="printWrapper" style="margin: 1; padding: 10px; background: white; font-size: 12px; color: black;">
+      <img src="https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png" alt="Logo" style="width: 100px; height: auto; margin-bottom: 10px;">
+      <h2>G10 EDUCTIONAL PLATFORM</h2>
+      <h3>Scorecard</h3>
+      <p><strong>Name:</strong> ${studentName}</p>
+      <p><strong>Date:</strong> ${dateStr}</p>
+      <p><strong>Start Time:</strong> ${startTimeStr}</p>
+      <p><strong>Quiz Title:</strong> ${quizTitle}</p>
+
+      <table style="width:100%; border-collapse:collapse;" border="1" cellpadding="6">
+        <thead>
+          <tr style="background:#007BFF; color:white;">
+            <th>Question</th>
+            <th>Status</th>
+            <th>Score</th>
+            <th>Time Spent (s)</th>
+          </tr>
+        </thead>
+        <tbody>
+        ${Object.keys(scores).map((k, i) => {
+  const qNum = i + 1;
+  const score = scores[k];
+  const attemptsCount = attempts[qNum] || 0;
+  const wasSubmitted = timerStates[qNum]?.submitted;
+
+  let statusText = "";
+
+  if (wasSubmitted && score === 1) {
+    statusText = "✔️ Correct";
+  } else if (wasSubmitted && score === 0 && attemptsCount > 0) {
+    statusText = "❌ Incorrect";
+  } else if (wasSubmitted && score === 0 && attemptsCount === 0) {
+    statusText = "🤔 I Don't Know";
+  } else {
+    statusText = "⏭️ Not Attempted";
+  }
+
+  return `
+    <tr style="page-break-inside: avoid;">
+      <td>Q${qNum}</td>
+      <td>${statusText}</td>
+      <td>${score}</td>
+      <td>${timerStates[qNum]?.timeSpent ?? "N/A"}</td>
+    </tr>`;
+}).join("")}
+
+
+        </tbody>
+      </table>
+
+      <h4 id="scoreText">⭐ Score: ${total} / ${quizData.length}</h4>
+    </div>
+  `;
+
+  // ✅ Show buttons after final submit
+  document.getElementById("afterSubmitBtns").style.display = "block";
+
+  // 📄 PDF download
+  document.getElementById("downloadPdfBtn").onclick = async function () {
+    const wrapper = document.getElementById("printWrapper");
+    const imgs = wrapper.querySelectorAll("img");
+    const loadPromises = Array.from(imgs).map(img => img.complete ? Promise.resolve() : new Promise(res => { img.onload = img.onerror = res; }));
+    await Promise.all(loadPromises);
+
+    html2canvas(wrapper, { scale: 2, useCORS: true }).then(canvas => {
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const imgData = canvas.toDataURL("image/jpeg", 1.0);
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const imgProps = pdf.getImageProperties(imgData);
+      const imgHeight = (imgProps.height * pageWidth) / imgProps.width;
+      let y = 0;
+      pdf.addImage(imgData, 'JPEG', 0, y, pageWidth, imgHeight);
+      if (imgHeight > pdf.internal.pageSize.getHeight()) {
+        while (y + pdf.internal.pageSize.getHeight() < imgHeight) {
+          y += pdf.internal.pageSize.getHeight();
+          pdf.addPage();
+          pdf.addImage(imgData, 'JPEG', 0, -y, pageWidth, imgHeight);
+        }
+      }
+      pdf.save(`${studentName}-Scorecard.pdf`);
+    });
+  };
+
+  // 📲 WhatsApp Share
+  document.getElementById("shareWhatsappBtn").onclick = function () {
+    const whatsappNumber = "916003582005";
+    const scoreText = document.getElementById('scoreText').innerText;
+
+    let details = "📋 Question-wise Performance:\n";
+    quizData.forEach((q, i) => {
+      const qNum = i + 1;
+      const selected = document.querySelector(`input[name="q${qNum}"]:checked`);
+      const userAns = selected ? selected.value : "Not Answered";
+      const correctAns = q.correctOption;
+
+      if (userAns === correctAns) {
+        details += `Q${qNum} → ✅ Correct (Your Ans: ${userAns})\n`;
+      } else if (userAns === "Not Answered") {
+        details += `Q${qNum} → ⏭ Skipped\n`;
+      } else {
+        details += `Q${qNum} → ❌ Wrong (Your Ans: ${userAns} | Correct: ${correctAns})\n`;
+      }
+    });
+
+    const message = `Sir, I have shared my Test Result for checking. Thank you!\n\n` +
+                    `📘 Quiz: ${quizTitle}\n` +
+                    `👤 Student: ${studentName}\n` +
+                    `${scoreText}\n\n${details}`;
+
+    const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(waUrl, "_blank");
+  };
+}
+
+document.getElementById("printBtn").onclick = function () {
+  const studentName = document.getElementById("studentName").value || "Student";
+
+  // Collect HTML for all questions and solutions
+  let printContent = '';
+  const allQuestions = document.querySelectorAll(".question");
+  allQuestions.forEach(q => {
+    const qClone = q.cloneNode(true);
+
+    // Show solution
+    const sol = qClone.querySelector(".solution");
+    if (sol) sol.style.display = "block";
+
+    // Remove buttons
+    qClone.querySelectorAll("button").forEach(btn => btn.remove());
+
+    // Remove video sections
+    const video = qClone.querySelector(".video");
+    if (video) video.remove();
+
+    printContent += qClone.outerHTML;
+  });
+
+  // Open new window for print
+  const printWindow = window.open('', '', 'width=900,height=700');
+  printWindow.document.write(`
+    <html>
+      <head>
+        <title>Print Quiz</title>
+        <style>
+          @page {
+            margin: 100mm 15mm 100mm 15mm; /* Top Right Bottom Left */
+          }
+          body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            background: #fff;
+            color: #000;
+          }
+          .question {
+            border: 1px solid #333;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #f5f2f2;
+          }
+          img { max-width: 100%; margin-top: 10px; border: 1px solid #c3c3d4; }
+          table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+          h2 { margin-bottom: 10px; }
+        </style>
+      </head>
+      <body>
+        <div style="text-align:center; margin-bottom: 20px;">
+          <img src="https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png" alt="Logo" style="width:120px; height:auto; display:block; margin:10px auto;">
+          <h2 style="margin-top:0;">${studentName}</h2>
+        </div>
+        ${printContent}
+        <div style="height:20px;"></div> <!-- Extra bottom spacing -->
+      </body>
+    </html>
+  `);
+  printWindow.document.close();
+  printWindow.focus();
+  printWindow.print();
+  printWindow.close();
+};
+
+function disableAllOptions() {
+  const allOptions = document.querySelectorAll("input[type='radio']");
+  allOptions.forEach(opt => {
+    opt.disabled = true;
+    opt.parentElement.style.opacity = "0.6";
+    opt.parentElement.style.cursor = "not-allowed";
+  });
+}
+
+
+  </script>
+</body>
+</html>
