@@ -169,7 +169,7 @@
 
   function scoredQuizResult() {
     var scoreCard = document.getElementById("scoreCard");
-    if (!scoreCard || !scoreCard.querySelector("#scoreText")) return null;
+    if (!scoreCard || !/\bscore\s*:/i.test(scoreCard.textContent || "")) return null;
 
     try {
       if (typeof quizData === "undefined" || !Array.isArray(quizData) || !quizData.length
