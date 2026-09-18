@@ -74,7 +74,7 @@
   }
 
   function scoreFraction(source) {
-    var match = String(source || "").match(/\b(?:final\s+)?score\s*:?\s*(-?\d+(?:\.\d+)?)\s*(?:\/|out\s+of)\s*(\d+(?:\.\d+)?)/i);
+    var match = String(source || "").match(/(?:final\s+)?score\s*:?\s*(-?\d+(?:\.\d+)?)\s*(?:\/|out\s+of)\s*(\d+(?:\.\d+)?)/i);
     if (!match) return null;
     var score = numeric(match[1], NaN);
     var maximum = numeric(match[2], NaN);
@@ -178,7 +178,7 @@
 
   function scoredQuizResult() {
     var scoreCard = document.getElementById("scoreCard");
-    if (!scoreCard || !/\bscore\s*:/i.test(scoreCard.textContent || "")) return null;
+    if (!scoreCard || !/score\s*:/i.test(scoreCard.textContent || "")) return null;
 
     try {
       if (typeof quizData === "undefined" || !Array.isArray(quizData) || !quizData.length
