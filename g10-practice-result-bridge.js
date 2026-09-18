@@ -5,6 +5,7 @@
   var ACK_TYPE = "g10:practice-test-result:ack";
   var lastFingerprint = "";
   var pendingAttemptId = "";
+  var bridgeStartedAt = Date.now();
 
   function parentOrigin() {
     if (window.parent === window || !document.referrer) return "";
@@ -50,7 +51,7 @@
     var countdown = document.getElementById("timerTitle");
     var timer = countdown || document.getElementById("timer");
     var match = String(timer && timer.textContent || "").match(/(\d{1,2}):(\d{2})(?::(\d{2}))?/);
-    if (!match) return 0;
+    if (!match) return Math.max(0, Math.round((Date.now() - bridgeStartedAt) / 1000));
     var displayed = match[3]
       ? integer(match[1], 0) * 3600 + integer(match[2], 0) * 60 + integer(match[3], 0)
       : integer(match[1], 0) * 60 + integer(match[2], 0);
@@ -60,7 +61,7 @@
           return Math.max(0, Math.round(numeric(config.testTime, 0) * 60 - displayed));
         }
       } catch (_) {
-        return 0;
+        return Math.max(0, Math.round((Date.now() - bridgeStartedAt) / 1000));
       }
     }
     return displayed;
@@ -70,6 +71,14 @@
     var escaped = label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     var match = String(source || "").match(new RegExp(escaped + "\\s*:\\s*(-?\\d+(?:\\.\\d+)?)", "i"));
     return match ? numeric(match[1], NaN) : NaN;
+  }
+
+  function scoreFraction(source) {
+    var match = String(source || "").match(/\b(?:final\s+)?score\s*:?\s*(-?\d+(?:\.\d+)?)\s*(?:\/|out\s+of)\s*(\d+(?:\.\d+)?)/i);
+    if (!match) return null;
+    var score = numeric(match[1], NaN);
+    var maximum = numeric(match[2], NaN);
+    return Number.isFinite(score) && maximum > 0 ? { score: score, maximum: maximum } : null;
   }
 
   function makeAttemptId() {
@@ -104,7 +113,7 @@
     var resultText = document.getElementById("resultArea");
     var displayedMaximum = labeledNumber(resultText && resultText.textContent, "Total Marks");
     var maximum = displayedMaximum > 0 ? displayedMaximum : total * marksPerCorrect;
-    var answers = Array.isArray(result.rows) ? result.rows.slice(0, 500).map(function (row) {
+    var answers = Array.isArray(result.rows) ? result.rows.slice(0, 2000).map(function (row) {
       var selected = text(row && (row.sel != null ? row.sel : row.selected));
       return {
         question: text(row && (row.q != null ? row.q : row.question)).slice(0, 100),
@@ -138,7 +147,7 @@
     var correct = 0;
     var incorrect = 0;
     var unanswered = 0;
-    var answers = Array.prototype.slice.call(details.querySelectorAll("tr"), 0, 500).map(function (row, index) {
+    var answers = Array.prototype.slice.call(details.querySelectorAll("tr"), 0, 2000).map(function (row, index) {
       var cells = Array.prototype.map.call(row.cells || [], function (cell) {
         return String(cell.textContent || "").trim();
       });
@@ -178,7 +187,7 @@
       var correct = 0;
       var incorrect = 0;
       var unanswered = 0;
-      var answers = quizData.slice(0, 500).map(function (question, index) {
+      var answers = quizData.slice(0, 2000).map(function (question, index) {
         var questionNumber = index + 1;
         var selectedInput = document.querySelector("input[name='q" + questionNumber + "']:checked");
         var selected = text(selectedInput && selectedInput.value);
@@ -227,6 +236,114 @@
     }
   }
 
+  function renderedScoreResult() {
+    var candidates = Array.prototype.slice.call(document.querySelectorAll(
+      "#scoreCard,#scorecard,.score-card,.scorecard,.score-section,[data-scorecard]"
+    ));
+    var card = null;
+    var fraction = null;
+
+    candidates.some(function (candidate) {
+      var parsed = scoreFraction(candidate && candidate.textContent);
+      if (!parsed) return false;
+      card = candidate;
+      fraction = parsed;
+      return true;
+    });
+    if (!card || !fraction) return null;
+
+    var grouped = {};
+    Array.prototype.forEach.call(document.querySelectorAll("input[type='radio'][name]"), function (input) {
+      var name = String(input.name || "");
+      if (!name) return;
+      if (!grouped[name]) grouped[name] = [];
+      grouped[name].push(input);
+    });
+
+    var groupNames = Object.keys(grouped).slice(0, 2000);
+    var totalQuestions = groupNames.length || integer(fraction.maximum, 0);
+    if (!totalQuestions) return null;
+
+    var correct = 0;
+    var incorrect = 0;
+    var unanswered = 0;
+    var allAnswerKeysKnown = groupNames.length > 0;
+    var answers = groupNames.map(function (name, index) {
+      var radios = grouped[name];
+      var selectedInput = null;
+      radios.some(function (input) {
+        if (!input.checked) return false;
+        selectedInput = input;
+        return true;
+      });
+
+      var block = radios[0] && radios[0].closest
+        ? radios[0].closest(".question,.question-card,[data-question]")
+        : null;
+      var solution = block && block.querySelector
+        ? block.querySelector(".solution,.answer,.explanation,.correct-answer,[data-correct-answer]")
+        : null;
+      var solutionText = String(solution && solution.textContent || "");
+      var keyMatch = solutionText.match(/correct\s*(?:answer|option)?\s*[:\-]\s*(?:option\s*)?([A-Z]|\d+)\b/i);
+      var correctAnswer = keyMatch ? text(keyMatch[1]).toUpperCase() : "";
+      var selected = text(selectedInput && selectedInput.value).toUpperCase();
+      var answerStatus = "unanswered";
+
+      if (!correctAnswer) allAnswerKeysKnown = false;
+      if (!selected) unanswered += 1;
+      else if (correctAnswer && selected === correctAnswer) {
+        correct += 1;
+        answerStatus = "correct";
+      } else {
+        incorrect += 1;
+        answerStatus = "incorrect";
+      }
+
+      var questionNode = block && block.querySelector
+        ? block.querySelector(".question-text,[data-question-text],h3,h2")
+        : null;
+      return {
+        question: text(questionNode && questionNode.textContent || name || index + 1).slice(0, 100),
+        selected: selected,
+        correct: correctAnswer,
+        status: answerStatus
+      };
+    });
+
+    var source = card.textContent || "";
+    var displayedCorrect = labeledNumber(source, "Correct");
+    var displayedIncorrect = labeledNumber(source, "Incorrect");
+    if (!Number.isFinite(displayedIncorrect)) displayedIncorrect = labeledNumber(source, "Wrong");
+    var displayedUnanswered = labeledNumber(source, "Not Answered");
+    if (!Number.isFinite(displayedUnanswered)) displayedUnanswered = labeledNumber(source, "Unanswered");
+
+    if (Number.isFinite(displayedCorrect) && Number.isFinite(displayedIncorrect) && Number.isFinite(displayedUnanswered)
+      && displayedCorrect + displayedIncorrect + displayedUnanswered <= totalQuestions) {
+      correct = integer(displayedCorrect, 0);
+      incorrect = integer(displayedIncorrect, 0);
+      unanswered = integer(displayedUnanswered, 0);
+    } else if (!allAnswerKeysKnown) {
+      unanswered = groupNames.reduce(function (count, name) {
+        return count + (grouped[name].some(function (input) { return input.checked; }) ? 0 : 1);
+      }, 0);
+      var answered = Math.max(0, totalQuestions - unanswered);
+      correct = Math.min(answered, integer(fraction.score, 0));
+      incorrect = Math.max(0, answered - correct);
+      answers = [];
+    }
+
+    return {
+      score: fraction.score,
+      maxScore: fraction.maximum,
+      totalQuestions: totalQuestions,
+      correct: correct,
+      incorrect: incorrect,
+      unanswered: unanswered,
+      timeSpentSeconds: Math.min(86400, timerSeconds()),
+      answers: answers.slice(0, 2000)
+    };
+  }
+
   function notice(message, kind) {
     var item = document.getElementById("g10-result-save-notice");
     if (!item) {
@@ -244,7 +361,7 @@
   function send(result) {
     var origin = parentOrigin();
     if (!origin || !result) return;
-    var fingerprint = [result.score, result.maxScore, result.correct, result.incorrect, result.unanswered, result.timeSpentSeconds].join("|");
+    var fingerprint = [result.score, result.maxScore, result.correct, result.incorrect, result.unanswered].join("|");
     if (fingerprint === lastFingerprint) return;
     lastFingerprint = fingerprint;
     pendingAttemptId = makeAttemptId();
@@ -257,15 +374,15 @@
     }, origin);
   }
 
-  function captureResult() {
-    var result = modernResult() || legacyResult() || scoredQuizResult();
+  function captureResult(silent) {
+    var result = modernResult() || legacyResult() || scoredQuizResult() || renderedScoreResult();
     if (result) send(result);
-    else notice("This result could not be read automatically. Please inform G10 support.", "error");
+    else if (!silent) notice("This result could not be read automatically. Please inform G10 support.", "error");
   }
 
   window.G10PracticeResults = {
     save: function (result) { send(result); },
-    capture: captureResult
+    capture: function () { captureResult(false); }
   };
 
   document.addEventListener("click", function (event) {
@@ -277,7 +394,11 @@
       || /finalSubmit\s*\(/.test(onclick)
       || /showScore\s*\(/.test(onclick)
       || /^(final\s+submit|submit\s*&\s*score)$/i.test(label);
-    if (isFinalSubmit) window.setTimeout(captureResult, 180);
+    if (isFinalSubmit) {
+      window.setTimeout(function () { captureResult(true); }, 150);
+      window.setTimeout(function () { captureResult(true); }, 600);
+      window.setTimeout(function () { captureResult(false); }, 1500);
+    }
   }, true);
 
   window.addEventListener("message", function (event) {
