@@ -1091,5 +1091,17 @@ function disableAllOptions() {
 })();
 </script>
 
+<script>
+(function(){
+ if(parent===window)return;
+ document.querySelectorAll('.final-submit-button').forEach(function(button){button.hidden=true;button.style.display='none';});
+ window.addEventListener('message',function(event){
+  var origin;try{origin=new URL(document.referrer).origin;}catch(_){return;}
+  if(event.source!==parent || event.origin!==origin || !event.data || event.data.type!=='g10:finalize-mcq')return;
+  if(!quizStartTime){alert('Start the quiz before final submission.');return;}
+  showScore();document.getElementById('scoreCard').scrollIntoView({behavior:'smooth',block:'start'});
+ });
+})();
+</script>
 </body>
 </html>
