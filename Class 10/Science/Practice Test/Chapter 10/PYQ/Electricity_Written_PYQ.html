@@ -1064,12 +1064,43 @@ function disableAllOptions() {
  }
  window.navigate=function(current,target){originalNavigate(current,target);announce(target);};
  function button(text,action,cls){const b=document.createElement('button');b.type='button';b.className=cls||'nav-button';b.textContent=text;b.onclick=action;return b;}
+ let paperDialog=null;
+ function showPaper(){
+  if(!paperDialog){
+   const dialog=document.createElement('dialog');paperDialog=dialog;
+   dialog.setAttribute('aria-label','Question paper viewer');
+   dialog.style.cssText='width:min(1000px,94vw);max-width:94vw;height:88vh;max-height:88vh;box-sizing:border-box;padding:16px;border:1px solid #333;border-radius:5px;background:#f5f2f2;color:#080707;overflow:auto';
+   const heading=document.createElement('h2');heading.textContent='Question paper';heading.style.margin='0 0 12px';
+   const toolbar=document.createElement('div');toolbar.style.cssText='display:flex;gap:10px;align-items:center;flex-wrap:wrap;position:sticky;top:0;padding:10px 0;background:#f5f2f2;z-index:1';
+   const image=document.createElement('img');image.alt='Question paper page 1';image.draggable=false;
+   image.style.cssText='display:block;width:100%;max-width:none;height:auto;margin:0;background:white;user-select:none;-webkit-user-select:none';
+   const imageArea=document.createElement('div');imageArea.style.cssText='overflow:auto;max-height:calc(88vh - 180px);margin-top:12px;touch-action:pan-x pan-y pinch-zoom';imageArea.append(image);
+   image.addEventListener('contextmenu',function(event){event.preventDefault();});
+   const label=document.createElement('label');label.textContent='Page ';
+   const input=document.createElement('input');input.type='number';input.min='1';input.max='64';input.value='1';input.setAttribute('aria-label','Paper page');input.style.cssText='width:65px;padding:7px;font:inherit';
+   label.append(input,document.createTextNode(' of 64'));
+   const status=document.createElement('p');status.setAttribute('role','status');status.style.margin='8px 0';
+   let page=1,zoom=1;
+   const previous=button('Previous page',()=>render(page-1));
+   const next=button('Next page',()=>render(page+1));
+   function render(value){page=Math.max(1,Math.min(64,Math.round(Number(value)||1)));input.value=String(page);previous.disabled=page===1;next.disabled=page===64;status.textContent='Loading page '+page+'…';image.alt='Question paper page '+page;image.src='Electricity_Pages/page-'+String(page).padStart(3,'0')+'.jpg';}
+   image.onload=()=>{status.textContent='Page '+page+' of 64';};
+   image.onerror=()=>{status.textContent='This page could not load. Try another page or reopen the viewer.';};
+   input.onchange=()=>render(input.value);
+   const zoomOut=button('Zoom out',()=>resize(zoom-.5));
+   const zoomIn=button('Zoom in',()=>resize(zoom+.5));
+   function resize(value){zoom=Math.max(1,Math.min(3,value));image.style.width=String(zoom*100)+'%';zoomOut.disabled=zoom===1;zoomIn.disabled=zoom===3;}
+   toolbar.append(previous,label,next,zoomOut,zoomIn,button('Fit width',()=>resize(1)),button('Close paper',()=>dialog.close()));
+   dialog.append(heading,toolbar,status,imageArea);document.body.append(dialog);render(1);resize(1);
+  }
+  paperDialog.showModal();
+ }
  function jump(target){const active=document.querySelector('.question.active');if(active)window.navigate(Number(active.id.slice(1)),target);}
  window.loadQuiz=function(){
   originalLoad();
   const container=document.getElementById('quizContainer');
   const nav=document.createElement('div');nav.style.cssText='display:flex;gap:8px;flex-wrap:wrap;margin:10px 0';
-  nav.append(button('MCQ questions ('+quizData.length+')',()=>jump(1)),button('Written questions ('+written.length+')',()=>jump(quizData.length+1)),button('Original paper',()=>window.open('Electricity_Source_Paper.pdf','_blank')));
+  nav.append(button('MCQ questions ('+quizData.length+')',()=>jump(1)),button('Written questions ('+written.length+')',()=>jump(quizData.length+1)),button('View question paper',showPaper));
   container.prepend(nav);
   const last=document.getElementById('q'+quizData.length);
   last.append(button('Next — written questions',()=>window.navigate(quizData.length,quizData.length+1)));
