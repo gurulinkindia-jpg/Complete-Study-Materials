@@ -1,0 +1,1230 @@
+                                     Electricity
+
+(2026)
+
+1. (a) The resistance of a wire of 0.01 cm radius and 1.0 cm length is 7 Ω.
+
+Calculate its resistivity.               (2 Marks) (CBSE 2026-31-1-1)
+
+                                     OR
+
+(b) An electric heater is rated 220 V; 11 A. Calculate the power consumed if
+the heater is operated at 200 V.
+
+2. (a) (i) Due to change in length and area of cross-section of a conductor,
+resistance of conductor changes while resistivity does not change. Why?
+
+(ii) Conductors of electric toasters and electric iron are made of an alloy
+rather than a pure metal. Why?
+
+(iii) Define the S.I. unit of electric current. (5 Marks) (CBSE 2026-31-1-1)
+
+                                     OR
+
+(b) (i) How many bulbs of resistance 8 Ω each should be connected in parallel
+combination to draw a current of 2 A from a battery of 4 V?
+
+(ii) Name the device used for measuring electric current. How is it connected
+in a circuit?
+
+(iii) State Joule’s law of heating.
+                                  Answer
+
+1.
+
+2. (i) As resistance, R=ρ l/A, it changes with change in length and area of
+cross-section of conductor. But resistivity of conductor is the characteristic
+property of material and hence it does not change.
+(ii) The resistivity of an alloy is generally higher than that of its constituent
+metals.
+/
+Alloys do not oxidise (burn) readily at high temperatures.
+(iii) 1 ampere is constituted by the flow of 1 coulomb of charge per second.
+/
+1 A=1 C/1 s1A=1C/1s
+
+                                                OR
+
+(ii)
+• Ammeter
+• In series
+(iii) Heat generated through a current carrying conductor is directly
+proportional to square of current, resistance of conductor and time for which
+current flows in conductor. /
+H = I2 R t
+(2025)
+
+1.. A wire of resistance R is cut into three equal parts. If these three parts are then
+joined in parallel, calculate the total resistance of the combination so formed.
+(2 Mark) (2025)
+2. Define electric power. When do we say that the power consumed in an electric
+circuit is 1 watt ? (2 Mark) (2025)
+3. Consider the following electric circuit :
+
+Calculate the values of the following :
+(a) The total resistance of the circuit
+(b) The total current drawn from the source
+(c) Potential difference across the parallel combination of 10  and 15  resistors
+(3 Mark) (2025)
+4. (a) Write the relationship between resistivity and resistance of a cylindrical
+conductor of length l and area of cross-section A. Hence derive the SI unit of
+resistivity.
+(b) Why are alloys used in electrical heating devices ? (3 Mark) (2025)
+5. In our homes, we receive the supply of electric power through a main supply also
+called mains, either supported through overhead electric poles or by underground
+cables. In our country the potential difference between the two wires (live wire and
+neutral wire) of this supply is 220 V.
+(a) Write the colours of the insulation covers of the line wires through which supply
+comes to our homes.
+(b) What should be the current rating of the electric circuit (220 V) so that an
+electric iron of 1 kW power rating can be operated ?
+(c) (i) What is the function of the earth wire ? State the advantage of the earth wire
+in domestic electric appliances such as electric iron.
+(c) (ii) List two precautions to be taken to avoid electrical accidents. State how these
+precautions prevent possible damage to the circuit/appliance. (6 Mark) (2025)
+
+                                      Answers
+
+1.
+
+2. • Electric power is the rate at which electrical energy is consumed or dissipated in
+an electrical circuit. / Electric power is electrical energy consumed per unit time.
+• When 1A current at 1V potential difference flows in a circuit. / Power consumed is
+1W when 1J electrical energy is consumed in 1 s
+3. (a)
+
+∵ R1 and R2 are in series
+ Rtotal = R1 + R2 = (6 + 24) = 30 
+(b)
+
+(c) V = IR1 = 0·5 A  6  = 3·0 V
+4. (a)
+
+(b) Resistivity of alloy is higher than pure metals. / They do not oxidise (burn)
+readily at high temperatures.
+5. (a) Live wire- Red
+Neutral wire- Black
+(b) Power, P = 1 kW = 1  1000 W = 1000 W
+Voltage, V = 220 V
+
+(c) (i) • The earth wire provides a low resistance conducting path for the current
+which ensures that any leakage of current to flow to the metallic body of the
+appliances, keeps its potential to that of the earth. • The user will not get an electric
+shock.
+
+(c) (ii) • Fuse wire
+• Earth wire
+• A fuse in a circuit prevents damage to the circuit due to overloading.
+• Earth wire prevents electric shock due to leakage of current.
+(2024)
+1. (A) Show how you would connect three resistors each of resistance 6 N, so
+that the combination has a resistance of 9 2. Also justify your answer. (2024)
+OR
+(B) In the given circuit calculate the power consumed in watts in the resistor
+of 2Ω :
+
+Answer. (A) When two 6  resistances are connected in parallel and the third
+resistance of 6 is connected in series combinations to this, then equivalent
+resistance will be 9  /
+
+[Award marks for writing the statement or drawing the diagram]
+OR
+(B) Equivalent resistance = ������1 + ������2 = 1 ������ + 2 ������ = 3 �
+
+11.1 Electric Current and Circuit
+MCQ
+The expressions that relate (i) Q, I and t and (ii) Q, V and W respectively are
+(Here the symbols have their usual meanings)
+
+LA (5 marks)
+2. Define electric current. (1/5, Board Term I, 2017)
+3. Define one ampere. (1/5, Board Term 1, 2015)
+11.3 Circuit Diagram
+LA (5 marks)
+4. Draw the symbols of commonly used components in electric circuit
+diagrams for
+(i) An electric cell
+(ii) Open plug key
+(iii) Wires crossing without connection
+(iv) Variable resistor
+(v) Battery
+(vi) Electric bulb
+(vii) Resistance (4/5, Board Term I, 2017)
+11.4 Ohm's Law
+MCQ
+5. A student plots V-I graphs for three samples of nichrome wire with
+resistances R1, R2 and R3. Choose from the following the statements that holds
+true for this graph.
+
+(a) R₁ =R2 = R3
+(c) R3 > R2 > R1
+(b) R1 > R2 > R3
+(d) R2 > R1 > R3 (2020, AI 2019)
+VSA (1 mark)
+6. State Ohm's law. (AI 2019)
+SA II (3 marks)
+7. (a) State Ohm's Law. Represent it mathematically.
+(b) Define 1 ohm.
+(c) What is the resistance of a conductor through which a current of 0.5 A
+flows when a potential difference of 2 V is applied across its ends? (Term II,
+2021-22)
+8. A V-I graph for a nichrome wire is given below. What do you infer from this
+graph? Draw a labelled circuit diagram to obtain such a graph.
+
+9. Study the V-I graph for a resistor as shown in the figure and prepare a table
+showing the values of (in amperes) corresponding to four different values V
+(in volts). Find the value of current for V = 10 volts. How can we determine
+the resistance of the resistor from this graph? (Board Term I, 2016)
+
+10. V-I graph for a conductor is as shown in the figure
+
+(i) What do you infer from this graph?
+(ii) State the law expressed here. (Board Term 1, 2014)
+LA (5 marks)
+
+11. State Ohm's law. Draw a labelled circuit diagram to verify this law in the
+laboratory. If you draw a graph between the potential difference and current
+flowing through a metallic conductor, what kind of curve will you get? Explain
+how would you use this graph to determine the resistance of the conductor.
+(Board Term I, 2016)
+
+12. State and explain Ohm's law. Define resistance and give its SI unit. What is
+meant by 1 ohm resistance? Draw V-I graph for an ohmic conductor and list its
+two important features. (Board Term 1, 2014)
+
+11.5 Factors on which the Resistance of a Conductor Depends
+
+MCQ
+
+For question No. 13 and 14, two statements are given- one labelled Assertion
+(A) and the other labelled Reason (R). Select the correct answer to these
+questions from the codes (a), (b), (c) and (d) as given below.
+(a) Both (A) and (R) are true and (R) is the correct explanation of the
+assertion (A).
+(b) Both (A) and (R) are true, but (R) is not the correct explanation of the
+assertion (A).
+(c) (A) is true, but (R) is false.
+(d) (A) is false, but (R) is true.
+
+13. Assertion (A): The metals and alloys are good conductors of electricity.
+Reason (R): Bronze is an alloy of copper and tin and it is not a good conductor
+of electricity. (2020) R
+
+14. Assertion (A): Alloys are commonly used in electrical heating devices like
+electric iron and heater.
+Reason (R): Resistivity of an alloy is generally higher than that of its
+constituent metals but the alloys have low melting points then their
+constituent metals. (2020)
+
+15. A cylindrical conductor of length 'l' and uniform area of cross section 'A'
+has resistance 'R' The area of cross section of another conductor of same
+material and same resistance but of length '21' is
+VSA (1 mark)
+
+16. How is the resistivity of alloys compared with those of pure metals from
+which they may have been formed? (Board Term 1, 2017)
+
+SAI (2 marks)
+
+17. (i) List three factors on which the resistance of a conductor depends.
+(ii) Write the SI unit of resistivity. (Board Term 1, 2015)
+
+SA II (3 marks)
+
+18. (i) In the following figure, three cylindrical conductors A, B and C are
+shown along with their lengths and areas of cross-section. If these three
+conductors are made of the same material and RA, RB and RC be their
+respective resistances, then find (I) RÅ/ Rg, and (II) RÅ/ RC-
+
+(ii) If the conductor A is made of copper and the conductor C is made of
+constantan (alloy of copper and nickel), then which one of the two will have
+more electrical resistance and why? (Term II, 2021-22 C)
+
+19. (a) List the factors on which the resistance of a uniform cylindrical
+conductor of a given material depends.
+(b) The resistance of a wire of 0.01 cm radius is 10Ω If the resistivity of the
+wire is 50 × 10-8 Ω m, find the length of this wire. (Term II, 2021-22)
+
+20. (a) List the factors on which the resistance of a conductor in the shape of a
+wire depends.
+(b) Why are metals good conductors of electricity whereas glass is a bad
+conductor of electricity? Give reason.
+(c) Why are alloys commonly used in electrical heating devices? Give reason.
+(2018)
+
+21. Calculate the resistivity of the material of a wire of length 1 m, radius 0.01
+cm and resistance 20 ohms. (Board Term 1, 2017)
+
+22. A copper wire has diameter 0.5 mm and resistivity 1.6 × 10−8 Ω m.
+Calculate the length of this wire to make it resistance 100 Ω. How much does
+the resistance change if the diameter is doubled without changing its length?
+(Board Term I, 2015)
+
+23. The resistance of a wire of 0.01 cm radius is 10 Q. If the resistivity of the
+material of the wire is 50 × 10-8 ohm meter, find the length of the wire.
+(Board Term I, 2014)
+
+LA (5 marks)
+
+24. If the radius of a current carrying conductor is halved, how does current
+through it change? (2/5 Board Term I, 2014)
+
+25. Define resistance of a conductor. State the factors on which resistance of a
+conductor depends. Name the device which is often used to change the
+resistance without changing the voltage source in an electric circuit. Calculate
+the resistance of 50 cm length of wire of cross sectional area 0.01 square mm
+and of resistivity 5 x 10-8 m.
+(Board Term I, 2014) (Cr)
+
+11.6 Resistance of a System of Resistors
+
+MCQ
+
+26. Two LED bulbs of 12 W and 6 W are connected in series. If the current
+through 12 W bulb is 0.06 A the current through 6 W bulb will be
+(a) 0.04 A
+(b) 0.06 A
+(c) 0.08 A
+(d) 0.12 A (2023)
+
+27. If a person has five resistors each of value  then the maximum
+resistance he can obtain by connecting them is
+(a) 1 Ω
+(c) 10 Ω
+(b) 5 Ω
+(d) 25 Ω (2020)
+
+28. The maximum resistance which can be made using four resistors each of 2
+Ω is
+(a) 2 Ω
+(b) 4 Ω
+(c) 8 Ω
+(d) 16 Ω (2020)
+29. The maximum resistance which can be made using
+
+(a) 2 Ω
+(b) 1 Ω
+(c) 2.5 Ω
+(d) 8 Ω (2020)
+SAI (2 marks)
+30. Calculate the equivalent resistance of the following electric circuit:
+
+31. Three resistors of 10 Ω , 15 Ω and 5 Ω are connected in parallel. Find their
+equivalent resistance. (Board Term 1, 2014)
+SA II (3 marks)
+32. (i) Write the formula for determining the equivalent resistance between A
+and B of the two combinations (1) and (II) of three resistors R1, R2 and R3
+arranged as follows:
+(ii) If the equivalent resistance of the arrangements (I) and (II) are Rs and RP
+respectively, then which one of the following V-I graphs is correctly labelled?
+Justify your answer.
+
+33. In the circuit given below, the resistors R1, R2 and R3 have the values 10 9,
+20 Ω and 30 Ω respectively, which have been connected to a battery of 12 V.
+Calculate
+(a) the current through each resistor,
+(b) the total circuit resistance, and
+(c) the total current in the circuit.
+
+(2019 C)
+34. Show how would you join three resistors, each of resistance 9Ω so that the
+equivalent resistance of the combination is (i) 13.5 Ω, (ii) 6Ω ? (2018)
+35. Three resistors of 3Ω each are connected to a battery of 3 V as shown.
+Calculate the current drawn from the battery.
+
+LA (4/5 marks)
+36. (i) How is electric current related to the potential difference across the
+terminals of a conductor? Draw the labelled circuit diagram to verify this
+relationship.
+(ii) Why should an ammeter have low resistance?
+(iii) Two V-I graphs A and B for series and parallel combinations of two
+resistors are as shown. Giving reason state which graph shows (a) series, (b)
+parallel combination of the resistors.
+37. Study the following electric circuit in which the resistors are arranged in
+three arms A, B and C :
+
+(a) Find the equivalent resistance of arm A.
+(b) Calculate the equivalent resistance of the parallel combination of the arms
+B and C.
+(c) (i) Determine the current that flows through the ammeter.
+
+                                                OR
+(ii) Determine the current that flows in the ammeter when the arm B is
+withdrawn from the circuit. (Term II, 2021-22)
+38. (a) List two disadvantages of using a series circuit in homes.
+(b) Calculate the effective resistance between A and B in the circuit given
+below:
+
+39. (a) A 6Ω resistance wire is doubled on itself. Calculate the new resistance
+of the wire.
+(b) Three 2Ω resistors A, B and C are connected in such a way that the total
+resistance of the combination is 3 Ω. Show the arrangement of the three
+resistors and justify your answer. (2020)
+40. Draw a schematic diagram of a circuit consisting of a battery of 3 cells of 2
+V each, a combination of three resistors of 10 9, 20Ω and 30Ω connected in
+parallel, a plug key and an ammeter, all connected in series. Use this circuit to
+find the value of the following:
+(a) Current through each resistor
+(b) Total current in the circuit
+(c) Total effective resistance of the circuit. (2020)
+41. (a) With the help of a suitable circuit diagram prove that the reciprocal of
+the equivalent resistance of a group of resistances joined in parallel is equal to
+the sum of the reciprocals of the individual resistances.
+(b) In an electric circuit two resistors of 12Ω each are joined in parallel to a 6
+V battery. Find the current drawn from the battery. (Delhi 2019)
+42. For the series combination of three resistors establish the relation R = R1
++ R₂+ R3 where the symbols have their usual meanings. Calculate the
+equivalent resistance of the combination of three resistors of 6 9, 9Ω and 18 Ω
+joined in parallel. (Board Term 1, 2016)
+43. State ohm's law. Represent it graphically. In the given circuit diagram
+calculate
+(i) the total effective resistance of the circuit.
+(ii) the current through each resistor.
+
+44. (a) Prove that the equivalent resistance of three resistors R1, R2 and R3 in
+series is R₁ + R2 + R3.
+(b) You have four resistors of 8 Ω each. Show how would you connect these
+resistors to have effective resistance of 8 Ω? (4/5, Board Term I, 2015)
+45. Draw a labelled circuit diagram showing three resistors R1, R2 and R3
+connected in series with a battery (E), a rheostat (Rh), a plug key (K) and an
+ammeter (A) using standard circuit symbols. Use this circuit to show that the
+same current flows through every part of the circuit. List two precautions you
+would observe while performing the experiment. (Board Term 1, 2014)
+46. Two wires A and B are of equal length and have equal resistances. If the
+resistivity of A is more than that of B, which wire is thicker and why? For the
+electric circuit given below calculate:
+
+(i) current in each resistor,
+(ii) total current drawn from the battery, and
+(iii) equivalent resistance of the circuit. (Board Term 1, 2014)
+11.7 Heating Effect of Electric Current
+MCQ
+47. The resistance of a resistor is reduced to half of its initial value. If other
+parameters of the electrical circuit remain unaltered, the amount of heat
+produced in the resistor will become
+(a) four times
+(b) two times
+(c) half
+(d) one fourth (2023)
+48. The resistance of a resistor is reduced to half of its initial value. In doing so,
+if other parameters of the circuit remain unchanged, the heating effects in the
+resistor will become
+(a) two times
+(b) half
+(c) one-fourth
+(d) four times (2020)
+SA II (3 marks)
+
+49. (i) State Joule's law of heating. Express it mathematically when an
+appliance of resistance R is connected to a source of voltage V and the
+current flows through the appliance for a time t.
+(ii) A 5 Ω resistor is connected across a battery of 6 volts. Calculate the energy
+that dissipates as heat in 10 s. (Term II, 2021-22)
+
+50. (a) Calculate the resistance of a metal wire of length 2 m and area of cross-
+section 1.55 x 10-6 m². (Resistivity of the metal is 2.8 × 10-8 Ω )
+(b) Why are alloys pr eferred over pure metals to make the heating elements
+of electrical heating devices? (Term II, 2021-22) Ev
+
+51. (a) Write the mathematical expression for Joule's law of heating.
+(b) Compute the heat generated while transferring 96000 coulomb of charge
+in two hours through a potential difference of 40 V. (2020)
+
+52. Write Joule's law of heating. (1/3, 2018)
+
+53. Explain the use of an electric fuse. What type of material is used for fuse
+wire and why? (Board Term 1, 2016)
+
+54. (a) Why is tungsten used for making bulb filaments of incandescent
+lamps?
+(b) Name any two electric devices based on heating effect of electric current.
+(2/5, Board Term I, 2015)
+
+LA (5 marks)
+
+55. (i) Draw a labelled circuit diagram of the circuit used to show the variation
+of potential difference across the ends of a resistor with current flowing
+through it. If you use this circuit, what relation would you find between the
+voltmeter reading, V and the ammeter reading, /?
+(ii) A wire of given material having length 'I' and area of cross-section 'A' has a
+resistance of 4 Ω. Find the resistance of another wire of the same material
+having length 1/2 and area of cross- section 2A. (2021 C)
+
+56. A fuse wire melts at 5 A. If it is desired that the fuse wire of same material
+melt at 10 A, then whether the new fuse wire should be of smaller or larger
+radius than the earlier one? Give reasons for your answer. (3/5, Board Term 1,
+2014)
+11.8 Electric Power
+
+MCQ
+
+57. An electric kettle consumes 1 kW of electric power when operated at 220
+V. The minimum rating of the fuse wire to be used for it is
+(a) 1A
+(b) 2 A
+(c) 4A
+(d) 5 A (2023)
+
+58. Two bulbs of 100 W and 40 W are connected in series. The current
+through the 100 W bulb is 1 A. The current through the 40 W bulb will be
+(a) 0.4 A
+(b) 0.6 A
+(c) 0.8 A
+(d) 1A (2020)
+
+VSA (1 mark)
+
+59. Write the relation between resistance (R) of filament of a bulb, its power
+(P) and a constant voltage V applied across it. (Board Term 1, 2017)
+
+60. Power of a lamp is 60 W. Find the energy in joules consumed by it in 1s.
+(Board Term 1, 2016)
+
+SAI (2 marks)
+
+61. An electric heater rated 1100 W operates at 220 V. Calculate (i) its
+resistance, and (ii) the current drawn by it. (Term II, 2021-22)
+
+SA II (3 marks)
+
+62. (a) What is the meaning of electric power of an electrical device? Write its
+SI unit.
+(b) An electric kettle of 2 kW is used for 2 h. Calculate the energy consumed in
+(i) kilowatt hour and
+(ii) joules (Term II, 2021-22)
+
+63. (i) Define electric power and write its Sl unit.
+(ii) Two bulbs rated 100 W; 220 V and 60 W; 220 V are connected in parallel
+to an electric mains of 220 V. Find the current drawn by the bulbs from the
+mains. (Term II, 2021-22)
+
+64. Define the term electric power. An electric device of resistance R when
+connected across an electric source of voltage V draws a current I. Derive an
+expression for the power in terms of resistance R and voltage V. What is the
+power of a device of resistance 400 Ω operating at 200 V? (Term II, 2021-22 C)
+
+65. Two lamps, one rated 100 W at 220 V and the other 60 W at 220 V, are
+connected in parallel to electric mains supply of 220 V. Draw a circuit diagram
+to show this arrangement and calculate the current drawn by the two lamps
+from the mains. (2021 C)
+
+66. Two lamps, one rated 100 W; 220 V, and the other 60 W; 220 V, are
+connected in parallel to electric mains supply. Find the current drawn by two
+bulbs from the line, if the supply voltage is 220 V. (2/3, 2018, Board Term I,
+2014)
+
+67. How much current will an electric iron draw from a 220 V source if the
+resistance of its element when hot is 55 ohms? Calculate the wattage of the
+electric iron when it operates on 220 volts. (Board Term 1, 2016)
+
+68. An electric iron has a rating of 750 W; 200 V. Calculate:
+(i) the current required.
+(ii) the resistance of its heating element.
+(iii) energy consumed by the iron in 2 hours. (Board Term I, 2015)
+
+69. An electric bulb is connected to a 220 V generator. The current is 2.5 A.
+Calculate the power of the bulb. (1/3, Board Term I, 2015)
+
+LA (5 marks)
+
+70. (a) Define electric power and state its SI unit. The commercial unit of
+electrical energy is known as 'unit'. Write the relation between this 'unit' and
+joule.
+(b) In a house, 2 bulbs of 50 W each are used for 6 hours daily and an electric
+geyser of 1 kW is used for 1 hour daily. Calculate the total energy consumed in
+a month of 30 days and its cost at the rate of Rs. 8.00 per kWh.
+
+71. (a) Define power and state its SI unit. (2023)
+(b) A torch bulb is rated 5V and 500 mA. Calculate its
+(i) power
+(ii) resistance
+(iii) energy consumed when it is lighted for
+
+72. Two identical resistors, each of resistance 15Ω, are connected in (i) series,
+and (ii) parallel, in turn to a battery of 6 V. Calculate the ratio of the power
+consumed in the combination of resistors in each case. (2020)
+73. (a) An electric bulb is rated at 200 V; 100 W. What is its resistance?
+(b) Calculate the energy consumed by 3 such bulbs if they glow continuously
+for 10 hours for complete month of November.
+(c) Calculate the total cost if the rate is ₹ 6.50 per unit (2020)
+74. (a) What is meant by the statement, “The resistance of a conductor is one
+ohm"?
+(b) Define electric power. Write an expression relating electric power,
+potential difference and resistance.
+(c) How many 132 Ω resistors in parallel are required to carry 5 A on a 220 V
+line? (2020)
+75. An electric lamp of resistance 20 Ω and a conductor of resistance 4 Ω are
+connected to a 6 V battery as shown in the circuit. Calculate.
+
+(a) the total resistance of the circuit
+(b) the current through the circuit,
+(c) the potential difference across the (i) electric lamp and (ii) conductor, and
+(d) power of the lamp. (Delhi 2019)
+76. Compare the power used in 2 Ω resistor in each of the following circuits.
+77. A bulb is rated 40 W; 220 V. Find the current drawn by it, when it is
+connected to a 220 V supply. Also find its resistance. If the given bulb is
+replaced by a bulb of rating 25 W; 220 V, will there be any change in the value
+of current and resistance? Justify your answer and determine the change. (AI
+2019)
+
+                        CBSE Sample Questions
+
+11.2 Electric Potential and Potential Difference
+
+VSA (1 mark)
+
+1. Some work is done to move a charge Q from infinity to a point A in space.
+The potential of the point A is given as V. What is the work done to move this
+charge from infinity in terms of Q and V? (2020-21)
+
+11.5 Factors on which the Resistance of a Conductor Depends
+
+MCQ
+2. A complete circuit is left on for several minutes, causing the connecting
+copper wire to become hot. As the temperature of the wire increases, the
+electrical resistance of the wire
+(a) decreases
+(b) remains the same
+(c) increases
+(d) increases for some time and then decreases. (2022-23)
+3.
+
+Plastic insulation surrounds a wire having diameter d and length I as shown
+above. A decrease in the resistance of the wire would be produced by an
+increase in the
+(a) length of the wire
+(b) diameter d of the wire
+(c) temperature of the wire
+(d) thickness of the plastic insulation (2022-23)
+11.6 Resistance of a System of Resistors
+VSA (1 mark)
+Two unequal resistances are connected in parallel. If you are not provided
+with any other parameters (e.g., numerical values of I and R), what can be said
+about the voltage drop across the two resistors? (2020-21)
+SAI (2 marks)
+5. A student has two resistors 2 Ω and 3 Ω. She has to put one of them in place
+of R2 as shown in the circuit. The current that she needs in the entire circuit is
+exactly 9A. Show by calculation which of the two resistors she should choose.
+
+SA II (3 marks)
+6.
+
+In the above circuit, if the current reading in the ammeter A is 2 A, what would
+be the value of R₁? (Term II, 2021-22)
+7.
+
+Calculate the total resistance of the circuit and find the total current in the
+circuit. (Term II, 2021-22)
+11.8 Electric Power
+SA II (3 marks)
+8. (a) It would cost a man ₹ 3.50 to buy 1.0 kW h of electrical energy from the
+main electricity board. His generator has a maximum power of 2.0 kW. The
+generator produces energy at this maximum power for 3 hours. Calculate how
+much it would cost to buy the same amount of energy from the main
+electricity board.
+(b) A student boils water in an electric kettle for 20 minutes. Using the same
+mains supply he wants to reduce the boiling time of water. To do so should he
+increase or decrease the length of the heating element? Justify your answer.
+(Term II, 2021-22)
+LA (5 marks)
+9. In the given circuit, A, B, C and D are four lamps connected with a battery of
+60 V.
+
+Analyse the circuit to answer the following questions.
+(i) What kind of combination are the lamps arranged in (series or parallel)?
+(ii) Explain with reference to your above answer, what are the advantages
+(any two) of this combination of lamps.
+(iii) Explain with proper calculations which lamp glows the brightest.
+(iv) Find out the total resistance of the circuit. (2020-21)
+
+                               SOLUTIONS
+
+                   Previous Years' CBSE Board Questions
+
+1.
+
+2. Electric current is the amount of charge flowing through a particular area in
+unit time.
+3. One ampere is constituted by the flow of one coulomb of charge per second.
+1A=1Cs-1
+4.
+
+5. (d): The inverse of the slope of I-V graph gives the resistance of the material.
+Here the slope of R3 is highest. Thus, R2 R1 R3.
+6. It states that the potential difference V, across the ends of a given metallic
+wire in an electric circuit is directly proportional to the current flowing
+through it, provided its temperature remains the same. Mathematically, V∞ I
+V = RI where R is resistance of the conductor.
+7. (a) Ohm's law states that the electric current flowing through a conductor is
+directly proportional to the potential difference applied across its ends,
+provided physical conditions like temperature etc., are kept unchanged.
+
+where, R is called the resistance of the conductor. Sl unit of resistance is ohm
+and is denoted by 2. It is a constant of proportionality and its value depends
+upon the size, nature of material and temperature.
+(b) If the potential difference across the two ends of a conductor is 1 V and the
+current through it is 1 A, then the resistance R, of the conductor is said to be
+1 Ω.
+(c) Given, potential difference V = 2 V
+Current, = 0.5 A
+Using Ohm's law, V = IR
+
+The shape of the grapn obtained by plotting potential difference applied
+across conductor against the current flowing through it will be a straight line.
+According to ohm's law,
+
+So, the slope of V-I graph at any point represents the resistance of the given
+conductor. As graph is a straight line, so it is clear from the graph that V I.
+
+9. Since, the graph is a straight line so we can either extrapolate the data or
+simply mark the value from graph as shown in figure.
+Hence, the value of current for V = 10 volts is 5 amperes (or 5 A). From Ohm's
+law, V = IR,
+
+At any point on the graph, resistance is the ratio of values of V and I. Since, the
+given graph is straight line (ohmic conductor) so, the slope of graph will also
+give the resistance of the resistor
+
+10. (i) The shape of the graph obtained by plotting potential difference applied
+across conductor against the current flowing through it will be a straight line.
+According to ohm's law,
+
+So, the slope of V-I graph at any point represents the resistance of the given
+conductor. As graph is a straight line, so it is clear from the graph that V ∞ I.
+(ii) The law expressed here is ohms law. It states that the potential difference
+V, across the ends of a given metallic wire in an electric circuit is directly
+proportional to the current flowing through it, provided its temperature
+remains the same. Mathematically,
+
+where R is resistance of the conductor.
+11. It states that the potential difference V, across the ends of a given metallic
+wire in an electric circuit is directly proportional to the current flowing
+through it, provided its temperature remains the same. Mathematically,
+where R is resistance of the conductor. The shape of the graph obtained by
+plotting potential difference applied across conductor against the current
+flowing through it will be a straight line. According to ohm's law,
+
+So, the slope of V-I graph at any point represents the resistance of the given
+conductor. As graph is a straight line, so it is clear from the graph that
+
+12. Ohm's law: It states that the potential difference V, across the ends of a
+given metallic wire in an electric circuit is directly proportional to the current
+flowing through it, provided its temperature remains the same.
+Mathematically,
+
+where R is resistance of the conductor. Resistance: It is the property of a
+conductor to resist the flow of charges through it. Its SI unit is ohm (Ω). If the
+potential difference across the two ends of a conductor is 1 V and the current
+through it is 1 A, then the resistance R, of the conductor is 1 ohm (1Ω).
+V-I graph for an ohmic conductor can be drawn as given in figure. Important
+feature of V-I graph are:
+(i) It is a straight line passing through origin.
+(ii) Slope of V-I graph gives the value of resistance of
+
+13. (c) Metals and Alloys are good conductors of electricity. Bronze is an alloy
+of copper and tin which are metals and thus is a good conductor of electricity.
+14. (c) Alloy These are mixture of metal with other elements in nature.
+15. (c) The resistance of a conductor of length I, and area of cross section, A is
+where p is the resistivity of the material. Now for the conductor of length 21,
+cross-section A' and resistivity p. area of
+
+16. The resistivity of an alloy is generally higher than that of its constituent
+metals.
+17. (i) Resistance of a conductor depends upon the following factors:
+(1) Length of the conductor: Greater the length (1) of the conductor more will
+be the resistance (R).
+(2) Area of cross-section of the conductor: Greater the cross-sectional area of
+the conductor, less will be the resistance.
+
+(3) Nature of conductor.
+(ii) SI unit of resistivity is 2 m.
+18. (i) We have three cylindrical conductors A, B and C –
+
+These three conductors are made of the same materials and their respective
+resistance are ORA, RB and Rc.
+
+(ii) Resistivity of alloys is generally higher than its constituent metals.
+Therefore, constantan has more resistance.
+19. (a) The resistance of a uniform cylindrical conductor depends on
+(i) Length of the conductor (1)
+(ii) Area of cross-section of the conductor (A)
+
+where p = Resistivity of the material
+The length of this wire is 0.628 m.
+20. (a) Resistance of a conductor depends upon the following factors:
+(1) Length of the conductor: Greater the length (1) of the conductor more will
+be the resistance (R). Rol
+
+(2) Area of cross-section of the conductor: Greater the cross-sectional area of
+the conductor, less will be the resistance.
+(3) Nature of conductor.
+(b) Metal have very low resistivity and hence they are good conductors of
+electricity. Whereas glass has very high resistivity so glass is a bad conductor
+of electricity.
+(c) Alloys are commonly used in electrical heating devices due to the following
+reasons
+(i) Alloys have higher resistivity than metals
+(ii) Alloys do not get oxidised or burn readily.
+21. We are given, the length of wire, | = 1 m, radius of wire, r = 0.01cm = 1×
+10-4m and resistance, R = 20 As we know,
+
+22. Given; resistivity of copper = 1.6 × 10−8 Ω m, diameter of wire, d = 0.5 mm
+and resistance of wire, R = 100 Ω
+
+If diameter is doubled (d' = 2d), then the area of cross- section of wire will
+become
+
+              so the resistance will decrease by four times or new resistance will
+be
+23. Here, r = 0.01 cm = 10-4 Ω, p = 50×10-8 Ω and R = 10 Ω
+24. If the radius of conductor is halved, the area of
+
+So, current will reduce to one-fourth of its previous value.
+25. Resistance is the property of a conductor to resist the flow of charges
+through it. Factors affecting resistance of a conductor: Resistance of a
+conductor depends upon the following factors:
+(1) Length of the conductor: Greater the length (l) of the conductor more will
+be the resistance (R). R∞l
+(2) Area of cross-section of the conductor: Greater the cross-sectional area of
+the conductor, less will be the resistance.
+
+(3) Nature of conductor. Rheostat is the device which is oftenly used to change
+the resistance without changing the voltage source in an electric circuit.
+We are given, length of wire, /= 50 cm = 50 × 10-2m cross-sectional area, A =
+0.01 mm² = 0.01 x 10-6m² and resistivity, p = 5 × 10-8 Ω m.
+
+26. (b): As they are connected in series, so current is same in both the bulbs.
+27. (a): The maximum resistance can be obtained from a group of resistors by
+connecting them in series. Thus,
+
+28. (c) A group of resistors can produce maximum resistance when they all
+are connected in series.
+R₁ =2 Ω +2+2 Ω +2 Ω =8 Ω
+29. (a) The maximum resistance can be produced from a group of resistors by
+connecting them in series.
+30.
+
+31. Here, R₁ = 10 Ω, R₂ = 15 Ω, R3 = 5 Ω. In parallel combination, equivalent
+resistance, (Req) is given by
+32.
+We know that resistance R1, R2 and R3 are in series.
+SO, RAB=R1+R₂+R3
+We know that, resistance R1, R2 and R3 are in parallel.
+
+(ii) The slope of V-I graph gives the resistance. The greater the slope greater
+will be the resistance. We know, Rs > Rp Graph (l) is correct.
+33.
+
+Here, R₁ = 10 Ω, R2 = 20 Ω
+R3 = 30 Ω and V = 12 V
+
+(b) Total circuit resistance
+34. (i) The resistance of the series combination is higher than each of the
+resistances. A parallel combination of two 9 resistors is equivalent to 4.5 Q. We
+can obtain 13.5 9 by coupling 4.5 92 and 9 Q in series. So, to obtain 13.5 Q, the
+combination is as shown in figure (a).
+
+(ii) To obtain a equivalent resistance of 6 Ω we have to connect two 9 Ω
+resistors in series and then connect the third 9 Ω resistor in parallel
+
+35. As given in circuit diagram, two 3 Ω resistors are connected in series to
+form R1, so R1=3 Ω +3 Ω =6 Ω And, R1 and R2 are in parallel combination,
+Hence, equivalent resistance of circuit (Req) is given by
+or Req=292
+Using Ohm's law, V = IR
+
+Current drawn from the battery is 1.5 A.
+36. (i) It states that the potential difference V, across the ends of a given
+metallic wire in an electric circuit is directly proportional to the current
+flowing through it, provided its temperature remains the same.
+Mathematically,
+
+where R is resistance of the conductor.
+
+(ii) To measure the entire current passing through the circuit, the ammeter
+should have low resistance.
+(iii) RS = R1+R₂ = Maximum resistance
+
+So, RA > RB
+Thus, A shows series combination and B shows parallel combination.
+37.
+
+38. (a) Two disadvantages of using a series circuit in homes:
+(i) If all devices are connected in series, the greater's the resistance.
+(ii) If a device have faulted then all devices of home stop working.
+Now, equivalent resistance between A and B
+
+We know that 6 Ω and 4 Ω are in series, then
+R1 = 6 Ω + 4 Ω = 10 and 3Ω and 3Ω are in series, R3 = 3Ω+3Ω=6Q Now
+equivalent resistance between A and B,
+
+39. (a) Given resistance of wire, R = 69 Let / be the length of the wire and A be
+its area of cross-
+
+Now when the length is doubled, l' = 21
+In order to get a total resistance of 32, the three resistors has to be connected
+as shown.
+
+40. The circuit diagram is as shown below.
+
+(a) Given, voltage of the battery = 2V + 2V + 2V = 6 V Current through 10 Ω
+resistance,
+Current through 20 resistance,
+Current through 30 resistance,
+(b) Total current in the circuit, /= /10 + /120 +/130
+= 0.6+0.3 +0.2 = 1.1 A
+(c) Total resistance of the circuit,
+41. (a) Resistors in parallel: When resistors are connected in parallel.
+
+(i) The potential difference across their ends is the same.
+(ii) The sum of current through them is the current drawn from the source of
+energy or cell.
+
+(iii) The equivalent resistance is given by,
+
+Hence, equivalent resistance in parallel combination is equal to the sum of
+reciprocals of the individual resistances.
+42.
+
+Given figure shows the series combination of three resistors R1, R2 and R3
+connected across a voltage source of potential difference V. Let current I is
+flowing through the circuit. V1, V2 and V3 are the potential differences across
+resistors R1, R2 and R3 respectively. Since, the total potential difference across
+a combination of resistors in series is equal to the sum of potential difference
+across the individual resistors.
+V=V₁+V₂+V3
+In series current through each resistor is same. ...(i)
+Applying the Ohm's law,
+V₁ = IR1, V2 = IR2 and V3 = IR3 ...(ii)
+If Rs, is the equivalent resistance of the circuit, then
+V = IRS ...(iii)
+From eqns. (i), (ii) and (iii), we can write
+IR₁ = IR₁+ IR2+ IR3
+or Rs = R1 + R₂+R3
+We can conclude that when several resistors are joined in series, the
+resistance of the combination Rs, equals the sum of their individual
+resistances, R1, R2 and R3.
+Given: R₁ = 6 Ω, R Ω = 9 Ω, R3 = 18 Ω
+are connected in parallel.
+Equivalent resistance, Req, is given by
+43. Ohm's law: It states that the potential difference V, across the ends of a
+given metallic wire in an electric circuit is directly proportional to the current
+flowing through it, provided its temperature remains the same.
+Mathematically,
+
+where R is resistance of the conductor. Graphical representation of Ohm's law
+
+For the given circuit
+R1=3 Ω, R2 = 4 Ω, R3 = 6 Ω and V = 6 V.
+(i) Total effective resistance of the circuit, Reg is given by
+
+(ii) Since, potential difference across each resistor connected in parallel is
+same.
+So, V₁ = V₂ = V3=6V
+Applying Ohm's law,
+(Note that net current in the circuit is/ = /1+ /2+/3)
+44.
+
+Given figure shows, the series combination of three resistors R1, R2 and R3
+connected across a voltage source of potential difference V.
+Let current / is flowing through the circuit. V1, V2 and V3 are the potential
+differences across resistors R1, R2 and R3 respectively. Since, the total potential
+difference across a combination of resistors in series is equal to the sum of
+potential difference across the individual resistors.
+V=V₁+V₂+V3 ...(i)
+In series current through each resistor is same. Applying the Ohm's law,
+V₁ = IR1, V2= IR2 and V3 = IR3 ...(ii)
+If R, is the equivalent resistance of the circuit, then
+V = IRS ...(iii)
+From eqns. (i), (ii) and (iii), we can write
+IR₁ = IR₁+IR₂+ IR3
+or Rs = R1+ R₂+ R3
+We can conclude that when several resistors are joined in series, the
+resistance of the combination R, equals the sum of their individual resistances,
+R1, R2 and R3.
+(b) If you have four 8 Ω resistors and the effective resistance is also 8 Ω
+then the two 8 Ω resistors are connected in series. Now you have pair of two
+16 Ω resistors (8 Ω +8 Ω). If you connect these resistors in parallel, you will
+have net resistance 8 Ω.
+45.
+
+Change the positions of ammeter and note the reading of ammeter each time.
+You will find that all the reading obtained are same. So, the value of the
+current in the ammeter is the same, independent of its position in the electric
+circuit. It means that in this circuit (series combination) the current is the
+same in every part of the circuit. Precautions:
+(i) All the connections are neat and tight.
+(ii) Ammeter is connected with the proper polarity, i.e., positive terminal of
+the ammeter should go to positive terminal and negative terminal of ammeter
+to the negative terminal of the battery or cell used.
+46. Let IA,aA and RA be the length, area of cross-section and resistance of wire A
+and IB, aB and RB are that of
+wire B.
+Here, IA IB and RA = RB
+If PA and PB are the resistivities of wire A and B respectively then
+Since PA PB therefore αA > B Hence, wire A is thicker than wire B. For parallel
+combination,
+(ii) Total current drawn from battery,
+1=11+12+13=0.2 + 0.6 + 1.2 = 2 A
+(iii) Equivalent resistance of the circuit, Reg can be obtained by Ohm's law
+
+47. (b): As voltage is same, resistance is halved,
+
+48.
+
+49. (i) According to the Joule's law of heating, when a
+current (/) is passed through a conductor of resistance (R)
+for a certain time (t), the conductor gets heated up and the amount of energy
+released is given by
+50. (a) Here, length of the wire, I = 2 m Area of cross-section, A = 1.55 x 10-6
+m² Resistivity of metal, p = 2.8 × 10-8 m
+
+(b) Alloys are preferred over pure metals to make the heating elements of
+electrical heating devices because they have high melting point and higher
+resistance than pure metals.
+51. (a) The Joule's law of heating implies that heat produced in a resistor is
+(i) directly proportional to the square of current for a given resistance,
+(ii) directly proportional to resistance for a given current, and
+(iii) directly proportional to the time for which the current flows through the
+resistor. i.e., H = 12 Rt
+(b) Given, charge q = 96000 C, time t = 2h = 7200s and potential difference V
+= 40 V
+
+52. According to the Joule's law of heating, when a current (I) is passed
+through a conductor of resistance (R) for a certain time (t), the conductor gets
+heated up and the amount of energy released is given by
+53. Electric fuse protects circuits and appliances by stopping the flow of any
+unduly high electric current. It consists of a piece of wire made of a metal or
+an alloy of appropriate melting point, for example aluminium, copper, iron,
+lead etc. If a current larger than the specified value flows through the circuit,
+the temperature of the fuse wire increases. This melts the fuse wire and
+breaks the circuit.
+54. (a) (i) Tungsten is a strong metal and has high melting point (3380°C).
+(ii) It emits light at high temperatures (about 2500°C).
+(b) Electric laundry, iron and electric heater are based on heating effect of
+electric current.
+55. (i) The potential difference V, across the ends of a given metallic wire in an
+electric circuit is directly proportional to the current flowing through it,
+provided its temperature remains the same. Mathematically,
+
+where R is resistance of the conductor. The shape of the graph obtained by
+plotting potential difference applied across conductor against the current
+flowing through it will be a straight line. According to ohm's law,
+
+So, the slope of V-I graph at any point represents the resistance of the given
+conductor. As graph is a straight line, so it is clear from the graph that
+(ii) A wire having length 'I' and area of cross section 'A' has a resistance R = 4Ω
+Then other wire of same material having length 1/2 and area of cross section
+2A has a resistance R' = ?
+
+56. Let the resistance of the wire be R, heat produced in the
+fuse at 5 A in 1s is
+H = (5)²R ( H = 12Rt)
+So, fuse melts at (5)²R joules of heat.
+Let, the resistance of new wire is R'
+So, heat produced in 1 second = (10)²R'
+To prevent it from melting
+
+.. cross-sectional area of new fuse wire is four times the first fuse.
+Now, A = πr², so new radius is twice the previous one. So, at 10A, the new fuse
+wire of same material and length has larger radius than the earlier one.
+57. (d): Given: P = 1 kW, V = 220 V
+P = VI
+
+So, minimum rating of fuse wire is 5 A.
+58. (d): Given power of first bulb, P₁ = 100 W and second bulb P₂ = 40 W
+Current through 100 W bulb, I₁ = 1 A
+Current through 40 W bulb, 12 =?
+Since both the bulbs are connected in series, the electric current passing
+through both the bulbs are same i.e., 12=1A.
+59.
+
+60. Here, power of lamp, P = 60 W time, t = 1s
+So, energy consumed = Power x time = (60x 1)J = 60 J
+61. Power of electric heater, P = 1100 W Operating voltage, V = 220 V
+
+62. (a) The electric power of an electrical device is the rate at which electric
+energy is dissipated or consumed in an electric circuit.
+
+The SI unit of electric power is watt (W)
+1 W = 1 volt x 1 ampere = 1 VA
+(b) (i) Electrical energy is the product of power and time.
+E=Pxt
+= 2 kW x 2 h = 4 kWh
+(ii) Electric energy consumed in joules
+1 kWh = 3.6 x 106 J
+= 4 kWh = 3.6 × 106 x 4 = 14.4 x 106 J.
+63. (i) The rate at which electric energy is dissipated or consumed in an
+electric circuit is called electric power. SI unit of electric power is watt (W).
+(ii) Given, P₁ = 100 W, V₁ = 220 V
+P₂ = 60 W, V₂ = 220 V
+P=VI
+64. Electric Power: The rate at which electrical energy is consumed or
+dissipated is called electrical power.
+
+Power is expressed in Joule/second or watt (W). We have a device that has the
+resistance of 4009Ω and operating at 200 V –
+
+65. Two lamps rated 100 W, 220 V and 60 W, 220 V and connect in parallel to
+electric mains supply of 220 V.
+As, both lamps are connected in parallel, So, total resistance of circuit, RT =
+
+66. Since both the bulbs are connected in parallel and to a 220 V supply, the
+voltage across each bulb is 220 V. Then Current drawn by 100 W bulb,
+Total current drawn from the supply line,
+1 = 11+12=0.454 A+ 0.273 A = 0.727 A = 0.73 A
+67. Here, V = 220 V, R = 55Ω
+By Ohm's law V = IR
+.. 220 = 1x 55 or 1 = 4 A
+68. Here, P = 750 W, V = 200 V
+(i) As P = VI
+I = P/V = (750/200) A = 3.75A
+(ii) By Ohm's law V = IR or R = V/I
+
+(iii) Energy consumed by the iron in 2 hours
+=Pxt = 750 W x 2h = 1.5 kWh
+or E = (750 × 2 × 3600) J = 5.4 x 106 J
+
+69. Here, V = 220 V, I = 2.5 A Power of the bulb P = VI = 220 × 2.5 W = 550 W
+
+70. (a) The electric power of an electrical device is the rate at which electric
+energy is dissipated or consumed in an electric circuit.
+The SI unit of electric power is watt (W).
+1 W = 1 volt x 1 ampere = 1 VA
+1 unit = 1 kWh = 3.6 x 106 J
+(b) 2 bulbs: P = 50 W, t = 6 hr daily
+1 geyser : P = 1 kW, t = 1 hr
+E=Pxt used by every 2 bulbs + energy used by geyser
+= 30 days, Rs. = 8/kWh
+Now, total energy consumed in one day
+= 2 × 50 × 6+1 x 1000 = 1600 Wh
+Total energy consumed in 30 days
+= 30 x 1600 Wh = 48 kWh
+Bill = 8 × 48 = Rs. 384.
+
+71. (a) Power is defined as the rate at which electric energy is dissipated or
+consumed in an electric circuit.
+P=VI=12R = V²/R
+The SI unit of electric power is watt (W). It is the power consumed by a device
+that carries 1 A of current when operated at a potential difference of 1 V.
+1 W = 1 volt x 1 ampere = 1 VA
+(b) Given, V = 5 V and I = 500 mA = 0.5 A
+(i) Power, P = V x 15 x 0.5 = 2.5 W
+
+(iii) Given, time t = 2.5 hrs = 9000 s
+The energy consumed, E = Pxt
+= 2.5 × 9000 = 2.25 x 104 J = 6.25 Watt hour
+72. Given, R₁ = R2 = 15Ω, V= 6 V
+(i) When connected in series,
+Rs = Rs+ R1 = 15Ω + 15Ω = 30Ω
+
+(ii) When connected in parallel,
+
+73.
+
+(b) Power of 1 bulb is 100 W Power of 3 bulbs, P = 3 x 100 W = 300 W These
+bulb glows for 10 hours in a day, so energy consumed in a day,
+E=Pxt = 300 x 10 = 3000 Wh = 3 kWh
+total energy consumed by 3 bulbs in month of
+November (30 days) will be
+ET = 30 x 3 kWh
+ET = 90 kWh or 90 units ( 1 unit = 1 kWh)
+(c) cost of 1 unit (1 kWh) = 6.50 = 6.50 × 90 = * 585
+74. (a) One Ohm is equal to the resistance of a conductor through which a
+current of one ompere flows when a potential difference of one volt is
+maintained across conductor.
+(b) The rote at which energy is used by an electrical appliances is called
+electric power. Expression relating electric power (P), potential difference
+(V) and resistance (R) is given by
+
+75. Resistance of the lamp = 20
+External resistance = 4 Q
+(a) As both the lamp and external resistance are connected in series, therefore
+the total resistance,
+
+(c) (i) Potential difference across the electric lamp
+
+(ii) Potential difference across conductor
+
+(d) Power of the lamp = (current)2 x resistance of lamp = (0.25)2 x 20 = 1.25
+W
+76. In circuit A,
+Total resistance, R = 1 + 2 = 39
+
+In circuit B, Voltage across both the resistance is same i.e. 4 V and both are
+connected in parallel combination.
+
+Power used in 2Ω resistor in each case is same i.e. 8 W.
+77. In first case, P = 40 W, V = 220 V
+
+Also, resistance of bulb,
+
+In second case, P = 25 W, V = 220 V
+
+Also, resistance of the bulb,
+
+Hence, by replacing 40 W bulb to 25 W bulb, having same source of voltage the
+amount of current flows decreases while resistance increases.
+
+                             CBSE Sample Questions
+
+1. Work done to bring charge Q from infinity to point at potential V is W = QV.
+(1)
+2. (c): As electrical resistance of a wire is directly proportional to its
+temperature, therefore on increasing the temperature of the wire would
+increase its electrical resistance. (1)
+3. (b): The resistance of the wire of length I having diameter d and resistivity p
+can be given by the formula,
+
+Therefore, on decreasing the resistance, there would be an increase in the
+diameter of the wire. (1)
+4. For the parallel combination, voltage-drop is same across both the resistors.
+5. The overall current needed = 9 A.
+The applied voltage is 12 V.
+By Ohm's law V = IR,
+The resistance for the entire circuit, (1)
+
+6. As shown in diagram, 5 ohm, 10 ohm and R₁ are in parallel
+
+Now, 6 ohm, 6 ohm and R, are in series
+From Ohm's law, V = I Reg From the circuit
+
+From equation (i) and (ii)
+
+7. Since R3 and R4 are connected in series,
+R34 R3+ R4
+= 6 + 4 = 10 Ω
+Now, R34 and R2 are connected in parallel,
+
+Also, R1 and R234 are connected in series,
+Req=R1+ R234 = 7+5=12 Ω
+
+So, total resistance of the circuit (Req) = 12
+total current in the circuit (I) = 2 A (1)
+8. (a) Energy = Power x Time
+So, Energy (E) = 3 x 2 = 6 kWh (1/2)
+Cost of buying electricity from the main electricity board
+= 6 x 3.50
+21.0 (1/2)
+(b) To reduce the boiling time using the same mains supply, the rate of heat
+production should be large.
+
+decreased. Since R is directly proportional to I so length should be decreased.
+(2)
+9. (i) The lamps are in parallel.
+(ii) Advantages: (1)
+If one lamp goes faulty, it will not affect the working of the other lamps. They
+will also be using the full potential of the battery as they are connected in
+parallel. (1)
+(iii) The lamp with the highest power will glow the brightest.
+P=VI
+In this case, all the bulbs have the same voltage, but lamp
+C has the highest current.
+Hence, lamp C will glow the brightest with power
+P = 5 × 60 Watt = 300 W.
+(iv) The total current in the circuit
+I=3+ 4+ 5+ 3A = 15 A
+Voltage, V = 60 V (2)
+As V = IR
+Hence, R = V/I = 60/15 A = 4A (1)
+
