@@ -674,6 +674,89 @@ let examDateTime = '';
 
 const quizTitle = document.title.split("Quiz")[1]?.trim() || document.title;
 
+
+function formatPhysicsMath(raw) {
+  let text = String(raw ?? '');
+  const math = [];
+  const hold = tex => {
+    const marker = String.fromCodePoint(0xE000) + math.length + String.fromCodePoint(0xE001);
+    math.push(tex);
+    return marker;
+  };
+  const greek = {
+    epsilon: '\\varepsilon', kappa: '\\kappa', lambda: '\\lambda',
+    sigma: '\\sigma', theta: '\\theta', phi: '\\phi', pi: '\\pi'
+  };
+  const atomTex = source => {
+    let value = source.trim();
+    const match = value.match(/^([A-Za-z]+)(?:<sub>([^<]+)<\/sub>)?(?:<sup>([^<]+)<\/sup>)?$/);
+    if (!match) return value;
+    const [, base, sub, sup] = match;
+    let tex = greek[base.toLowerCase()] || base;
+    if (sub) tex += '_{' + (/^[A-Za-z]+$/.test(sub) ? '\\mathrm{' + sub + '}' : sub) + '}';
+    if (sup) tex += '^{' + sup + '}';
+    return tex;
+  };
+
+  // Preserve expressions already written in MathJax syntax.
+  text = text.replace(/\\\([\s\S]*?\\\)|\\\[[\s\S]*?\\\]|\$\$[\s\S]*?\$\$/g, value => hold(value));
+
+  // Scientific notation, including legacy HTML superscripts.
+  text = text.replace(/\b(\d+(?:\.\d+)?)\s*(?:x|×)\s*10(?:<sup>(-?\d+)<\/sup>|\^(-?\d+))/g,
+    (_, coefficient, htmlExponent, caretExponent) => hold('\\(' + coefficient + '\\times10^{' + (htmlExponent || caretExponent) + '}\\)'));
+
+  // Parenthesised bases raised to fractional powers, e.g. (r² + a²)^(3/2).
+  text = text.replace(/\(([^()]+)\)\^\(([^()]+)\)/g, (_, base, exponent) => {
+    const texBase = base
+      .replace(/([A-Za-z0-9]+)<sup>(-?[^<]+)<\/sup>/g, '$1^{$2}')
+      .replace(/([A-Za-z0-9])²/g, '$1^{2}')
+      .replace(/([A-Za-z0-9])³/g, '$1^{3}');
+    const texExponent = /^(-?\d+)\s*\/\s*(\d+)$/.test(exponent)
+      ? exponent.replace(/^(-?\d+)\s*\/\s*(\d+)$/, '\\frac{$1}{$2}')
+      : exponent;
+    return hold('\\(\\left(' + texBase + '\\right)^{' + texExponent + '}\\)');
+  });
+
+  // Common fractions whose numerator and denominator are single physics symbols.
+  text = text.replace(/\b([A-Za-z]+(?:<sub>[^<]+<\/sub>)?(?:<sup>[^<]+<\/sup>)?)\s*\/\s*([A-Za-z]+(?:<sub>[^<]+<\/sub>)?(?:<sup>[^<]+<\/sup>)?)/g,
+    (_, numerator, denominator) => hold('\\(\\frac{' + atomTex(numerator) + '}{' + atomTex(denominator) + '}\\)'));
+  text = text.replace(/\b1\s*\/\s*\((4\s+pi\s+epsilon(?:<sub>0<\/sub>|\s*0)?)\)/gi,
+    () => hold('\\(\\frac{1}{4\\pi\\varepsilon_0}\\)'));
+
+  // Legacy HTML subscripts and superscripts.
+  text = text.replace(/\b([A-Za-z]+)<sub>([^<]+)<\/sub>/g, (_, base, sub) => {
+    const texBase = greek[base.toLowerCase()] || base;
+    const texSub = /^[A-Za-z]+$/.test(sub) ? '\\mathrm{' + sub + '}' : sub;
+    return hold('\\(' + texBase + '_{' + texSub + '}\\)');
+  });
+  text = text.replace(/\b(10|[A-Za-z]+|\d+)<sup>(-?[^<]+)<\/sup>/g, (_, base, exponent) => {
+    const texBase = /^(N|C|m|cm|mm|kg|s|J)$/.test(base) ? '\\mathrm{' + base + '}' : base;
+    return hold('\\(' + texBase + '^{' + exponent + '}\\)');
+  });
+
+  // Plain-text Greek symbols and indexed forms used by the imported questions.
+  text = text.replace(/\b(epsilon|kappa|lambda|sigma|theta|phi)\s*([012])\b/gi,
+    (_, name, index) => hold('\\(' + greek[name.toLowerCase()] + '_{' + index + '}\\)'));
+  text = text.replace(/\b(epsilon|kappa|lambda|sigma|theta|phi|pi)\b/gi,
+    (_, name) => hold('\\(' + greek[name.toLowerCase()] + '\\)'));
+  text = text.replace(/\b([qFEr])([012]{1,2})\b/g,
+    (_, variable, index) => hold('\\(' + variable + '_{' + index + '}\\)'));
+
+  // Vector, exponent, multiplication, proportionality, and arrow notation.
+  text = text.replace(/\br[- ]hat\b/gi, () => hold('\\(\\hat{\\mathbf r}\\)'));
+  text = text.replace(/\b([A-Za-z0-9]+)\^(-?\d+)\b/g,
+    (_, base, exponent) => hold('\\(' + base + '^{' + exponent + '}\\)'));
+  text = text.replace(/([A-Za-z0-9])([²³])/g,
+    (_, base, exponent) => hold('\\(' + base + '^{' + (exponent === '²' ? '2' : '3') + '}\\)'));
+  text = text.replace(/\s+x\s+/g, () => ' ' + hold('\\(\\times\\)') + ' ');
+  text = text.replace(/\bproportional to\b/gi, match => match + ' ' + hold('\\(\\propto\\)'));
+  text = text.replace(/->|→/g, () => hold('\\(\\rightarrow\\)'));
+
+  text = text.replace(new RegExp(String.fromCodePoint(0xE000) + '(\\d+)' + String.fromCodePoint(0xE001), 'g'),
+    (_, index) => math[Number(index)]);
+  return text;
+}
+
 function startQuiz() {
   const name = document.getElementById('studentNameInput').value.trim();
   if (!name) { alert('Please enter your name.'); return; }
@@ -691,7 +774,7 @@ function buildQuestions() {
   out.innerHTML = '';
 
   Q.forEach((q, index) => {
-    const qText = q.text || q.question || q.prompt || ''; // tolerate different keys
+    const qText = formatPhysicsMath(q.text || q.question || q.prompt || ''); // typeset physics notation
 	
 	// Fill in the blank question
 if (q.type === "fill") {
@@ -704,7 +787,7 @@ if (q.type === "fill") {
     placeholder="1"
     style="width:60px;padding:4px;margin:4px;"
     oninput="enableSubmit('${q.id}')">
-  ${b.replace("___","")}
+  ${formatPhysicsMath(b.replace("___",""))}
 `).join(" + ");
 
   out.insertAdjacentHTML('beforeend', `
@@ -723,11 +806,11 @@ if (q.type === "fill") {
       <button class="toggle-button" id="btn-sol-${q.id}" style="display:none;" onclick="toggleSolution('sol-${q.id}')">Show Solution</button>
 
     <div class="solution" id="sol-${q.id}">
-  <strong>Solution:</strong> ${q.solution || ''}
+  <strong>Solution:</strong> ${formatPhysicsMath(q.solution || '')}
   ${
     q.solution_steps && q.solution_steps.length
       ? "<ul style='margin-top:8px;'>" +
-        q.solution_steps.map(s => `<li>${s}</li>`).join("") +
+        q.solution_steps.map(s => `<li>${formatPhysicsMath(s)}</li>`).join("") +
         "</ul>"
       : ""
   }
@@ -755,7 +838,7 @@ if (q.type === "fill") {
     const optionsHTML = entries.map(([letter, opt]) => {
       return `<label class="option-item" for="${q.id}-${letter}">
                 <input type="radio" id="${q.id}-${letter}" name="${q.id}" value="${letter}" onchange="enableSubmit('${q.id}')">
-                ${letter}. ${opt}
+                ${letter}. ${formatPhysicsMath(opt)}
               </label>`;
     }).join('');
 
@@ -786,7 +869,7 @@ if (q.solution_steps && Array.isArray(q.solution_steps) && q.solution_steps.leng
         </div>
         <button class="toggle-button" id="btn-sol-${q.id}" style="display:none;" onclick="toggleSolution('sol-${q.id}')">Show Solution</button>
         <div class="solution" id="sol-${q.id}">
-          <strong>Solution:</strong> ${q.solution || ''} ${solutionStepsHTML}
+          <strong>Solution:</strong> ${formatPhysicsMath(q.solution || '')} ${solutionStepsHTML}
         </div>
       </div>
     `);
@@ -977,18 +1060,18 @@ if (chosen === null || chosen === "") {
     let solutionStepsHTML = '';
     if (q.solution_steps && Array.isArray(q.solution_steps) && q.solution_steps.length > 0) {
       solutionStepsHTML = '<ul style="margin-top:5px;">' +
-        q.solution_steps.map(step => `<li>${step}</li>`).join('') +
+        q.solution_steps.map(step => `<li>${formatPhysicsMath(step)}</li>`).join('') +
         '</ul>';
     }
 
     detailHTML += `
       <tr>
         <td>${index + 1}</td>
-        <td>${q.text || q.question}</td>
+        <td>${formatPhysicsMath(q.text || q.question)}</td>
         <td>${chosen || 'Not Answered'}</td>
         <td>${correctLetter}</td>
         <td>${resultText}</td>
-        <td>${q.solution || ''}${solutionStepsHTML}</td>
+        <td>${formatPhysicsMath(q.solution || '')}${solutionStepsHTML}</td>
         <td>${marks}</td>
       </tr>`;
   });
