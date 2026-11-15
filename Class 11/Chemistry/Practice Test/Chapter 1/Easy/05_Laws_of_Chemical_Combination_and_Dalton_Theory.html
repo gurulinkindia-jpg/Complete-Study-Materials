@@ -674,6 +674,61 @@ let examDateTime = '';
 
 const quizTitle = document.title.split("Quiz")[1]?.trim() || document.title;
 
+
+function formatMath(raw) {
+  let text = String(raw ?? '');
+  const math = [];
+  const hold = tex => {
+    const marker = String.fromCodePoint(0xE000) + math.length + String.fromCodePoint(0xE001);
+    math.push(tex);
+    return marker;
+  };
+
+  // Preserve any expressions that were already written in MathJax form.
+  text = text.replace(/\\\([\s\S]*?\\\)|\\\[[\s\S]*?\\\]|\$\$[\s\S]*?\$\$/g, value => hold(value));
+
+  // Scientific notation, powers of ten, and unit exponents.
+  text = text.replace(/\b(\d+(?:\.\d+)?)\s*(?:x|×)\s*10\^(-?\d+)\b/g,
+    (_, coefficient, exponent) => hold('\\(' + coefficient + '\\times 10^{' + exponent + '}\\)'));
+  text = text.replace(/\b10\^(-?\d+|[A-Za-z])\b/g,
+    (_, exponent) => hold('\\(10^{' + exponent + '}\\)'));
+  text = text.replace(/\b(mL|mol|kg|cm|dm|mm|g|m|L|u)\^(-?\d+)\b/g,
+    (_, unit, exponent) => hold('\\(\\mathrm{' + unit + '}^{' + exponent + '}\\)'));
+
+  text = text.replace(/\((\d+(?:\.\d+)?)\s+(mL|mol|kg|cm|dm|mm|g|m|L|u)\)\^(-?\d+|[A-Za-z])/g,
+    (_, value, unit, exponent) => hold('\\((' + value + '\\,\\mathrm{' + unit + '})^{' + exponent + '}\\)'));
+  text = text.replace(/\b([A-Za-z]+)\^(-?\d+|[A-Za-z])\b/g,
+    (_, base, exponent) => hold('\\(' + base + '^{' + exponent + '}\\)'));
+
+  // Common indexed variables used in concentration and mole equations.
+  text = text.replace(/\b(?:[A-Za-z]\d){2,}\b/g, token => {
+    const tex = token.replace(/([A-Za-z])(\d+)/g, '$1_{$2}');
+    return hold('\\(' + tex + '\\)');
+  });
+  text = text.replace(/\b([xMN])([AB12])\b/g,
+    (_, variable, index) => hold('\\(' + variable + '_{' + index + '}\\)'));
+  text = text.replace(/\bN_A\b/g, () => hold('\\(N_{\\!A}\\)'));
+
+  // Chemical formulae containing subscripts, including grouped formulae such as Pb(NO3)2.
+  text = text.replace(/\b(?:[A-Z][a-z]?\d*)+(?:\([A-Z][A-Za-z0-9]*\)\d*)*\b/g, token => {
+    if (!/[0-9(]/.test(token)) return token;
+    const tex = token.replace(/(\)|[A-Za-z])(\d+)/g, '$1_{$2}');
+    return hold('\\(\\mathrm{' + tex + '}\\)');
+  });
+
+  // Temperature scales, inequalities, reaction arrows, and arithmetic symbols.
+  text = text.replace(/°C/g, () => hold('\\({}^{\\circ}\\mathrm{C}\\)'));
+  text = text.replace(/°F/g, () => hold('\\({}^{\\circ}\\mathrm{F}\\)'));
+  text = text.replace(/<=/g, () => hold('\\(\\le\\)'));
+  text = text.replace(/->|→/g, () => hold('\\(\\rightarrow\\)'));
+  text = text.replace(/\s+x\s+/g, () => ' ' + hold('\\(\\times\\)') + ' ');
+
+  // Restore protected MathJax expressions.
+  text = text.replace(new RegExp(String.fromCodePoint(0xE000) + '(\\d+)' + String.fromCodePoint(0xE001), 'g'),
+    (_, index) => math[Number(index)]);
+  return text;
+}
+
 function startQuiz() {
   const name = document.getElementById('studentNameInput').value.trim();
   if (!name) { alert('Please enter your name.'); return; }
@@ -691,7 +746,7 @@ function buildQuestions() {
   out.innerHTML = '';
 
   Q.forEach((q, index) => {
-    const qText = q.text || q.question || q.prompt || ''; // tolerate different keys
+    const qText = formatMath(q.text || q.question || q.prompt || ''); // typeset all scientific notation
 	
 	// Fill in the blank question
 if (q.type === "fill") {
@@ -704,7 +759,7 @@ if (q.type === "fill") {
     placeholder="1"
     style="width:60px;padding:4px;margin:4px;"
     oninput="enableSubmit('${q.id}')">
-  ${b.replace("___","")}
+  ${formatMath(b.replace("___",""))}
 `).join(" + ");
 
   out.insertAdjacentHTML('beforeend', `
@@ -723,11 +778,11 @@ if (q.type === "fill") {
       <button class="toggle-button" id="btn-sol-${q.id}" style="display:none;" onclick="toggleSolution('sol-${q.id}')">Show Solution</button>
 
     <div class="solution" id="sol-${q.id}">
-  <strong>Solution:</strong> ${q.solution || ''}
+  <strong>Solution:</strong> ${formatMath(q.solution || '')}
   ${
     q.solution_steps && q.solution_steps.length
       ? "<ul style='margin-top:8px;'>" +
-        q.solution_steps.map(s => `<li>${s}</li>`).join("") +
+        q.solution_steps.map(s => `<li>${formatMath(s)}</li>`).join("") +
         "</ul>"
       : ""
   }
@@ -755,7 +810,7 @@ if (q.type === "fill") {
     const optionsHTML = entries.map(([letter, opt]) => {
       return `<label class="option-item" for="${q.id}-${letter}">
                 <input type="radio" id="${q.id}-${letter}" name="${q.id}" value="${letter}" onchange="enableSubmit('${q.id}')">
-                ${letter}. ${opt}
+                ${letter}. ${formatMath(opt)}
               </label>`;
     }).join('');
 
@@ -786,7 +841,7 @@ if (q.solution_steps && Array.isArray(q.solution_steps) && q.solution_steps.leng
         </div>
         <button class="toggle-button" id="btn-sol-${q.id}" style="display:none;" onclick="toggleSolution('sol-${q.id}')">Show Solution</button>
         <div class="solution" id="sol-${q.id}">
-          <strong>Solution:</strong> ${q.solution || ''} ${solutionStepsHTML}
+          <strong>Solution:</strong> ${formatMath(q.solution || '')} ${solutionStepsHTML}
         </div>
       </div>
     `);
@@ -977,18 +1032,18 @@ if (chosen === null || chosen === "") {
     let solutionStepsHTML = '';
     if (q.solution_steps && Array.isArray(q.solution_steps) && q.solution_steps.length > 0) {
       solutionStepsHTML = '<ul style="margin-top:5px;">' +
-        q.solution_steps.map(step => `<li>${step}</li>`).join('') +
+        q.solution_steps.map(step => `<li>${formatMath(step)}</li>`).join('') +
         '</ul>';
     }
 
     detailHTML += `
       <tr>
         <td>${index + 1}</td>
-        <td>${q.text || q.question}</td>
+        <td>${formatMath(q.text || q.question)}</td>
         <td>${chosen || 'Not Answered'}</td>
         <td>${correctLetter}</td>
         <td>${resultText}</td>
-        <td>${q.solution || ''}${solutionStepsHTML}</td>
+        <td>${formatMath(q.solution || '')}${solutionStepsHTML}</td>
         <td>${marks}</td>
       </tr>`;
   });
