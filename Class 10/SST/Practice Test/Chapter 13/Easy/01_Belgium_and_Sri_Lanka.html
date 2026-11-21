@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  
-  
+
+
   <title>Belgium and Sri Lanka Easy Quiz</title>
-  
-  
+
+
   <style>
     body{font-family:Arial, sans-serif;padding:20px;background:#121212;color:#f0f0f0;}
     #logo{display:block;margin:0 auto 25px;max-width:180px;}
@@ -34,7 +34,7 @@
     #reportModal button { margin-top: 10px; padding: 8px 12px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
     #sendReport { background: #28a745; color: white; }
     #closeReport { background: #dc3545; color: white; margin-left: 5px; }
-  
+
   /* ===== LOGIN PAGE ENHANCEMENTS ===== */
 
 #name-container {
@@ -282,7 +282,7 @@
 }
 
 
-  
+
   /* Keep chemistry diagrams readable against the dark quiz theme. */
   .question img {
     display: block;
@@ -306,7 +306,7 @@
   <script>
     window.MathJax = {
       tex: {
-        inlineMath: [['\\(','\\)'], ['$', '$']], 
+        inlineMath: [['\\(','\\)'], ['$', '$']],
         displayMath: [['$$','$$'], ['\\[','\\]']],
         processEscapes: true
       },
@@ -368,8 +368,8 @@
 
 
   <h2>Class 10 Social Science: Power-Sharing<br><small>Belgium and Sri Lanka - Easy</small></h2>
-  
-  
+
+
   <p><strong>Time Elapsed:</strong> <span id="timer">00:00</span></p>
   <div id="questions-container"></div>
 
@@ -680,14 +680,14 @@ function buildQuestions() {
 
   Q.forEach((q, index) => {
     const qText = q.text || q.question || q.prompt || ''; // tolerate different keys
-	
+
 	// Fill in the blank question
 if (q.type === "fill") {
 
   const blanksHTML = q.blanks.map((b,i)=>`
-  <input type="text" 
-    data-q="${q.id}" 
-    data-i="${i}" 
+  <input type="text"
+    data-q="${q.id}"
+    data-i="${i}"
     class="fill-input"
     placeholder="1"
     style="width:60px;padding:4px;margin:4px;"
@@ -804,8 +804,8 @@ function getCorrectLetter(q) {
 function grade(qid) {
   const q = Q.find(x => x.id === qid);
   // accept different possible field names for the correct answer
-  
-  
+
+
 const correct = getCorrectLetter(q);
 
 
@@ -940,10 +940,10 @@ if(q.type === "fill"){
   correctLetter = getCorrectLetter(q);
 
 }
-	
-	
-	
-	
+
+
+
+
 
     let marks = 0;
     let resultText = "";
@@ -1040,14 +1040,14 @@ document.getElementById("shareWhatsappBtn").addEventListener("click", function (
     const qNum = i + 1;
     const checked = document.querySelector(`input[name="${q.id}"]:checked`);
     let userAns = checked ? checked.value : null;
-	
-	
-	
-	
-	
+
+
+
+
+
 const correctAns = getCorrectLetter(q);
-	
-	
+
+
 
     let marks = 0;
     let resultText = "";
