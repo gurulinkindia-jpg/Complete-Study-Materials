@@ -670,7 +670,7 @@ function startQuiz() {
   document.getElementById('name-container').style.display = 'none';
   document.getElementById('quiz-container').style.display = 'block';
   buildQuestions();
-  if (window.MathJax) MathJax.typesetPromise();
+  if (window.MathJax && typeof MathJax.typesetPromise === 'function') MathJax.typesetPromise();
   startTimer();
 }
 
@@ -802,7 +802,7 @@ function getCorrectLetter(q) {
 
 
 function grade(qid) {
-  const q = Q.find(x => x.id === qid);
+  const q = Q.find(x => String(x.id) === String(qid));
   // accept different possible field names for the correct answer
 
 
@@ -860,7 +860,7 @@ const correct = getCorrectLetter(q);
 
 function gradeFill(qid){
 
-  const q = Q.find(x=>x.id===qid);
+  const q = Q.find(x => String(x.id) === String(qid));
 
   const inputs = document.querySelectorAll(`input[data-q="${qid}"]`);
 
